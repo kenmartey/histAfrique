@@ -7,3 +7,11 @@
 meteor-platform
 autopublish
 insecure
+twbs:bootstrap
+fortawesome:fontawesome
+iron:router
+aldeed:autoform
+aldeed:collection2
+yogiben:autoform-file@=0.2.0
+cfs:gridfs@=0.0.27
+cfs:standard-packages
