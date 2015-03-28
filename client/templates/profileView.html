@@ -1,0 +1,31 @@
+<template name="view_profile">
+	<!-- {{#each profiles}}
+	
+	
+	{{gender}}
+	{{email}}
+	{{#with FS.GetFile 'images' picture}}
+	<img class="img-thumbnail" width="180px" height="180px" src="{{this.url}}" alt="" >
+	{{/with}}
+	{{/each}} -->
+
+
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+	{{#each profiles}}
+	<div class="container">
+		<div class="fb-profile">
+			<img align="left" class="fb-image-lg" src="images/blacklinux.jpg" alt="Profile image example"/>
+			{{#with FS.GetFile 'images' picture}}
+			<img align="left" class="fb-image-profile thumbnail" width="170px" height="200px" src="{{this.url}}" alt="" >
+			{{/with}}
+			<!-- <img align="left" class="fb-image-profile thumbnail" src="images/profilepic.jpg" alt="Profile image example"/> -->
+			<div class="fb-profile-text">
+				<h1>{{fullName}}</h1>
+				<p>{{username}}</p>
+				<p>{{email}}</p>
+			</div>
+		</div>
+	</div> <!-- /container -->  
+	{{/each}}
+
+</template>

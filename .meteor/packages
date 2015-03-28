@@ -15,3 +15,5 @@ aldeed:collection2
 yogiben:autoform-file@=0.2.0
 cfs:gridfs@=0.0.27
 cfs:standard-packages
+cfs:ui
+cfs:autoform
