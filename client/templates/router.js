@@ -42,3 +42,37 @@ Router.route('/profile', function(){
 		}
 	}
 });
+Router.route('/events/:_id/view_event_pictures', function(){
+	this.render('createEventPicture');
+},
+{
+	name: 'eventPictures',
+	
+	data: function(){
+		var _id = this.params._id;
+		return {
+			createevents: Events.findOne(_id),
+			eventpictures: EventPictures.find({createevents:_id}).fetch()
+		}
+	}
+
+});
+
+// Router.route('/dashboard/job/applications/:_id', function(){
+// 	this.render('viewapplications');
+// },
+// {
+// 	name: 'viewapplications',
+// 	waitOn: function(){
+// 		var _id = this.params._id;
+// 		Meteor.subscribe('applications',_id)
+// 	},
+// 	data: function(){
+// 		var _id = this.params._id;
+// 		return{ 
+// 			job: Jobs.findOne(_id),
+// 			applications: Applications.find({job: _id}).fetch()
+
+// 		}
+// 	}
+// })
