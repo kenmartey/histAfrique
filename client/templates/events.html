@@ -24,7 +24,8 @@
 						<a href="#">{{location}}</a>
 						<a href="#" target="new_blank">{{contact}}</a>
 						<a href="{{pathFor 'eventPictures'  _id=_id}}" target="">View More</a>
-						<a href="#" target="new_blank">Join</a>
+
+						<a id="join" href="#" data-toggle="modal" data-book-event="{{_id}}" data-target="#bookEvent">Join</a>
 					</div>
 				</div>
 			</div>

@@ -57,22 +57,18 @@ Router.route('/events/:_id/view_event_pictures', function(){
 	}
 
 });
+Router.route('/events/:_id/join', function(){
+	this.render('bookings');
+},
+{
+	name: 'bookings',
+	
+	data: function(){
+		var _id = this.params._id;
+		return {
+			eventsid: Events.findOne(_id),
+			bookings: Bookings.find({eventsid:_id}).fetch()
+		}
+	}
 
-// Router.route('/dashboard/job/applications/:_id', function(){
-// 	this.render('viewapplications');
-// },
-// {
-// 	name: 'viewapplications',
-// 	waitOn: function(){
-// 		var _id = this.params._id;
-// 		Meteor.subscribe('applications',_id)
-// 	},
-// 	data: function(){
-// 		var _id = this.params._id;
-// 		return{ 
-// 			job: Jobs.findOne(_id),
-// 			applications: Applications.find({job: _id}).fetch()
-
-// 		}
-// 	}
-// })
+});

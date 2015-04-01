@@ -6,6 +6,7 @@
 	<div class="container">
 		<div class="row">
 			<!-- Card Projects -->
+			{{#if eventpictures}}
 			{{#each eventpictures}}
 			<div class="col-md-4">
 				<div class="card">
@@ -25,11 +26,14 @@
 						<a href="#"></a>
 						<a href="#" target="new_blank"></a>
 						
-						<a href="#" target="new_blank">Join</a>
+						<a href="#" target="#bookEvent">Join</a>
 					</div>
 				</div>
 			</div>
 			{{/each}}
+			{{else}}
+			<h1>No Data found here</h1>
+			{{/if}}
 		</div>
 	</div>
 </template>

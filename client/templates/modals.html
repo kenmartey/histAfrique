@@ -94,4 +94,48 @@
 		</div>
 	</div>
 	<!-- end of Modal for EventPictures Success-->
+
+	<!-- Modal for Bookings -->
+	<div class="modal fade" id="bookEvent" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<!-- {{#if createevents}} -->
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close" ><span aria-hidden="true">&times;</span></button> 
+					<!-- {{#if createevents}} -->
+					<h4 class="modal-title" id="myModalLabel" data-book-event="{{_id}}">Book for {{eventName}}</h4>
+					
+				</div>
+				<!-- {{/if}} -->
+				<div class="modal-body">
+					{{> quickForm collection="Bookings" id="insertBookingForm" type="insert"}}
+
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- end of Modal for Bookings-->
+
+	<!-- Modal for Successfully Booking an Event -->
+	<div class="modal fade" id="EventBookingSuccess" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-body">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+					You have successfully Joined this Event.Please check your mail for confirmation in 30min time.
+
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- end of Modal for Successfully Booking an Event -->
+
 </template>
