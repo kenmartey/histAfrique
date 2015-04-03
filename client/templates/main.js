@@ -4,6 +4,7 @@ Template.events.events({
 		var _id = $(e.currentTarget).attr('data-book-event');
 		// console.log(this);
 		Session.set('eventId', this._id);
+		Session.set('eventname', this);
 		// Session.set('eventName', this.placeName);
 	}
 	
@@ -11,7 +12,7 @@ Template.events.events({
 
 Template.modals.helpers({
 	eventName: function (e, t) {
-		return Session.get('eventId').location
+		return Session.get('eventname').location
 		// return 'hello'
 	}
 });

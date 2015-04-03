@@ -22,6 +22,7 @@ AutoForm.hooks({
 		formToDoc: function(doc, ss, formId) {
 			console.log(doc);
 			doc.eventsid = Session.get('eventId');
+			doc.eventname = Session.get('eventname');
 			console.log(doc);
 			return doc;
 		}
