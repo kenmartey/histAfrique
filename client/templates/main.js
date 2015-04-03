@@ -8,6 +8,15 @@ Template.events.events({
 	}
 	
 });
+// Template.events.events({
+// 	'click [data-book-event]': function (e,t) {
+// 		var _id = $(e.currentTarget).attr('data-book-event');
+// 		// console.log(this);
+// 		Session.set('eventId', this._id);
+// 		// Session.set('eventName', this.placeName);
+// 	}
+
+// });
 
 // Template.events.events({
 // 	'click #join': function (e,t) {

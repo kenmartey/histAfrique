@@ -1,3 +1,39 @@
 <template name="navigation">
-	This navigation
+
+	<div class="navbar navbar-default navbar-fixed-top " role="navigation">
+		<div class="container">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="{{pathFor 'home'}}">Linexo</a>
+			</div>
+			<div class="navbar-collapse collapse">
+
+				<ul class="nav navbar-nav navbar-right">
+					<li class="active"><a href="{{pathFor 'home'}}">Home</a></li>
+					<li><a href="#services">My Dashboard</a></li>
+					<li class="dropdown"><a href="#portfolio" class="dropdown-toggle js-activated" data-toggle="dropdown">Profile</a>
+						<ul class="dropdown-menu">
+							<li><a href="{{pathFor 'view_profile'}}">Edit Profile</a></li>
+							<li><a href="portfolio-single.html">Portfolio single</a></li>
+						</ul>
+					</li>
+					<li><a href="{{pathFor 'events'}}">Trips</a></li>
+					<li><a href="contact.html">Contact</a></li>
+					{{#if currentUser}}
+					<li><a href="/sign-out">Sign-Out</a>
+					</li>
+					{{else}}
+					<li><a href="/sign-in">Sign-In</a>
+					</li>
+					{{/if}}
+				</ul>
+			</div><!--/.nav-collapse -->
+		</div><!--/.container -->
+	</div><!--navbar-default end-->
+	
 </template>

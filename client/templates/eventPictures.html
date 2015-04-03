@@ -1,39 +1,41 @@
 <template name="createEventPicture">
-	<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#createEventPicture">
-		Add Picture
-	</button>
+	<div class="body">
+		<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#createEventPicture">
+			Add Picture
+		</button>
 
-	<div class="container">
-		<div class="row">
-			<!-- Card Projects -->
-			{{#if eventpictures}}
-			{{#each eventpictures}}
-			<div class="col-md-4">
-				<div class="card">
-					<div class="card-image">
-						{{#with FS.GetFile 'images' picture}}
-						<img class="img-thumbnail" width="560px" height="500px" src="{{this.url}}" alt="" >
-						<span class="card-title">{{pictureName}}</span>
-						{{/with}}
-					</div>
+		<div class="container">
+			<div class="row">
+				<!-- Card Projects -->
+				{{#if eventpictures}}
+				{{#each eventpictures}}
+				<div class="col-md-4">
+					<div class="card">
+						<div class="card-image">
+							{{#with FS.GetFile 'images' picture}}
+							<img class="img-thumbnail" width="560px" height="500px" src="{{this.url}}" alt="" >
+							<span class="card-title">{{pictureName}}</span>
+							{{/with}}
+						</div>
 
-					<div class="card-content">
-						<p>{{history}}</p>
-					</div>
+						<div class="card-content">
+							<p>{{history}}</p>
+						</div>
 
-					<div class="card-action">
-						<!-- <i class="fa fa-envelope-o"></i><a href="" target="new_blank"></a> -->
-						<a href="#"></a>
-						<a href="#" target="new_blank"></a>
-						
-						<a href="#" target="#bookEvent">Join</a>
+						<div class="card-action">
+							<!-- <i class="fa fa-envelope-o"></i><a href="" target="new_blank"></a> -->
+							<a href="#"></a>
+							<a href="#" target="new_blank"></a>
+							
+							<a id="join" href="#" data-toggle="modal" data-book-event="{{_id}}" data-target="#bookEvent">Join</a>
+						</div>
 					</div>
 				</div>
+				{{/each}}
+				{{else}}
+				<h1>No Data found here</h1>
+				{{/if}}
 			</div>
-			{{/each}}
-			{{else}}
-			<h1>No Data found here</h1>
-			{{/if}}
 		</div>
 	</div>
 </template>

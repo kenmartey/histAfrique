@@ -20,8 +20,8 @@ AutoForm.hooks({
 AutoForm.hooks({
 	insertBookingForm: {
 		formToDoc: function(doc, ss, formId) {
-			doc.eventsid=Session.get('eventId');
-			// console.log(Session.get('eventId'))
+			doc.eventsid = Session.get('eventId');
+			console.log(Session.get('eventId'))
 			// doc.eventsName=Session.get('eventName');
 			// console.log(Session.get('eventName'))
 			console.log(doc);
