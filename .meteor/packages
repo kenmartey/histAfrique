@@ -9,7 +9,7 @@ autopublish
 insecure
 twbs:bootstrap
 fortawesome:fontawesome
-iron:router
+
 aldeed:autoform
 aldeed:collection2
 yogiben:autoform-file@=0.2.0
@@ -18,3 +18,5 @@ cfs:standard-packages
 cfs:ui
 cfs:autoform
 joshowens:accounts-entry
+iron:router
+matteodem:easy-search

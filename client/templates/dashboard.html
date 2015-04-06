@@ -1,0 +1,39 @@
+<template name="myBoard">
+	<div class="body">
+		{{#if currentUser}}
+		<div class="container">
+			<div class="row">
+				<!-- Card Projects -->
+				{{#each dashboardevents}}
+				<div class="col-md-4">
+					<div class="card">
+						<div class="card-image">
+							{{#with FS.GetFile 'images' picture}}
+							<img class="img-thumbnail" width="560px" height="500px" src="{{this.url}}" alt="" >
+							<span class="card-title">{{placeName}}</span>
+							{{/with}}
+						</div>
+
+						<div class="card-content">
+							<p>{{history}}</p>
+						</div>
+
+						<div class="card-action">
+							<!-- <i class="fa fa-envelope-o"></i><a href="" target="new_blank"></a> -->
+							<a href="#">{{location}}</a>
+							<a href="#" target="new_blank">{{contact}}</a>
+							<a href="{{pathFor 'view_bookings'  _id=_id}}" target="">View Bookings</a>
+						</div>
+					</div>
+				</div>
+				{{/each}}
+			</div>
+		</div>
+		{{else}}
+		<div class="alert alert-info">
+			Please Login to view your data
+		</div>
+
+		{{/if}}
+	</div>
+</template>

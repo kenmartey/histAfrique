@@ -25,7 +25,7 @@ Bookings.attachSchema(new SimpleSchema({
 				collection: 'Images'
 			}
 		},
-		label: 'Choose file'
+		label: 'Choose Profile Picture'
 	},
 	eventsid: {
 		type: String,

@@ -15,7 +15,7 @@
 
 				<ul class="nav navbar-nav navbar-right">
 					<li class="active"><a href="{{pathFor 'home'}}">Home</a></li>
-					<li><a href="#services">My Dashboard</a></li>
+
 					<li class="dropdown"><a href="#portfolio" class="dropdown-toggle js-activated" data-toggle="dropdown">Profile</a>
 						<ul class="dropdown-menu">
 							<li><a href="{{pathFor 'view_profile'}}">Edit Profile</a></li>
@@ -23,6 +23,9 @@
 						</ul>
 					</li>
 					<li><a href="{{pathFor 'events'}}">Trips</a></li>
+
+					<li><a href="{{pathFor 'myBoard'}}">dashboard</a></li>
+
 					<li><a href="contact.html">Contact</a></li>
 					{{#if currentUser}}
 					<li><a href="/sign-out">Sign-Out</a>
@@ -31,6 +34,8 @@
 					<li><a href="/sign-in">Sign-In</a>
 					</li>
 					{{/if}}
+					<li><a href="#">me</a>
+					</li>
 				</ul>
 			</div><!--/.nav-collapse -->
 		</div><!--/.container -->

@@ -1,4 +1,5 @@
 Events = new Mongo.Collection('events');
+// Events.initEasySearch('placeName');
 Events.attachSchema(new SimpleSchema({
 
 	placeName:{

@@ -23,6 +23,18 @@ Router.route('/events', function(){
 		}
 	}
 });
+Router.route('/dashboard',function(){
+	this.render('myBoard');
+},
+{
+	name: 'myBoard',
+	data: function(){
+		return {
+			dashboardevents: Events.find().fetch().reverse()
+		}
+	}
+
+});
 
 Router.route('/create_profile', function(){
 	this.render('profile');
@@ -69,6 +81,26 @@ Router.route('/events/:_id/join', function(){
 			eventsid: Events.findOne(_id),
 			bookings: Bookings.find({eventsid:_id}).fetch()
 		}
+	}
+
+});
+
+Router.route('dashboard/event/booking/:_id', function(){
+	this.render('view_bookings');
+},
+{ 
+	name: 'view_bookings',
+	// var _id = this.params._id;
+	// return{
+	// 	Bookings.find(_id)
+	// },
+	data: function(){
+		var _id = this.params._id;
+		return {
+			bookevents: Events.findOne(_id),
+			bookings: Bookings.find({eventsid: _id}).fetch()
+		} 
+
 	}
 
 });
