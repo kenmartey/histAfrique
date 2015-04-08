@@ -28,10 +28,12 @@
 
 					<li><a href="contact.html">Contact</a></li>
 					{{#if currentUser}}
-					<li><a href="/sign-out">Sign-Out</a>
+					<li><a href="{{pathFor 'signout'}}">Sign-Out</a>
 					</li>
 					{{else}}
-					<li><a href="/sign-in">Sign-In</a>
+					<li><a href="{{pathFor 'signup'}}">Register</a>
+					</li>
+					<li><a href="{{pathFor 'signin'}}">Sign-In</a>
 					</li>
 					{{/if}}
 					<li><a href="#">me</a>

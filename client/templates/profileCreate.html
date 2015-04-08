@@ -1,11 +1,10 @@
 <template name="profile">
-	<div class='container'>
-		<div class="section-heading scrollpoint sp-effect3">
-			<h1>Create your profile</h1>
-			<div class="divider"></div>
-		</div>
-		<div class="row">
-			<div class="col-md-offset-3 col-md-6">
+	<div class="body">
+
+		<div class='container'>
+			<div class="createprofile">
+				<h1>Create your profile</h1>
+
 				{{> quickForm id="insertProfileForm" collection="Profiles" type="insert"}}
 			</div>
 		</div>

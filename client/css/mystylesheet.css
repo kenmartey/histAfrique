@@ -151,7 +151,20 @@
 .panel-body{
   display: none;
 }
+.signin{
+  width: 400px;
+  margin-left: 450px;
+}
+.signup{
+  width: 400px;
+  margin-left: 450px;
+}
+.createprofile{
 
+  width: 450px;
+  margin-left: 400px;
+
+}
 /*
 END OF CUSTOME CSS
 */

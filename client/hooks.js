@@ -67,6 +67,11 @@ AutoForm.hooks({
 			$('#bookEvent').modal('hide');
 			return $('#EventBookingSuccess').modal('show');
 		}
+	},
+	onSubmitHook:{
+		onSuccess: function(formType, result){
+			return	$('#loginSuccess').modal('show');
+		}
 	}
-});
 
+});

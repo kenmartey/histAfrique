@@ -104,3 +104,29 @@ Router.route('dashboard/event/booking/:_id', function(){
 	}
 
 });
+
+Router.route('/signin',function(){
+	this.render('signin')
+},
+{
+	name: 'signin'
+
+});
+
+Router.route('/signup', function(){
+	this.render('signup')
+},
+{
+	name: 'signup'
+
+});
+
+Router.route('/signout', function(){
+	this.render('signout')
+},
+{
+	name: 'signout',
+	data: function(){
+		return Meteor.logout()
+	}
+});
