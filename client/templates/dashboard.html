@@ -1,7 +1,7 @@
 <template name="myBoard">
 	<div class="body">
 		{{#if currentUser}}
-		<!-- {{#if owned}} -->
+		{{#if Owner}}
 		<div class="container">
 			<div class="row">
 				<!-- Card Projects -->
@@ -30,12 +30,12 @@
 				{{/each}}
 			</div>
 		</div>
+		{{/if}}
+		you have not added any shit
 		{{else}}
 		<div class="alert alert-info">
 			Please Login to view your data
 		</div>
 		{{/if}}
-
-		<!-- {{/i/f}} -->
 	</div>
 </template>

@@ -17,3 +17,11 @@ Template.modals.helpers({
 	}
 });
 
+Template.view_profile.helpers({
+	isOwner: function(e,t){
+		return this.owner === Meteor.userId();
+	}
+});
+// Template.view_profile.isOwner = function() {
+// 	return this.owner === Meteor.userId();
+// };

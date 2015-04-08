@@ -15,11 +15,7 @@ Profiles.attachSchema(new SimpleSchema({
 		type: String,
 		allowedValues: [ 'Male', 'Female' ]
 	},
-	email: {
-		type: String,
-		regEx: SimpleSchema.RegEx.Email,
-		label: "Email"
-	},
+
 	picture: {
 		type: String,
 		autoform: {
@@ -30,25 +26,13 @@ Profiles.attachSchema(new SimpleSchema({
 		},
 		label: 'Choose file'
 	},
-
-	// createdBy: {
-	// 	type: String,
-	// 	autoform: {
-	// 		omit: true
-	// 	}
-	// },
-
-	// createdAt: {
-	// 	type: Date,
-	// 	autoform: {
-	// 		omit: true
-	// 	}
-	// },
-
-	// updatedAt: {
-	// 	type: Date,
-	// 	autoform: {
-	// 		omit: true
-	// 	}
-	// },
+	owner: {
+		type: String,
+		autoform: {
+			omit: true
+		},
+		autoValue: function(){
+			return Meteor.userId();
+		}
+	}
 }));

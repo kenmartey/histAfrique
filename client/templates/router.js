@@ -49,6 +49,7 @@ Router.route('/profile', function(){
 {
 	name: 'view_profile',
 	data: function(){
+		// var _id = this._id;
 		return{
 			profiles: Profiles.find().fetch()
 		}
@@ -127,6 +128,6 @@ Router.route('/signout', function(){
 {
 	name: 'signout',
 	data: function(){
-		return Meteor.logout()
+		return Meteor.logout();
 	}
 });
