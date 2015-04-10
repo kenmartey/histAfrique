@@ -35,6 +35,15 @@ Events.attachSchema(new SimpleSchema({
 		},
 		label: 'Choose file'
 	},
+	owner: {
+		type: String,
+		autoform: {
+			omit: true
+		},
+		autoValue: function(){
+			return Meteor.userId();
+		}
+	}
 	// owner: {
 	// 	type: String,
 	// 	autoform: {

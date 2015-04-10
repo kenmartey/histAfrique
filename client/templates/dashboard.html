@@ -1,11 +1,11 @@
 <template name="myBoard">
 	<div class="body">
 		{{#if currentUser}}
-		{{#if Owner}}
 		<div class="container">
 			<div class="row">
-				<!-- Card Projects -->
 				{{#each dashboardevents}}
+				{{#if isOwner}}
+				<!-- Card Projects -->
 				<div class="col-md-4">
 					<div class="card">
 						<div class="card-image">
@@ -27,11 +27,12 @@
 						</div>
 					</div>
 				</div>
+				{{else}}
+				You allowed to see Only Trip You have created!
+				{{/if}}
 				{{/each}}
 			</div>
 		</div>
-		{{/if}}
-		you have not added any shit
 		{{else}}
 		<div class="alert alert-info">
 			Please Login to view your data

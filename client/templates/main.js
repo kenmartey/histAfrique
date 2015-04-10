@@ -22,6 +22,11 @@ Template.view_profile.helpers({
 		return this.owner === Meteor.userId();
 	}
 });
+Template.myBoard.helpers({
+	isOwner: function(e,t){
+		return this.owner === Meteor.userId();
+	}
+})
 // Template.view_profile.isOwner = function() {
 // 	return this.owner === Meteor.userId();
 // };

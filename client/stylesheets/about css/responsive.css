@@ -1,0 +1,130 @@
+
+
+/* Small devices (tablets, 768px and up) */
+@media (min-width: 768px) { 
+
+	body {
+		padding-top: 64px;
+	}
+
+    h1 {
+    	font-size: 50px;
+    	margin-bottom: 20px;
+    }
+
+    h2 {
+    	font-size: 48px;
+    }
+
+    h4 {
+    	margin: 15px 0 0 0;
+    }
+
+    .nav > li > a {
+       padding: 12px 15px;
+    }
+
+    .navbar-default .navbar-nav > li > a {
+       border-top: 1px solid transparent;
+    }
+
+    .navbar-brand {
+        padding-top: 14px;
+    }
+
+    span.percentfactor {
+        font-size: 48px;
+    }
+
+    .services-bb-rb {
+        border-bottom: 1px solid #eee!important;
+        border-right: 1px solid #eee;
+    }
+
+    .services-bb {
+        border-bottom: 1px solid #eee;
+    }
+
+    .services-rb {
+        border-right: 1px solid #eee;
+    }
+
+    .home-projects .project-item {
+    	width: 49%;
+    }
+
+    ul.client-list li {
+    	width: 33%;
+    }
+
+    ul.project-navigation {
+    	margin-top: 0;
+    	text-align: right;
+    }
+
+    .pagination-title h4 {
+    	text-align: left;
+    }
+
+ }
+
+/* Medium devices (desktops, 992px and up) */
+@media (min-width: 992px) { 
+
+	h3 {
+		font-size: 36px;
+	}
+
+	.subsection-action {
+		text-align: right;
+		margin-top: 10px;
+	}
+
+	.member-team {
+       margin-bottom: 0;
+    }
+
+	.home-projects .project-item {
+		width: 25%;
+	}
+
+    .project-desc h5 {
+        margin-top: 0;
+	}
+ }
+
+/* Large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) { 
+
+	h1 {
+		font-size: 56px;
+	}
+
+	h2 {
+		font-size: 50px;
+	}
+
+	span.percentfactor {
+		font-size: 52px;
+	}
+
+	.services-action-btns .btn {
+		margin-top: 0;
+	}
+
+	ul.price-table li p {
+		font-size: 15px;
+	}
+
+	ul.price-table li.price p span {
+		font-size: 44px;
+	}
+
+	ul.client-list li {
+		width: 16.6%;
+	}
+
+	#commentform input.form-control {
+		width: 70%;
+	}
+ }

@@ -41,7 +41,7 @@
       box-shadow: 0 0 0 1px #dcdcda;
       background: #eeeeee !important;
     }
-
+    
     .dropdown-menu {
       -moz-border-radius: 0px;
       -webkit-border-radius: 0px;
@@ -112,7 +112,7 @@
     .navbar-default .navbar-toggle .icon-bar {
       background-color: #0084DD;
     }
-
+    
 /*------------------------------------*\
     NiceScroll Overlapping
     \*------------------------------------*/

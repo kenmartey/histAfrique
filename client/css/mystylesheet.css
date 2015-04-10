@@ -165,6 +165,23 @@
   margin-left: 400px;
 
 }
+.search_heading{
+  margin-left: 600px;
+}
+.search_box{
+  margin-top: 0px;
+  margin-right: 50px;
+}
+.jumbotron{
+  width:400px;
+  height: 150px;
+  margin-left: 450px;
+  margin-top: 100px;
+}
+.createevent{
+  margin-top: 100px;
+  margin-left: 600px;
+}
 /*
 END OF CUSTOME CSS
 */
