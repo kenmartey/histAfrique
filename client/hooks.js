@@ -53,7 +53,7 @@ AutoForm.hooks({
 	insertProfileForm: {
 		onSuccess: function(formType, result) {
 			return $('#profileSuccess').modal('show');
-			Router.go ('/events')
+			Router.go ('/events');
 		}
 	},
 	insertEventPictureForm:{

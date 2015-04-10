@@ -4,12 +4,12 @@ Events.attachSchema(new SimpleSchema({
 
 	placeName:{
 		type:String,
-		label: "Place of Visit"
+		label: "Place of Visit eg. Elmina Castle"
 	},
 
 	history: {
 		type: String,
-		label: "History",
+		label: "History eg. what you know about slavery",
 		max: 200,
 		autoform: {
 			rows: 2
@@ -18,7 +18,7 @@ Events.attachSchema(new SimpleSchema({
 
 	location: {
 		type: String,
-		label: 'Location'
+		label: 'Location eg. Central Region'
 	},
 	contact: {
 		type: String,
@@ -33,7 +33,7 @@ Events.attachSchema(new SimpleSchema({
 				collection: 'Images'
 			}
 		},
-		label: 'Choose file'
+		label: 'Picture of the place'
 	},
 	owner: {
 		type: String,

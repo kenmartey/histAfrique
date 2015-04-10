@@ -9,7 +9,7 @@
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</button>
-				<a class="navbar-brand" href="{{pathFor 'home'}}">Linexo</a>
+				<a class="navbar-brand" href="{{pathFor 'home'}}">TripGh</a>
 			</div>
 			<div class="navbar-collapse collapse">
 
@@ -23,8 +23,9 @@
 						</ul>
 					</li>
 					<li><a href="{{pathFor 'events'}}">Trips</a></li>
-
+					{{#if currentUser}}
 					<li><a href="{{pathFor 'myBoard'}}">dashboard</a></li>
+					{{/if}}
 
 					<li><a href="contact.html">Contact</a></li>
 					{{#if currentUser}}

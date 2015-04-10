@@ -1,86 +1,50 @@
 <template name="view_bookings">
 	<div class="body">
-		<!-- {{#if bookings}}
-		{{#each bookings}}
-		<p>{{fullName}}</p>
-		<p>{{email}}</p>
-		<p>{{contact}}</p>
-		<br>
-		{{#with FS.GetFile 'images' picture}}
-		<img align="left" class="fb-image-profile thumbnail" width="170px" height="200px" src="{{this.url}}" alt="" >
-		{{/with}}
-		{{/each}}
-		{{else}}
-		<div class="alert alert-info">
-			No one has booked for this event
-		</div>
-		{{/if}}
-	</div> -->
 
-	{{#if bookings}}
-	{{#if Owner}}
-	<div class="container">
-		<div class="row">
-			<div class="col-md-6">
-				<div class="panel panel-primary">
-					<div class="panel-heading">
-						<h3 class="panel-title">Bookings</h3>
-						<div class="pull-right">
-							<span class="clickable filter" data-toggle="tooltip" title="Toggle table filter" data-container="body">
-								<i class="glyphicon glyphicon-filter"></i>
-							</span>
-						</div>
-					</div>
-					<div class="panel-body">
-						<input type="text" class="form-control" id="dev-table-filter" data-action="filter" data-filters="#dev-table" placeholder="Filter Developers" />
-					</div>
-					<div class="table">
-						<table class="table table-hover" id="dev-table">
-							<thead>
-								<tr>
-									<th>FullName</th>
-									<!-- <th>why this Job</th> -->
-									<th>Email</th>
-									<th>contact</th>
-									<!-- <th>CV</th> -->
-									<th>Picture</th>
-								</tr>
-							</thead>
-							<!-- {{#if currentUser}} -->
-							{{#each bookings}}
-							<tbody>
-								<tr>
-									<td>{{fullName}}</td>
-									<td>{{email}} </td>
-									<td>{{contact}} </td>
-									<!-- <td>{{#with FS.GetFile 'files' uploadCV}}
-										<a href="{{this.url}}" download="CV">{{this.name}}</a>
-										{{/with}}</td> -->
-
-										<!-- <td><a class='download'>download {{getFileName uploadCV}}</a> </td> -->
-										<td>{{#with FS.GetFile 'images' picture}}
-											<img class="img-thumbnail" width="125px" height="125px" src="{{this.url}}" alt="" >
-											{{/with}}</td>
-											<td>
-											</td>
-											<!-- <td> -->
-											<!-- </td> -->
-										</tr>
-									</tbody>
-									<!-- <td><i class="fa fa-trash-o"></i></td> -->
-									{{/each}}
-									<!-- {{/if}} -->
-								</table>
+		{{#if bookings}}
+		<div class="container">
+			<div class="row">
+				<div class="col-md-6">
+					<div class="panel panel-success">
+						<div class="panel-heading">
+							<h3 class="panel-title">Bookings for {{placeName}}</h3>
+							<div class="pull-right">
+								<span class="clickable filter" data-toggle="tooltip" title="Toggle table filter" data-container="body">
+									<i class="glyphicon glyphicon-filter"></i>
+								</span>
 							</div>
+						</div>
+						<div class="panel-body">
+							<input type="text" class="form-control" id="dev-table-filter" data-action="filter" data-filters="#dev-table" placeholder="Filter Developers" />
+						</div>
+						<div class="table">
+							<table class="table table-hover" id="dev-table">
+								<thead>
+									<tr>
+										<th>FullName</th>
+										<th>Email</th>
+										<th>contact</th>
+									</tr>
+								</thead>
+								{{#each bookings}}
+								<tbody>
+									<tr>
+										<td>{{fullName}}</td>
+										<td>{{email}} </td>
+										<td>{{contact}} </td>
+									</tr>
+								</tbody>
+								{{/each}}
+							</table>
 						</div>
 					</div>
 				</div>
 			</div>
-			{{/if}}
-			{{else}}
-			<div class="alert alert-info">
-				<h3>No Bookings yet</h3>
-			</div>
-			{{/if}}
 		</div>
-	</template>
+		{{else}}
+		<div class="alert alert-info">
+			<h3>No Bookings yet</h3>
+		</div>
+		{{/if}}
+	</div>
+</template>

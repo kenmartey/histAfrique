@@ -1,9 +1,12 @@
 <template name="createEventPicture">
 	<div class="body">
+
 		<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#createEventPicture">
 			Add Picture
 		</button>
-
+		<br>
+		<h3>More pictures from {{morepictures}}</h3>		
+		
 		<div class="container">
 			<div class="row">
 				<!-- Card Projects -->
@@ -27,7 +30,11 @@
 							<a href="#"></a>
 							<a href="#" target="new_blank"></a>
 							
+							{{#if currentUser}}
 							<a id="join" href="#" data-toggle="modal" data-book-event="{{_id}}" data-target="#bookEvent">Join</a>
+							{{else}}
+							<a id="join" href="#" data-toggle="modal"  data-target="#pleaseSignIn">Join</a>
+							{{/if}}
 						</div>
 					</div>
 				</div>
@@ -38,4 +45,117 @@
 			</div>
 		</div>
 	</div>
-</template>
+
+
+	 <!-- Blog
+	 ================================================== -->
+	 <section>
+	 	<div id="blog-section">
+	 		<div class="container">
+	 			<div class="title-section animated out" data-animation="fadeInUp" data-delay="0">
+	 				<h3>Latest blog posts</h3>
+	 				<hr>
+	 				<p>Mauris eros tortor, tristique cursus porttitor et, luctus sed urna. Quisque id libero risus.</p>
+	 			</div> <!-- end title-section -->
+	 			<div class="blog-posts">
+	 				<div class="row">
+	 					{{#if eventpictures}}
+	 					{{#each eventpictures}}
+	 					<!-- Post -->
+	 					<div class="col-md-4">
+	 						<div class="entry-post animated out" data-animation="fadeInLeft" data-delay="0">
+	 							<div class="entry-image">
+	 								<a href="blog-single.html">
+	 									{{#with FS.GetFile 'images' picture}}
+	 									<img class="img-thumbnail" width="560px" height="700px" src="{{this.url}}" alt="" >
+	 									<span class="card-title">{{pictureName}}</span>
+	 									{{/with}}
+	 									<div class="hover-item">
+	 										<span class="link-icon"><i class="fa fa-ellipsis-h"></i></span>
+	 									</div> <!-- end hover-item -->
+	 								</a>
+	 							</div> <!-- end entry-image -->
+
+	 							<div class="post-meta">
+	 								<p>
+	 									{{#if currentUser}}
+	 									<span class="join"><a href="#" data-toggle="modal" book-event="{{_id}}" data-target="#bookEvent">Join</a></span> {{else}}
+	 									<span class="join"><a href="#" data-toggle="modal" data-target="#pleaseSignIn">Join</a></span>
+	 									{{/if}}
+
+	 									<span class="comments">0 Comments</span></p>
+
+	 								</div> <!-- end post-meta -->
+	 								<h4 class="post-title"><a href="blog-single.html">POST WITH IMAGE</a></h4>
+	 								<div class="post-body">
+	 									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque ut lacus at velit consequat sodales. Ut posuere neque in molestie gravida. Integer eu feugiat neque, elementum posuere purus.</p>
+	 								</div> <!-- end post-body -->
+	 							</div> <!-- end entry-post -->
+	 						</div> <!-- end col-md-4 -->
+	 						{{/each}}
+	 						{{else}}
+	 						<h1>No Data found here</h1>
+	 						{{/if}}
+	 						<!-- Post -->
+	 						<div class="col-md-4">
+	 							<div class="entry-post animated out" data-animation="fadeInUp" data-delay="0">
+	 								<div class="entry-image">
+	 									<a href="blog-single.html">
+	 										<img src="images/portfolio/project3.jpg" alt="">
+	 										<div class="hover-item">
+	 											<span class="link-icon"><i class="fa fa-ellipsis-h"></i></span>
+	 										</div> <!-- end hover-item -->
+	 									</a>
+	 								</div> <!-- end entry-image -->
+
+	 								<div class="post-meta">
+	 									<p><span class="date"><a href="#">28.01.2015</a></span> <span class="comments">0 Comments</span></p>
+	 								</div>
+	 								<h4 class="post-title"><a href="blog-single.html">Post with image</a></h4>
+	 								<div class="post-body">
+	 									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque ut lacus at velit consequat sodales. Ut posuere neque in molestie gravida. Integer eu feugiat neque, elementum posuere purus.</p>
+	 								</div> <!-- end post-body -->
+	 							</div> <!-- end entry-post -->
+	 						</div> <!-- end col-md-4 -->
+
+	 						<!-- Post -->
+	 						<div class="col-md-4">
+	 							<div class="entry-post animated out" data-animation="fadeInRight" data-delay="0">
+	 								<div class="entry-image">
+	 									<a href="blog-single.html">
+	 										<img src="images/portfolio/project6.jpg" alt="">
+	 										<div class="hover-item">
+	 											<span class="link-icon"><i class="fa fa-ellipsis-h"></i></span>
+	 										</div> <!-- end hover-item -->
+	 									</a>
+	 								</div> <!-- end entry-image -->
+
+	 								<div class="post-meta">
+	 									<p><span class="date"><a href="#">15.01.2015</a></span> <span class="comments">0 Comments</span></p>
+	 								</div>
+	 								<h4 class="post-title"><a href="blog-single.html">Post with video</a></h4>
+	 								<div class="post-body">
+	 									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque ut lacus at velit consequat sodales. Ut posuere neque in molestie gravida. Integer eu feugiat neque, elementum posuere purus.</p>
+	 								</div><!-- end post-body -->
+	 							</div> <!-- end entry-post -->
+	 						</div> <!-- end col-md-4 -->
+
+	 					</div> <!-- end row -->
+	 				</div> <!-- end blog-posts -->
+	 			</div> <!-- end container -->
+	 		</div>
+	 	</section>
+	 	<!-- End blog section -->
+
+	 	<!-- Action -->
+	 	<section>
+	 		<div id="action-section">
+	 			<div class="container">
+	 				<div class="call-to-action animated out" data-animation="fadeInUp" data-delay="0">
+	 					<a href="blog.html" class="btn clean">View all posts</a>
+	 				</div> <!-- end call-to-action -->
+	 			</div> <!-- end container -->
+	 		</div>
+	 	</section>
+	 	<!-- End action section -->
+	 </template>

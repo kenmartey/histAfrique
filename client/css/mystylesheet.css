@@ -167,6 +167,7 @@
 }
 .search_heading{
   margin-left: 600px;
+  margin-top: -90px;
 }
 .search_box{
   margin-top: 0px;
@@ -181,6 +182,15 @@
 .createevent{
   margin-top: 100px;
   margin-left: 600px;
+}
+.btn-primary{
+  background: #00bc95;
+}
+.btn-primary:active{
+ background:  #00bc95;
+}
+.btn-primary:hover{
+  background: #5FD5BC;
 }
 /*
 END OF CUSTOME CSS

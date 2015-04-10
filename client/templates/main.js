@@ -12,7 +12,7 @@ Template.events.events({
 
 Template.modals.helpers({
 	eventName: function (e, t) {
-		return Session.get('eventname').location
+		return Session.get('eventname').placeName
 		// return 'hello'
 	}
 });
@@ -27,6 +27,15 @@ Template.myBoard.helpers({
 		return this.owner === Meteor.userId();
 	}
 })
-// Template.view_profile.isOwner = function() {
-// 	return this.owner === Meteor.userId();
-// };
+Template.view_bookings.helpers({
+	placeName: function (e, t) {
+		return Session.get('eventname').placeName
+		// return 'hello'
+	}
+});
+Template.eventPictures.helpers({
+	morepictures: function (e, t) {
+		return Session.get('eventname').placeName
+		// return 'hello'
+	}
+});

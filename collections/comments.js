@@ -1,22 +1,25 @@
-Bookings = new Mongo.Collection('bookings');
-Bookings.attachSchema(new SimpleSchema({
+Comments = new Mongo.Collection('comments');
+// Comments.initEasySearch('placeName');
+Comments.attachSchema(new SimpleSchema({
 
-	fullName:{
+	name:{
 		type:String,
-		label: "Full Name"
+		label: "Name"
 	},
 
 	email: {
 		type: String,
-		regEx: SimpleSchema.RegEx.Email,
 		label: "Email"
 	},
-
-	contact: {
-		type: String,
-		label: "Contact"
-	},
 	
+	comment: {
+		type: String,
+		label: "Leave a Review",
+		max: 200,
+		autoform: {
+			rows: 2
+		}
+	},
 	eventsid: {
 		type: String,
 		autoform: {
@@ -32,4 +35,5 @@ Bookings.attachSchema(new SimpleSchema({
 			return Meteor.userId();
 		}
 	}
+	
 }));

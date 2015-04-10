@@ -131,3 +131,6 @@ Router.route('/signout', function(){
 		return Meteor.logout();
 	}
 });
+Router.route('/comments', function(){
+	this.render('comments')
+})
