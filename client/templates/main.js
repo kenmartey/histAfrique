@@ -39,3 +39,21 @@ Template.eventPictures.helpers({
 		// return 'hello'
 	}
 });
+// Template.registerHelper('commentscount',function(placename){
+// 	return Comments.find({placeName: placename}).count()
+// });
+
+// Template.comments.helpers({
+// 	commentscount: function(placename){
+// 		return Comments.find({placeName: placename}).count();
+// 	}
+// });
+Template.comments.helpers({
+	commentscount: function(e,t){
+		return Comments.find().count();
+	}
+});
+
+Template.registerHelper('commentscount', function(){
+	return Comments.find().count();
+});

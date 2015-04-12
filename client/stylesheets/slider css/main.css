@@ -474,7 +474,7 @@
 
 		.testimonial-bg
 		{
-			background-image:url(../images/body/testimonial-bg.jpg)  !important;
+			background-image:url(/images/niceplace.jpg);
 			background-attachment:fixed;
 
 			margin-top:40px;
@@ -704,7 +704,7 @@
 #contact
 {
 	background:#424a56;
-	background-image:url(../images/body/dot-map.png);
+	background-image:url(/images/eagle.jpg);
 	background-position:top center;
 	background-repeat:no-repeat;
 	

@@ -8,14 +8,18 @@
 <div id="bannerSlider" class="carousel carousel-fade slide" data-ride="carousel">
 <!-- Indicators -->
 <div class="carousel-inner">
-<div class="item active" style="background-image:url(images/akosombo1.jpg);">
+<div class="item active" style="background-image:url(images/niceplace.jpg);">
 <div class="carousel-caption">
 <div class="container">
 <div class="col-md-12">
 <div class="content">
 <h1>A new way of Tripping</h1>
 <h2>Discover Interesting places around</h2>
-<div class="btn-orange"><a href="index.html#">Register Now</a></div>
+{{#if currentUser}}
+<div class="btn-orange"><a href="{{pathFor 'events'}}">Take a Tour</a></div> 
+{{else}}
+<div class="btn-orange"><a href="{{pathFor 'signup'}}">Register Now</a></div>
+{{/if}}
 </div>
 </div>
 </div>
@@ -28,20 +32,28 @@
 <div class="content">
 <h1>Amazing People</h1>
 <h2>Join the family for Trips</h2>
-<div class="btn-orange"><a href="index.html#">Signup for FREE!</a></div>
+{{#if currentUser}}
+<div class="btn-orange"><a href="{{pathFor 'events'}}">Take a Tour</a></div> 
+{{else}}
+<div class="btn-orange"><a href="{{pathFor 'signup'}}#">Signup for FREE!</a></div>
+{{/if}}
 </div>
 </div>
 </div>
 </div>
 </div>
-<div class="item" style="background-image:url(images/niceplace.jpg);">
+<div class="item" style="background-image:url(images/akosombo1.jpg);">
 <div class="carousel-caption">
 <div class="container">
 <div class="col-md-12">
 <div class="content">
 <h1>Simple & Easy</h1>
 <h2>Register,view interesting places, Join to go !</h2>
-<div class="btn-orange"><a href="index.html#">Try TripGh for free</a></div>
+{{#if currentUser}}
+<div class="btn-orange"><a href="{{pathFor 'events'}}">Take a Tour</a></div> 
+{{else}}
+<div class="btn-orange"><a href="{{pathFor 'signup'}}">Try TripGh for free</a></div>
+{{/if}}
 </div>
 </div>
 </div>

@@ -29,6 +29,18 @@ AutoForm.hooks({
 	}
 
 });
+// this section collects the id of the Event and add it to the Comment collection
+AutoForm.hooks({
+	insertCommentForm: {
+		formToDoc: function(doc, ss, formId) {
+			console.log(doc);
+			doc.eventsid = Router.current().params._id;
+			console.log(doc);
+			return doc;
+		}
+	}
+
+});
 // AutoForm.hooks({
 // 	insertBookingForm: {
 // 		formToDoc: function(doc, ss, formId) {
@@ -72,6 +84,11 @@ AutoForm.hooks({
 		onSuccess: function(formType, result){
 			return	$('#loginSuccess').modal('show');
 		}
+	},
+	insertCommentForm:{
+		onSuccess: function(formType, result){
+			$('#commentModal').modal('hide');
+			return $('#successCommentModal').modal('show');
+		}
 	}
-
 });

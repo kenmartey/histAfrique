@@ -18,13 +18,53 @@ Events.attachSchema(new SimpleSchema({
 
 	location: {
 		type: String,
-		label: 'Location eg. Central Region'
+		autoform:{
+			options: function(){
+				return[{
+					label:"Ashanti Region",
+					value:"Ashanti Region"
+				},{
+
+					label:"Brong Ahafo Region",
+					value:"Brong Ahafo Region"
+				},{
+
+					label:"Central Region",
+					value:"Central Region"
+				},{
+
+					label:"Eastern Region",
+					value:"Eastern Region"
+				},{
+
+					label:"Greater Accra",
+					value:"Greater Accra"
+				},{
+
+					label:"Northern Region",
+					value:"Northern Region"
+				},{
+
+					label:"Upper East",
+					value:"Upper East"
+				},{
+
+					label:"Upper West",
+					value:"Upper West"
+				},{
+
+					label:"Volta Region",
+					value:"Volta Region"
+				},{
+
+					label:"Western Region",
+					value:"Western Region"
+				}
+				]
+			}
+		}
 	},
-	contact: {
-		type: String,
-		label: "Contact"
-	},
-	
+
 	picture: {
 		type: String,
 		autoform: {
@@ -43,16 +83,6 @@ Events.attachSchema(new SimpleSchema({
 		autoValue: function(){
 			return Meteor.userId();
 		}
-	}
-	// owner: {
-	// 	type: String,
-	// 	autoform: {
-	// 		omit: true
-	// 	},
-	// 	autoValue: function(){
-	// 		if (this.isInsert){
-	// 			return Meteor.userId();
-	// 		}
-	// 	}
-	// },
+	},
+
 }));

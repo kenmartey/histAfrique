@@ -3,23 +3,39 @@
 		{{#if currentUser}}
 		<div class="createevent">
 			
-			<button type="button" class="btn btn-success btn-lg" data-toggle="modal" data-target="#createEvent">
+			<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#createEvent">
 				<h4>Add Trip</h4>
 			</button>
 		</div>
-		{{else}}
-		<div class="jumbotron">
-			<h4 align="center">please signIn to add an Trip
-			</h4>
-			<p align="center">
+		<div class="btn-group"> <a class="btn btn-default dropdown-toggle btn-select2" data-toggle="dropdown" href="#">Display by Region  <span class="caret"></span></a>
+			<ul class="dropdown-menu">
+				<li><a href="{{pathFor 'events'}}">View All</a></li>
+				<li><a href="{{pathFor 'eventLocation' location='Ashanti Region'}}">Ashanti Region</a></li>
+				<li><a href="{{pathFor 'eventLocation' location='Brong Ahafo Region'}}">Brong Ahafo Region</a></li>
+				<li><a href="{{pathFor 'eventLocation' location='Central Region'}}">Central Region</a></li>
 				
-				<button type="button" class="btn btn-success btn-lg" href="{{pathFor 'signin'}}">
-					sign In
-				</button>
-			</p>
-		</div>
-		{{/if}}
-		
+				<li><a href="{{pathFor 'eventLocation' location='Greater Accra'}}">Greater Accra</a>
+				</li><li><a href="{{pathFor 'eventLocation' location='Northern Region'}}">Northern Region</a>
+			</li><li><a href="{{pathFor 'eventLocation' location='Upper East'}}">Upper East</a>
+		</li><li><a href="{{pathFor 'eventLocation' location='Upper West'}}">Upper West</a>
+	</li><li><a href="{{pathFor 'eventLocation' location='Volta Region'}}">Volta Region</a>
+</li><li><a href="{{pathFor 'eventLocation' location='Western Region'}}">Western Region</a>
+</li>
+</ul>
+</div>
+{{else}}
+<div class="jumbotron">
+	<h4 align="center">please signIn to add an Trip
+	</h4>
+	<p align="center">
+
+		<button type="button" class="btn btn-primary btn-lg" href="{{pathFor 'signin'}}">
+			sign In
+		</button>
+	</p>
+</div>
+{{/if}}
+
 <!-- SEARCH BOX BUT N0T FUNCTIONING WELL
 		{{> esInput index="events" placeholder="Search..." }}
 
@@ -82,7 +98,7 @@
  							</div> <!-- end entry-image -->
 
  							<div class="post-meta">
- 								<p><span class="location">{{location}}</span> | <span class="comment"><a href="#">0 Comments</a></span> | <span class="contact">{{contact}}</span></p>
+ 								<p><span class="location">{{location}}</span> | <span class="comment"><a href="{{pathFor 'comments' _id=_id}}">0 Comments</a></span> | <span class="contact">{{contact}}</span></p>
  							</div> <!-- end post-meta -->
  							<h4 class="post-title"><a href="blog-single.html">{{placeName}}</a></h4>
  							<div class="post-body">

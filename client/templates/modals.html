@@ -222,5 +222,67 @@
 	</div>
 	
 	<!-- / End of Modal message to login-->
-	
+
+	<!-- Modal for Comments -->
+	<div class="modal fade" id="commentModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+					<h4 class="modal-title" id="myModalLabel">Please Leave a Review</h4>
+				</div>
+				<div class="modal-body">
+					{{> quickForm collection="Comments" id="insertCommentForm" type="insert"}}
+
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- end of Modal for Comments-->
+
+	<!-- Modal for Comments -->
+	<div class="modal fade" id="successCommentModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+					<h4 class="modal-title" id="myModalLabel">Comments</h4>
+				</div>
+				<div class="modal-body">
+					Thank You for your time and comment
+
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- end of Modal for Comments-->
+
+	<!-- Modal for sign in before adding Comments -->
+	<div class="modal fade" id="signinBeforeComment" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+					<h4 class="modal-title" id="myModalLabel">Information</h4>
+				</div>
+				<div class="modal-body">
+					We would appreciate if you Register or Signin before leaving a comment
+
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- end of Modal for sign in before adding Comments-->
 </template>

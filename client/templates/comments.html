@@ -1,7 +1,7 @@
 <template name="comments">
 	<div class="body">
 		
-		
+
       <!-- Headblog
       ================================================== -->
       <section>
@@ -9,7 +9,7 @@
       		<div class="container">
       			<div class="col-md-12">
       				<div class="title-head-blog">
-      					<h1>Our Blog</h1>
+      					<h1>Reviews and Hotels</h1>
       					<hr>
       				</div> <!-- end title-head-blog -->
       			</div> <!-- end col-md-12 -->
@@ -27,6 +27,7 @@
       				<div class="col-md-7 col-md-offset-1">
 
       					<!-- Blog Post -->
+      					{{#with eventscomment}}
       					<div class="blog-post">
 
       						<div class="date-post">
@@ -42,93 +43,65 @@
       							<div class="post-media">
       								<div class="entry-image">
       									<a href="blog-single.html">
-      										<img src="images/blog-img/project1.jpg" alt="">
+      										
+      										{{#with FS.GetFile 'images' picture}}
+      										<img class="img-thumbnail" width="560px" height="700px" src="{{this.url}}" alt="" >
+      										{{/with}}
+
       									</a>
       								</div> <!-- end entry-image -->
       							</div> <!-- end post-media -->
 
-      							<h3 class="post-title"><a href="#">Standard post with image.</a></h3>
+      							<h3 class="post-title"><a href="#">{{placeName}}</a></h3>
       							<div class="post-meta">
       								<p class="author-post">Posted by <a href="#">John Doe</a> / <a href="#">Standard</a></p>
       							</div> <!-- end post-meta -->
 
       							<div class="post-body">
-      								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque ut lacus at velit consequat sodales. Ut posuere neque in molestie gravida. Integer eu feugiat neque, elementum posuere purus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque ut lacus at velit consequat sodales. Ut posuere neque in molestie gravida. Integer eu feugiat neque, elementum posuere purus. Etiam in nulla arcu, ut vehicula velit. Vivamus dapibus rutrum mi ut aliquam. In hac habitasse platea dictumst. Integer sagittis neque a tortor tempor in porta sem vulputate.</p>
-      								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque ut lacus at velit consequat sodales. Ut posuere neque in molestie gravida. Integer eu feugiat neque, elementum posuere purus. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+      								<p>
+      									{{history}}
+      								</p>
       							</div> <!-- end post-body -->
 
       						</div> <!-- end post -->
 
       					</div> <!-- end blog-post -->
+      					{{/with}}
 
       					<div id="comments" class="clearfix">
       						<h5 class="comments-title">
-      							Comments ( 5 )
+      							Comments - {{commentscount}}
       						</h5>
       						<div class="comment-body">
-      							
-      							<!-- Blog Comment -->
-      							<div class="media">
-      								<a class="media-left" href="#">
-      									<img src="images/blog-img/avatar.png" alt="Avatar">
-      								</a>
-      								<div class="media-body">
-      									<h6 class="media-heading"><a href="#">John Doe</a></h6>
-      									<div class="comment-meta">
-      										<p><a href="#">December 18, 2014 at 11:39 am</a> / <a class="comment-reply-link" href="#">Reply</a></p>
-      									</div> <!-- end comment-meta -->
-      									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque vehicula pellentesque tristique. Sed quis metus id urna molestie commodo. Nulla fringilla placerat ligula, sed tempus risus elementum sed. Nulla tempor nulla a lacus fringilla nec convallis neque accumsan.</p>
-      									<p>J.D.</p>
-      								</div> <!-- end media-body -->
-      							</div> <!-- end media -->
 
       							<!-- Blog Comment -->
+      							{{#each comments}}
       							<div class="media">
-      								<a class="media-left" href="#">
-      									<img src="images/blog-img/avatar.png" alt="Avatar">
+      								<a class="media-left img-rounded" href="#">
+      									<img src="/images/avatar.png" alt="Avatar">
       								</a>
       								<div class="media-body">
-      									<h6 class="media-heading"><a href="#">John Doe</a></h6>
-      									<div class="comment-meta">
-      										<p><a href="#">January 19, 2015 at 12:42 am</a> / <a class="comment-reply-link" href="#">Reply</a></p>
-      									</div> <!-- end comment-meta -->
-      									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque vehicula pellentesque tristique. Sed quis metus id urna molestie commodo. Nulla fringilla placerat ligula, sed tempus risus elementum sed. Nulla tempor nulla a lacus fringilla nec convallis neque accumsan.</p>
-      									<p>John Doe</p>
-
-      									<!-- Blog reply Comment -->
-      									<div class="media nbm">
-      										<a class="media-left" href="#">
-      											<img src="images/blog-img/avatar1.png" alt="Avatar">
-      										</a>
-      										<div class="media-body">
-      											<h6 class="media-heading"><a href="#">John Doe</a></h6>
-      											<div class="comment-meta">
-      												<p><a href="#">January 19, 2015 at 18:12 am</a> / <a class="comment-reply-link" href="#">Reply</a></p>
-      											</div>
-      											<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque vehicula pellentesque tristique. Sed quis metus id urna molestie commodo. Nulla fringilla placerat ligula, sed tempus risus elementum sed. Nulla tempor nulla a lacus fringilla nec convallis neque accumsan.</p>
-      											<p>ClasDesign</p>
-      										</div> <!-- end media-body -->
-      									</div> <!-- end media -->
+      									<h6 class="media-heading"><a href="#"> {{name}}
+      										<p>{{email}}</p>
+      									</a></h6>
+      									<p>December 18, 2014 at 11:39 am</p>
+      									<p>{{comment}}
+      									</p>
       								</div> <!-- end media-body -->
       							</div> <!-- end media -->
-      							
+      							{{/each}}
       							<!-- Blog Comment -->
-      							<div class="media">
-      								<a class="media-left" href="#">
-      									<img src="images/blog-img/avatar.png" alt="Avatar">
-      								</a>
-      								<div class="media-body">
-      									<h6 class="media-heading"><a href="#">John Doe</a></h6>
-      									<div class="comment-meta">
-      										<p><a href="#">January 22, 2015 at 11:39 pm</a> / <a class="comment-reply-link" href="#">Reply</a></p>
-      									</div> <!-- end comment-meta -->
-      									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque vehicula pellentesque tristique. Sed quis metus id urna molestie commodo. Nulla fringilla placerat ligula, sed tempus risus elementum sed. Nulla tempor nulla a lacus fringilla nec convallis neque accumsan.</p>
-      									<p>John Doe</p>
-      								</div> <!-- end media-body -->
-      							</div> <!-- end media -->
 
       						</div> <!-- end comment-body -->
-      						
+      						{{#if currentUser}}
+      						<button type="submit" class="btn clean" data-toggle="modal" data-target="#commentModal">Post comment</button>
+      						{{else}}
+      						<button type="submit" class="btn clean" data-toggle="modal" data-target="#signinBeforeComment">Post comment</button>
+      						{{/if}}
+
+
+
+
       						<!-- Comment form -->
       						<div id="respond">
       							<h5 id="reply-title">Leave A Comment</h5>
@@ -145,7 +118,7 @@
       									<label for="email">Email<span class="required">*</span></label>
       									<input type="email" name="email" class="form-control" id="email" placeholder="Password">
       								</div>
-      								
+
       								<div class="form-group">
       									<label for="comment">Comment<span class="required">*</span></label>
       									<textarea class="form-control" name="comment" id="comment" rows="10"></textarea>
@@ -153,7 +126,7 @@
 
       								<button type="submit" class="btn clean">Post comment</button>
       							</form>
-      							
+
       						</div> <!-- end respond -->
       					</div> <!-- end comments -->
 
@@ -175,23 +148,23 @@
       								</form>
       							</div> <!-- end widget-search -->
       						</div> <!-- end widget -->
-      						
+
       						<!-- Categories -->
       						<div class="widget">
-      							<h5>Categories</h5>
+      							<h5>Hotels Around</h5>
       							<ul>
-      								<li><a href="#">Web design and Development</a></li>
-      								<li><a href="#">Photoshop and Ilustrator</a></li>
-      								<li><a href="#">SEO and Internet Marketing</a></li>
+      								<li><a href="#">Hotel One</a></li>
+      								<li><a href="#">Hotel two</a></li>
+      								<li><a href="#">Hotel Three</a></li>
       							</ul>
       						</div> <!-- end widget -->
-      						
+
       						<!-- Text widget -->
       						<div class="widget">
       							<h5>Text widget</h5>
       							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna.</p>
       						</div> <!-- end widget -->
-      						
+
       						<!-- Archives -->
       						<div class="widget">
       							<h5>Archives</h5>
@@ -201,7 +174,7 @@
       								<li><a href="#">November 2014</a></li>
       							</ul>
       						</div> <!-- end widget -->
-      						
+
       						<!-- Tags -->
       						<div class="widget">
       							<h5>Tags</h5>
@@ -233,7 +206,40 @@
       	</div> <!-- end blog-content-section -->
       </section>
       <!-- end blog section -->
-
   </div>
 
+
+
+<!-- 
+
+  <div class="row">
+  	<div class="col-md-10 col-md-push-1 scrollpoint sp-effect3">
+  		<div class="review-filtering">
+  			<div class="review">
+  				<div class="row">
+  					<div class="col-md-2">
+  						<div class="review-person">
+  							<img src="http://api.randomuser.me/portraits/women/94.jpg" alt="" class="img-responsive">
+  						</div>
+  					</div>
+  					<div class="col-md-10">
+  						<div class="review-comment">
+  							<h3>“I love Oleose, I highly recommend it, Everyone Try It Now”</h3>
+  							<p>
+  								- Krin Fox
+  								<span>
+  									<i class="fa fa-star fa-lg"></i>
+  									<i class="fa fa-star fa-lg"></i>
+  									<i class="fa fa-star fa-lg"></i>
+  									<i class="fa fa-star fa-lg"></i>
+  									<i class="fa fa-star-o fa-lg"></i>
+  								</span>
+  							</p>
+  						</div>
+  					</div>
+  				</div>
+  			</div>
+  		</div>
+  	</div>
+  </div> -->
 </template>

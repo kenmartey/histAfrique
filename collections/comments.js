@@ -17,7 +17,7 @@ Comments.attachSchema(new SimpleSchema({
 		label: "Leave a Review",
 		max: 200,
 		autoform: {
-			rows: 2
+			rows: 4
 		}
 	},
 	eventsid: {

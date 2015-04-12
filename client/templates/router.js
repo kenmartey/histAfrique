@@ -131,6 +131,30 @@ Router.route('/signout', function(){
 		return Meteor.logout();
 	}
 });
-Router.route('/comments', function(){
+Router.route('/event/:_id/comments', function(){
 	this.render('comments')
-})
+},
+{
+	name: 'comments',
+	data: function(){
+		var _id = this.params._id;
+		return {
+			eventscomment: Events.findOne(_id),
+			comments: Comments.find({eventsid: _id}).fetch()
+		}
+	}
+});
+Router.route('/event/:location/', function(){
+	this.render('events');
+},
+{
+	name:'eventLocation',
+
+	data: function(){
+		return {
+			createevents: Events.find({location: this.params.location}).fetch().reverse(),
+			pageTitle: 'location:' + this.params.location
+		}
+	}
+
+});

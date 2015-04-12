@@ -49,8 +49,8 @@
       padding: 1px 0 1px 0;
     }
     .dropdown-menu li > a {
-      font-weight: bold;
-      text-transform: uppercase;
+      /*font-weight: bold;*/
+      /*text-transform: uppercase;*/
       padding: 8px 16px;
     }
     .dropdown-menu li > a:hover {
