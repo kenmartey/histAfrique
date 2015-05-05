@@ -1,6 +1,9 @@
 <template name="myBoard">
 	<div class="body">
 		{{#if currentUser}}
+		<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#createEvent">
+			<h4>Add place</h4>
+		</button>
 		<div class="container">
 			<div class="row">
 				{{#each dashboardevents}}
@@ -22,13 +25,17 @@
 						<div class="card-action">
 							<!-- <i class="fa fa-envelope-o"></i><a href="" target="new_blank"></a> -->
 							<a href="#">{{location}}</a>
-							<a href="#" target="new_blank">{{contact}}</a>
-							<a href="{{pathFor 'view_bookings'  _id=_id}}" target="">View Bookings</a>
+							
+							<a href="#"> <i class="fa fa-pencil" data-toggle="modal"  data-target="#editEvent"></i></a>
+
+							
+							
+							{{> quickRemoveButton collection="Events" _id=this._id onError=onError onSuccess=onSuccess beforeRemove=beforeRemove class="btn btn-danger"}}<i class="fa fa-trash-o"></i>
+
+							
 						</div>
 					</div>
 				</div>
-				{{else}}
-				You allowed to see Only Trip You have created!
 				{{/if}}
 				{{/each}}
 			</div>

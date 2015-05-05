@@ -5,45 +5,7 @@
 			Add Picture
 		</button>
 		<br>
-		<h3>More pictures from {{morepictures}}</h3>		
 		
-		<div class="container">
-			<div class="row">
-				<!-- Card Projects -->
-				{{#if eventpictures}}
-				{{#each eventpictures}}
-				<div class="col-md-4">
-					<div class="card">
-						<div class="card-image">
-							{{#with FS.GetFile 'images' picture}}
-							<img class="img-thumbnail" width="560px" height="500px" src="{{this.url}}" alt="" >
-							<span class="card-title">{{pictureName}}</span>
-							{{/with}}
-						</div>
-
-						<div class="card-content">
-							<p>{{history}}</p>
-						</div>
-
-						<div class="card-action">
-							<!-- <i class="fa fa-envelope-o"></i><a href="" target="new_blank"></a> -->
-							<a href="#"></a>
-							<a href="#" target="new_blank"></a>
-							
-							{{#if currentUser}}
-							<a id="join" href="#" data-toggle="modal" data-book-event="{{_id}}" data-target="#bookEvent">Join</a>
-							{{else}}
-							<a id="join" href="#" data-toggle="modal"  data-target="#pleaseSignIn">Join</a>
-							{{/if}}
-						</div>
-					</div>
-				</div>
-				{{/each}}
-				{{else}}
-				<h1>No Data found here</h1>
-				{{/if}}
-			</div>
-		</div>
 	</div>
 
 
@@ -53,9 +15,9 @@
 	 	<div id="blog-section">
 	 		<div class="container">
 	 			<div class="title-section animated out" data-animation="fadeInUp" data-delay="0">
-	 				<h3>Latest blog posts</h3>
+	 				<h3> Image Gallery</h3>
 	 				<hr>
-	 				<p>Mauris eros tortor, tristique cursus porttitor et, luctus sed urna. Quisque id libero risus.</p>
+	 				<p>More Images from {{eventName}}. Explore them yourself</p>
 	 			</div> <!-- end title-section -->
 	 			<div class="blog-posts">
 	 				<div class="row">
@@ -65,7 +27,7 @@
 	 					<div class="col-md-4">
 	 						<div class="entry-post animated out" data-animation="fadeInLeft" data-delay="0">
 	 							<div class="entry-image">
-	 								<a href="blog-single.html">
+	 								<a href="{{pathFor 'picturedetail'  _id=_id}}">
 	 									{{#with FS.GetFile 'images' picture}}
 	 									<img class="img-thumbnail" width="560px" height="700px" src="{{this.url}}" alt="" >
 	 									<span class="card-title">{{pictureName}}</span>
@@ -96,49 +58,7 @@
 	 						{{else}}
 	 						<h1>No Data found here</h1>
 	 						{{/if}}
-	 						<!-- Post -->
-	 						<div class="col-md-4">
-	 							<div class="entry-post animated out" data-animation="fadeInUp" data-delay="0">
-	 								<div class="entry-image">
-	 									<a href="blog-single.html">
-	 										<img src="images/portfolio/project3.jpg" alt="">
-	 										<div class="hover-item">
-	 											<span class="link-icon"><i class="fa fa-ellipsis-h"></i></span>
-	 										</div> <!-- end hover-item -->
-	 									</a>
-	 								</div> <!-- end entry-image -->
-
-	 								<div class="post-meta">
-	 									<p><span class="date"><a href="#">28.01.2015</a></span> <span class="comments">0 Comments</span></p>
-	 								</div>
-	 								<h4 class="post-title"><a href="blog-single.html">Post with image</a></h4>
-	 								<div class="post-body">
-	 									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque ut lacus at velit consequat sodales. Ut posuere neque in molestie gravida. Integer eu feugiat neque, elementum posuere purus.</p>
-	 								</div> <!-- end post-body -->
-	 							</div> <!-- end entry-post -->
-	 						</div> <!-- end col-md-4 -->
-
-	 						<!-- Post -->
-	 						<div class="col-md-4">
-	 							<div class="entry-post animated out" data-animation="fadeInRight" data-delay="0">
-	 								<div class="entry-image">
-	 									<a href="blog-single.html">
-	 										<img src="images/portfolio/project6.jpg" alt="">
-	 										<div class="hover-item">
-	 											<span class="link-icon"><i class="fa fa-ellipsis-h"></i></span>
-	 										</div> <!-- end hover-item -->
-	 									</a>
-	 								</div> <!-- end entry-image -->
-
-	 								<div class="post-meta">
-	 									<p><span class="date"><a href="#">15.01.2015</a></span> <span class="comments">0 Comments</span></p>
-	 								</div>
-	 								<h4 class="post-title"><a href="blog-single.html">Post with video</a></h4>
-	 								<div class="post-body">
-	 									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque ut lacus at velit consequat sodales. Ut posuere neque in molestie gravida. Integer eu feugiat neque, elementum posuere purus.</p>
-	 								</div><!-- end post-body -->
-	 							</div> <!-- end entry-post -->
-	 						</div> <!-- end col-md-4 -->
+	 						
 
 	 					</div> <!-- end row -->
 	 				</div> <!-- end blog-posts -->
@@ -160,86 +80,5 @@
 	 	<!-- End action section -->
 
 
-	 	<section class="title-section main-color">
-	 		<div class="container">
-
-	 			<h4>Blog</h4>
-
-	 		</div>
-	 	</section>	
-	 	<section id="blog" class="container">             
-	 		<div class="row" >
-	 			<div class="col-sm-12">
-	 				<div class="big-blog-entry  wow fadeInUp " >
-	 					<div class="row blog-group">
-	 						<div class="col-sm-12 blog-item">
-	 							<h2>
-	 								Sed lacinia suscipit lacus non sodales. Pellentesque lacinia ornare justo eu tincidunt.
-	 							</h2>		
-	 						</div>
-	 						<div class="col-sm-6 blog-item">
-	 							<div id="carousel-portfolio" class="carousel slide" data-ride="carousel">
-	 								<!-- Wrapper for slides -->
-	 								<div class="carousel-inner">
-	 									<div class="item active">
-	 										{{#each eventpictures}}
-	 										{{#with FS.GetFile 'images' picture}}
-	 										<img class="img-thumbnail" width="560px" height="700px" src="{{this.url}}" alt="" >
-	 										<span class="card-title">{{pictureName}}</span>
-	 										{{/with}}
-	 										{{/each}}
-	 									</div>
-	 									<div class="item">
-	 										<img src="assets/img/art/art-5.jpg" class="" alt="...">
-	 									</div>
-	 									<div class="item">
-	 										<img src="assets/img/art/art-6.jpg" class="" alt="...">
-	 									</div>
-	 									<div class="item">
-	 										<img src="assets/img/art/art-7.jpg" class="" alt="...">
-	 									</div>
-	 								</div>
-	 								<!-- Controls -->
-	 								<a class="left carousel-control" href="blog-item-2.html#carousel-portfolio" data-slide="prev">
-	 									<span class="fa fa-chevron-left"></span>
-	 								</a>
-	 								<a class="right carousel-control" href="blog-item-2.html#carousel-portfolio" data-slide="next">
-	 									<span class="fa fa-chevron-right"></span>
-	 								</a>
-	 							</div>
-	 						</div>
-	 						<div class="col-sm-6">
-	 							<div class="row">
-	 								<div class="col-sm-12">
-	 									<small><em>By John Doe</em> - 21 June</small>    
-	 								</div>
-	 								<div class="col-sm-12">
-	 									<div class="p-big-post">
-	 										<p>
-	 											Nulla fringilla lacinia tortor eget auctor. Morbi vulputate tincidunt justo, quis viverra arcu dapibus sit amet. Sed facilisis lectus non lacus tincidunt interdum. Pellentesque congue posuere urna quis condimentum. Maecenas non molestie leo. Quisque eget tortor tellus. Duis lacinia est vel blandit fermentum. Duis quis arcu mauris. Mauris et facilisis orci, sed pretium enim. In hac habitasse platea dictumst. Pellentesque eget tempor nisl, quis tempus ipsum. Nunc egestas neque ac velit lobortis pulvinar. 
-	 										</p>
-	 										<p>
-	 											Aliquam neque metus, ornare eget tincidunt a, hendrerit ultricies nunc. Duis ornare semper eleifend. Suspendisse tellus justo, tristique vel eros ut, lacinia gravida arcu. Etiam erat ligula, mattis pellentesque velit id, facilisis ultricies sapien. Donec ultrices sodales velit ut placerat. Fusce id mi mattis est bibendum iaculis sit amet vitae lectus. Quisque tempus fringilla neque et accumsan. Etiam at metus laoreet, suscipit justo faucibus, lacinia massa. Pellentesque felis nibh, interdum id mi vel, ultrices fermentum quam.
-	 										</p>
-	 										<p>
-	 											Nulla fringilla lacinia tortor eget auctor. Morbi vulputate tincidunt justo, quis viverra arcu dapibus sit amet. Sed facilisis lectus non lacus tincidunt interdum. Pellentesque congue posuere urna quis condimentum. Maecenas non molestie leo. Quisque eget tortor tellus. Duis lacinia est vel blandit fermentum. Duis quis arcu mauris. Mauris et facilisis orci, sed pretium enim. In hac habitasse platea dictumst. Pellentesque eget tempor nisl, quis tempus ipsum. Nunc egestas neque ac velit lobortis pulvinar. 
-	 										</p>
-	 										<p>
-	 											Aliquam neque metus, ornare eget tincidunt a, hendrerit ultricies nunc. Duis ornare semper eleifend. Suspendisse tellus justo, tristique vel eros ut, lacinia gravida arcu. Etiam erat ligula, mattis pellentesque velit id, facilisis ultricies sapien. Donec ultrices sodales velit ut placerat. Fusce id mi mattis est bibendum iaculis sit amet vitae lectus. Quisque tempus fringilla neque et accumsan. Etiam at metus laoreet, suscipit justo faucibus, lacinia massa. Pellentesque felis nibh, interdum id mi vel, ultrices fermentum quam.
-	 										</p>
-	 									</div>
-	 								</div>
-	 							</div>	
-	 						</div>
-	 					</div>    
-	 				</div>
-	 			</div>
-	 		</div>	
-	 	</section>	
-	 	<section id="pagination" class="container content-title-center">
-	 		<ul class="pagination">
-	 			<li><a href="blog-item-2.html#" class="main-color">Previous Post</a></li>
-	 			<li><a href="blog-item-2.html#" class="main-color">Next Post</a></li>
-	 		</ul>
-	 	</section>
+	 	
 	 </template>

@@ -16,7 +16,7 @@ Bookings.attachSchema(new SimpleSchema({
 		type: String,
 		label: "Contact"
 	},
-	
+
 	eventsid: {
 		type: String,
 		autoform: {

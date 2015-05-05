@@ -108,3 +108,74 @@
 <!-- end about section -->
 
 </template>
+
+// Template.modals.helpers({
+// 	eventName: function (e, t) {
+// 		console.log(Session.get('eventname'))
+// 		return Session.get('eventname').placeName
+
+// 		// return 'hello'
+// 	}
+// });
+
+// Template.view_bookings.helpers({
+// 	placeName: function (e, t) {
+// 		return Session.get('eventname').placeName
+// 		// return 'hello'
+// 	}
+// });
+// Template.eventPictures.helpers({
+// 	morepictures: function (e, t) {
+// 		return Session.get('eventNameForMorePictures').placeName
+// 		// return 'hello'
+// 	}
+// });
+// // Template.registerHelper('commentscount',function(placename){
+// 	return Comments.find({placeName: placename}).count()
+// });
+
+
+
+
+// //you pass-in the Id of the event and call the _id at the html page
+// //It recognizes it bcos its being used in the router
+// Template.comments.helpers({
+// 	commentsCount: function(id){
+// 		return Comments.find({eventsid:id}).count();
+
+// 	}
+// });
+// //you pass-in the Id of the event and call the _id at the html page
+// //It recognizes it bcos its being used in the router
+// Template.events.helpers({
+// 	eventscommentsCount: function(id){
+// 		return Comments.find({eventsid:id}).count();
+// 		// return 'hello'
+// 	}
+// });
+
+
+<!-- Modal for deleting of Events -->
+<!-- <div class="modal fade" id="deleteEvent" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+<div class="modal-dialog">
+<div class="modal-content">
+<div class="modal-header">
+<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+<h4 class="modal-title" id="myModalLabel">Delete Event</h4>
+</div>
+<div class="modal-body">
+Are you sure you want to proceed deleting this event with it's history and images?
+{{> quickRemoveButton collection="Events" _id=this._id onError=onError onSuccess=onSuccess beforeRemove=beforeRemove class="btn btn-danger"}}
+
+
+
+</div>
+<div class="modal-footer">
+<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+
+</div>
+</div>
+</div>
+</div> -->
+<!-- end of Modal for deleting of Events-->
+

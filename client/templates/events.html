@@ -1,5 +1,7 @@
 <template name="events">
 	<div class="body">
+		<!-- {{> Events}} -->
+		
 		{{#if currentUser}}
 		<div class="createevent">
 			
@@ -25,7 +27,7 @@
 </div>
 {{else}}
 <div class="jumbotron">
-	<h4 align="center">please signIn to add an Trip
+	<h4 align="center">please signIn to add historical place
 	</h4>
 	<p align="center">
 
@@ -45,28 +47,19 @@
 			{{/esEach}}
 		</ul> -->
 
-		<div class="container search_heading">
-			<div class="row">
-				<div class="col-md-6 col-md-offset-5">
-					<h4>Search Form</h4>
-				</div>
-			</div>
-			<div class="row search_box">
-				<div class="col-md-4 col-md-offset-3">
-					<form action="" class="search-form">
-						<div class="form-group has-feedback">
-							<label for="search" class="sr-only">Search</label>
-							<input type="text" class="form-control" name="search" id="search" placeholder="search">
-							<span class="glyphicon glyphicon-search form-control-feedback"></span>
-						</div>
-					</form>
-				</div>
+	</div>
+	<div class="container">
+		<div class="row search-row">
+			<div class="span12">
+				<form id="custom-search-form" class="form-search form-horizontal pull-right">
+					<div class="input-append span12">
+						<input type="text" class="search-query" placeholder="Search">
+						<button type="submit" class="btn"><i class="icon-search"></i></button>
+					</div>
+				</form>
 			</div>
 		</div>
-		
 	</div>
-
-
 
  <!-- Blog
  ================================================== -->
@@ -74,9 +67,9 @@
  	<div id="blog-section">
  		<div class="container">
  			<div class="title-section animated out" data-animation="fadeInUp" data-delay="0">
- 				<h3>Latest Event Posted</h3>
+ 				<h3>Historical places with images and History</h3>
  				<hr>
- 				<p>Mauris eros tortor, tristique cursus porttitor et, luctus sed urna. Quisque id libero risus.</p>
+ 				<p>Post historical place with its picture and people can share their experiences</p>
  			</div> <!-- end title-section -->
  			<div class="blog-posts">
  				<div class="row">
@@ -85,8 +78,8 @@
  					<!-- Post -->
  					<div class="col-md-4">
  						<div class="entry-post animated out" data-animation="fadeInLeft" data-delay="0">
- 							<div class="entry-image">
- 								<a href="{{pathFor 'eventPictures'  _id=_id}}">
+ 							<div class="entry-image resize">
+ 								<a href="{{pathFor 'eventPictures'  _id=_id}}" id="eventpicture">
  									{{#with FS.GetFile 'images' picture}}
  									<img class="img-thumbnail" width="560px" height="700px" src="{{this.url}}" alt="" >
  									<span class="card-title">{{pictureName}}</span>
@@ -98,11 +91,12 @@
  							</div> <!-- end entry-image -->
 
  							<div class="post-meta">
- 								<p><span class="location">{{location}}</span> | <span class="comment"><a href="{{pathFor 'comments' _id=_id}}">0 Comments</a></span> | <span class="contact">{{contact}}</span></p>
+ 								<p><span class="location">{{location}}</span> | <span class="comment"><a href="{{pathFor 'comments' _id=_id}}">{{commentsCount _id}} Review(s) </a></span> | <span class="likes"><a href="#" data-likes-event="{{_id}}">Likes-{{likes}}</a></span> | <span class="comment"><a href="{{pathFor 'comments' _id=_id}}">Readmore... </a></span>
+ 								</p>
  							</div> <!-- end post-meta -->
- 							<h4 class="post-title"><a href="blog-single.html">{{placeName}}</a></h4>
+ 							<h4 class="post-title"><a href="{{pathFor 'comments'}}">{{placeName}}</a></h4>
  							<div class="post-body">
- 								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque ut lacus at velit consequat sodales. Ut posuere neque in molestie gravida. Integer eu feugiat neque, elementum posuere purus. {{history}}</p>
+ 								<p class="history">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque ut lacus at velit consequat sodales. Ut posuere neque in molestie gravida. Integer eu feugiat neque, elementum posuere purus. {{history}}</p>
  							</div> <!-- end post-body -->
  						</div> <!-- end entry-post -->
  					</div> <!-- end col-md-4 -->
@@ -125,6 +119,10 @@
  			</div> <!-- end call-to-action -->
  		</div> <!-- end container -->
  	</div>
+ 	<!-- {{> Paginator_UI events}} -->
  </section>
  <!-- End action section -->
+ <!-- {{> Events}} -->
+ {{> pagesNav}}  <!--Bottom navigation-->
+ {{> pages}}
 </template>

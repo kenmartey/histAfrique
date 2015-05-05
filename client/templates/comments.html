@@ -23,6 +23,7 @@
       <section>
       	<div id="blog-content-section">
       		<div class="container">
+      			
       			<div class="row">
       				<div class="col-md-7 col-md-offset-1">
 
@@ -42,204 +43,110 @@
 
       							<div class="post-media">
       								<div class="entry-image">
-      									<a href="blog-single.html">
-      										
-      										{{#with FS.GetFile 'images' picture}}
-      										<img class="img-thumbnail" width="560px" height="700px" src="{{this.url}}" alt="" >
-      										{{/with}}
+      									
+                                                        
+                                                        {{#with FS.GetFile 'images' picture}}
+                                                        <img class="img-thumbnail" width="560px" height="700px" src="{{this.url}}" alt="" >
+                                                        {{/with}}
 
-      									</a>
-      								</div> <!-- end entry-image -->
-      							</div> <!-- end post-media -->
+                                                        
+                                                  </div> <!-- end entry-image -->
+                                            </div> <!-- end post-media -->
 
-      							<h3 class="post-title"><a href="#">{{placeName}}</a></h3>
-      							<div class="post-meta">
-      								<p class="author-post">Posted by <a href="#">John Doe</a> / <a href="#">Standard</a></p>
-      							</div> <!-- end post-meta -->
+                                            <h3 class="post-title">{{placeName}}</h3>
+                                            <div class="post-meta">
+                                              <p class="author-post">Posted by <a href="#">John Doe</a> / <a href="#">Standard</a></p>
+                                        </div> <!-- end post-meta -->
 
-      							<div class="post-body">
-      								<p>
-      									{{history}}
-      								</p>
-      							</div> <!-- end post-body -->
+                                        <div class="post-body">
+                                              <p>
+                                                   {{history}}
+                                             </p>
+                                       </div> <!-- end post-body -->
 
-      						</div> <!-- end post -->
+                                 </div> <!-- end post -->
 
-      					</div> <!-- end blog-post -->
-      					{{/with}}
+                           </div> <!-- end blog-post -->
+                           <div id="comments" class="clearfix">
+                              <h5 class="comments-title">
+                                   Comments - {{commentsCount _id}}
+                             </h5>
+                       </div>
+                       {{/with}}
+                       <div id="comments" class="clearfix">
 
-      					<div id="comments" class="clearfix">
-      						<h5 class="comments-title">
-      							Comments - {{commentscount}}
-      						</h5>
-      						<div class="comment-body">
+                        <div class="comment-body">
 
-      							<!-- Blog Comment -->
-      							{{#each comments}}
-      							<div class="media">
-      								<a class="media-left img-rounded" href="#">
-      									<img src="/images/avatar.png" alt="Avatar">
-      								</a>
-      								<div class="media-body">
-      									<h6 class="media-heading"><a href="#"> {{name}}
-      										<p>{{email}}</p>
-      									</a></h6>
-      									<p>December 18, 2014 at 11:39 am</p>
-      									<p>{{comment}}
-      									</p>
-      								</div> <!-- end media-body -->
-      							</div> <!-- end media -->
-      							{{/each}}
-      							<!-- Blog Comment -->
+                             <!-- Blog Comment -->
+                             {{#each comments}}
+                             <div class="media">
+                                  <a class="media-left img-rounded" href="#">
+                                       <img src="/images/avatar.png" alt="Avatar">
+                                 </a>
+                                 <div class="media-body">
+                                       <h6 class="media-heading"><a href="#"> {{name}}
+                                            <p>{{email}}</p>
+                                      </a></h6>
+                                      <p>December 18, 2014 at 11:39 am</p>
+                                      <p>{{comment}}
+                                      </p>
+                                </div> <!-- end media-body -->
+                          </div> <!-- end media -->
+                          {{/each}}
+                          <!-- Blog Comment -->
 
-      						</div> <!-- end comment-body -->
-      						{{#if currentUser}}
-      						<button type="submit" class="btn clean" data-toggle="modal" data-target="#commentModal">Post comment</button>
-      						{{else}}
-      						<button type="submit" class="btn clean" data-toggle="modal" data-target="#signinBeforeComment">Post comment</button>
-      						{{/if}}
-
-
-
-
-      						<!-- Comment form -->
-      						<div id="respond">
-      							<h5 id="reply-title">Leave A Comment</h5>
-      							<p class="comment-notes"><small>Your email address will not be published. Required fields are marked</small><span class="required">*</span></p>
-
-      							<form action="#" method="post" id="commentform" name="commentform">
-
-      								<div class="form-group">
-      									<label for="author">Name<span class="required">*</span></label>
-      									<input type="text" name="author" class="form-control" id="author" placeholder="Enter email">
-      								</div>
-
-      								<div class="form-group">
-      									<label for="email">Email<span class="required">*</span></label>
-      									<input type="email" name="email" class="form-control" id="email" placeholder="Password">
-      								</div>
-
-      								<div class="form-group">
-      									<label for="comment">Comment<span class="required">*</span></label>
-      									<textarea class="form-control" name="comment" id="comment" rows="10"></textarea>
-      								</div>
-
-      								<button type="submit" class="btn clean">Post comment</button>
-      							</form>
-
-      						</div> <!-- end respond -->
-      					</div> <!-- end comments -->
-
-      				</div> <!-- end col-md-7 -->
-
-      				<div class="col-md-3">
-      					<div class="sidebar">
-
-      						<!-- Search -->
-      						<div class="widget">
-      							<div class="widget-search">
-      								<form action="#" method="post" id="search-form">
-      									<div class="input-group">
-      										<input type="text" class="form-control search-input" placeholder="Search...">
-      										<span class="input-group-btn">
-      											<button class="btn btn-search" type="button"><i class="fa fa-search"></i></button>
-      										</span>
-      									</div><!-- /input-group -->
-      								</form>
-      							</div> <!-- end widget-search -->
-      						</div> <!-- end widget -->
-
-      						<!-- Categories -->
-      						<div class="widget">
-      							<h5>Hotels Around</h5>
-      							<ul>
-      								<li><a href="#">Hotel One</a></li>
-      								<li><a href="#">Hotel two</a></li>
-      								<li><a href="#">Hotel Three</a></li>
-      							</ul>
-      						</div> <!-- end widget -->
-
-      						<!-- Text widget -->
-      						<div class="widget">
-      							<h5>Text widget</h5>
-      							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna.</p>
-      						</div> <!-- end widget -->
-
-      						<!-- Archives -->
-      						<div class="widget">
-      							<h5>Archives</h5>
-      							<ul>
-      								<li><a href="#">January 2015</a></li>
-      								<li><a href="#">December 2014</a></li>
-      								<li><a href="#">November 2014</a></li>
-      							</ul>
-      						</div> <!-- end widget -->
-
-      						<!-- Tags -->
-      						<div class="widget">
-      							<h5>Tags</h5>
-      							<div class="tagcloud">
-      								<a href="#">Design</a>
-      								<a href="#">Portfolio</a>
-      								<a href="#">Tag</a>
-      								<a href="#">Demo</a>
-      								<a href="#">Blog</a>
-      								<a href="#">Web</a>
-      								<a href="#">Clean</a>
-      							</div> <!-- end tagcloud -->
-      						</div> <!-- end widget -->
-
-      						<!-- Recent Posts -->
-      						<div class="widget">
-      							<h5>Recent Posts</h5>
-      							<ul>
-      								<li><a href="#" title="Post Title">Standard post with goodies.</a></li>
-      								<li><a href="#" title="Post Title">Fluid video. Yeah we got that.</a></li>
-      								<li><a href="#" title="Post Title">Gallery post with slider.</a></li>
-      							</ul>
-      						</div> <!-- end widget -->
-      					</div> <!-- end sidebar -->
-      				</div> <!-- end col-md-3 -->
-      			</div> <!-- end row -->
-
-      		</div> <!-- end container -->
-      	</div> <!-- end blog-content-section -->
-      </section>
-      <!-- end blog section -->
-  </div>
+                    </div> <!-- end comment-body -->
+                    {{#if currentUser}}
+                    <button type="submit" class="btn clean" data-toggle="modal" data-target="#commentModal">Post comment</button>
+                    {{else}}
+                    <button type="submit" class="btn clean" data-toggle="modal" data-target="#signinBeforeComment">Post comment</button>
+                    {{/if}}
 
 
 
-<!-- 
 
-  <div class="row">
-  	<div class="col-md-10 col-md-push-1 scrollpoint sp-effect3">
-  		<div class="review-filtering">
-  			<div class="review">
-  				<div class="row">
-  					<div class="col-md-2">
-  						<div class="review-person">
-  							<img src="http://api.randomuser.me/portraits/women/94.jpg" alt="" class="img-responsive">
-  						</div>
-  					</div>
-  					<div class="col-md-10">
-  						<div class="review-comment">
-  							<h3>“I love Oleose, I highly recommend it, Everyone Try It Now”</h3>
-  							<p>
-  								- Krin Fox
-  								<span>
-  									<i class="fa fa-star fa-lg"></i>
-  									<i class="fa fa-star fa-lg"></i>
-  									<i class="fa fa-star fa-lg"></i>
-  									<i class="fa fa-star fa-lg"></i>
-  									<i class="fa fa-star-o fa-lg"></i>
-  								</span>
-  							</p>
-  						</div>
-  					</div>
-  				</div>
-  			</div>
-  		</div>
-  	</div>
-  </div> -->
+                    <!-- Comment form -->
+
+              </div> <!-- end comments -->
+
+        </div> <!-- end col-md-7 -->
+
+        <div class="col-md-3">
+             <div class="sidebar">
+
+                  <!-- Search -->
+                  <div class="widget">
+                       <div class="widget-search">
+                            <form action="#" method="post" id="search-form">
+                                 <div class="input-group">
+                                      <input type="text" class="form-control search-input" placeholder="Search...">
+                                      <span class="input-group-btn">
+                                           <button class="btn btn-search" type="button"><i class="fa fa-search"></i></button>
+                                     </span>
+                               </div><!-- /input-group -->
+                         </form>
+                   </div> <!-- end widget-search -->
+             </div> <!-- end widget -->
+
+
+
+             <!-- Recent Posts -->
+             <div class="widget">
+                 <h5>Recent Posts</h5>
+                 <ul>
+                      <li><a href="#" title="Post Title">Standard post with goodies.</a></li>
+                      <li><a href="#" title="Post Title">Fluid video. Yeah we got that.</a></li>
+                      <li><a href="#" title="Post Title">Gallery post with slider.</a></li>
+                </ul>
+          </div> <!-- end widget -->
+    </div> <!-- end sidebar -->
+</div> <!-- end col-md-3 -->
+</div> <!-- end row -->
+
+</div> <!-- end container -->
+</div> <!-- end blog-content-section -->
+</section>
+<!-- end blog section -->
+</div>
+
 </template>

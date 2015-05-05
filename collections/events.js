@@ -1,5 +1,10 @@
 Events = new Mongo.Collection('events');
 // Events.initEasySearch('placeName');
+this.Pages = new Meteor.Pagination(Events,{
+	templateName: "events", 
+	perPage: 2
+});
+
 Events.attachSchema(new SimpleSchema({
 
 	placeName:{
@@ -10,9 +15,9 @@ Events.attachSchema(new SimpleSchema({
 	history: {
 		type: String,
 		label: "History eg. what you know about slavery",
-		max: 200,
+		max: 5000,
 		autoform: {
-			rows: 2
+			rows: 5
 		}
 	},
 
@@ -64,7 +69,15 @@ Events.attachSchema(new SimpleSchema({
 			}
 		}
 	},
+	likes: {
+		type: Number,
+		optional: true,
+		autoform:{
+			omit: true
 
+		}
+
+	},
 	picture: {
 		type: String,
 		autoform: {

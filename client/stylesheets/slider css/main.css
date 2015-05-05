@@ -98,7 +98,7 @@
 		-moz-transition-property: opacity;
 		-o-transition-property: opacity;
 		transition-property: opacity;
-		background-attachment:fixed;
+		/*background-attachment:fixed;*/
 
 	}
 
@@ -157,7 +157,7 @@
 		margin: 3px;
 		background: none;
 		opacity:1;
-		border: 2px solid #00bc95;
+		border: 2px solid #FF9800;
 	}
 
 	/*text content on banner*/
@@ -203,7 +203,7 @@
 		.btn-orange a
 		{
 			border-radius:2px !important;
-			background: #00bc95;
+			background: #FF9800;
 			color:#fff;
 			font-size:21px;
 			font-weight:bold;
@@ -217,7 +217,7 @@
 
 		.btn-orange a:hover
 		{
-			background:#5FD5BC;
+			background: #FFA726;
 			text-decoration:none;
 		}
 
@@ -474,7 +474,7 @@
 
 		.testimonial-bg
 		{
-			background-image:url(/images/niceplace.jpg);
+			/*background-image:url(/images/niceplace.jpg);*/
 			background-attachment:fixed;
 
 			margin-top:40px;
@@ -704,7 +704,7 @@
 #contact
 {
 	background:#424a56;
-	background-image:url(/images/eagle.jpg);
+	/*background-image:url(/images/eagle.jpg);*/
 	background-position:top center;
 	background-repeat:no-repeat;
 	

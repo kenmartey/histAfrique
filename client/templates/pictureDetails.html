@@ -1,0 +1,11 @@
+<template name="pictureDetails">
+	<div class="body">
+		<h1>dfdfsfds</h1>
+		{{#with picturedetail}}
+		dfdfdf
+		{{#with FS.GetFile 'images' picture}}
+		<img class="img-thumbnail" width="560px" height="700px" src="{{this.url}}" alt="" >
+		{{/with}}
+		{{/with}}
+	</div>
+</template>

@@ -74,67 +74,62 @@
   color: #444;
   margin-top: 158px;
 }
+.history {
+  width: 250px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
 
 /* SEARCH BAR STYLESHEET
 */
-.search-form .form-group {
-  float: right !important;
-  transition: all 0.35s, border-radius 0s;
-  width: 32px;
-  height: 32px;
-  background-color: #fff;
-  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset;
-  border-radius: 25px;
-  border: 1px solid #ccc;
+#custom-search-form {
+  margin:0;
+  margin-top: 5px;
+  padding: 0;
 }
-.search-form .form-group input.form-control {
-  padding-right: 20px;
-  border: 0 none;
-  background: transparent;
-  box-shadow: none;
-  display:block;
+
+#custom-search-form .search-query {
+  padding-right: 21px;
+  padding-right: 4px \9;
+  padding-left: 8px;
+  padding-left: 4px \9;
+  /* IE7-8 doesn't have border-radius, so don't indent the padding */
+
+  margin-bottom: 0;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 24px;
 }
-.search-form .form-group input.form-control::-webkit-input-placeholder {
-  display: none;
+
+#custom-search-form button {
+  border: 0;
+  background: none;
+  /** belows styles are working good */
+  padding: 2px 5px;
+  margin-top: 2px;
+  position: relative;
+  left: -28px;
+  /* IE7-8 doesn't have border-radius, so don't indent the padding */
+  margin-bottom: 0;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
 }
-.search-form .form-group input.form-control:-moz-placeholder {
-  /* Firefox 18- */
-  display: none;
+
+.search-query:focus + button {
+  z-index: 3;   
 }
-.search-form .form-group input.form-control::-moz-placeholder {
-  /* Firefox 19+ */
-  display: none;
-}
-.search-form .form-group input.form-control:-ms-input-placeholder {
-  display: none;
-}
-.search-form .form-group:hover,
-.search-form .form-group.hover {
-  width: 100%;
-  border-radius: 4px 25px 25px 4px;
-}
-.search-form .form-group span.form-control-feedback {
-  position: absolute;
-  top: -1px;
-  right: -2px;
-  z-index: 2;
-  display: block;
-  width: 34px;
-  height: 34px;
-  line-height: 34px;
-  text-align: center;
-  color: #3596e0;
-  left: initial;
-  font-size: 14px;
-}
-/*
+
+
+
 ================BOOTSTRAP CSS FOR THE TABLE=================
 */
 .col-md-6 {
   width: 100%;
 }
-.row{
-  margin-top:40px;
+.search-row{
+  margin-top:-40px;
   padding: 0 10px;
 }
 .clickable{
@@ -165,32 +160,124 @@
   margin-left: 400px;
 
 }
-.search_heading{
+/*.search_heading{
   margin-left: 600px;
   margin-top: -90px;
+  }*/
+  .search_box{
+    margin-top: 0px;
+    margin-right: 50px;
+  }
+  .jumbotron{
+    width:400px;
+    height: 150px;
+    margin-left: 450px;
+    margin-top: 100px;
+  }
+  .createevent{
+    margin-top: 100px;
+    margin-left: 600px;
+  }
+  .btn-primary{
+    background: #FF9800;
+  }
+  .btn-primary:active{
+   background:  #FF9800;
+ }
+ .btn-primary:hover{
+  background: #FFA726;
 }
-.search_box{
-  margin-top: 0px;
-  margin-right: 50px;
+.error404{
+  margin-left: 200px;
 }
-.jumbotron{
-  width:400px;
-  height: 150px;
-  margin-left: 450px;
-  margin-top: 100px;
+/*.search-form{
+  margin-left: 900px;
+  }*/
+  .btn-primary:focus{
+    background-color: #FF9800;
+  }
+  .btn-primary:hover{
+    background-color: #FFA726;
+  }
+/*===============COMMENTS==============
+*/
+/*font Awesome http://fontawesome.io*/
+/*@import url(//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css);*/
+/*Comment List styles*/
+.comment-list .row {
+  margin-bottom: 0px;
 }
-.createevent{
-  margin-top: 100px;
-  margin-left: 600px;
+.comment-list .panel .panel-heading {
+  padding: 4px 15px;
+  position: absolute;
+  border:none;
+  /*Panel-heading border radius*/
+  border-top-right-radius:0px;
+  top: 1px;
 }
-.btn-primary{
-  background: #00bc95;
+.comment-list .panel .panel-heading.right {
+  border-right-width: 0px;
+  /*Panel-heading border radius*/
+  border-top-left-radius:0px;
+  right: 16px;
 }
-.btn-primary:active{
- background:  #00bc95;
+.comment-list .panel .panel-heading .panel-body {
+  padding-top: 6px;
 }
-.btn-primary:hover{
-  background: #5FD5BC;
+.comment-list figcaption {
+  /*For wrapping text in thumbnail*/
+  word-wrap: break-word;
+}
+/* Portrait tablets and medium desktops */
+@media (min-width: 768px) {
+  .comment-list .arrow:after, .comment-list .arrow:before {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-color: transparent;
+  }
+  .comment-list .panel.arrow.left:after, .comment-list .panel.arrow.left:before {
+    border-left: 0;
+  }
+  /*****Left Arrow*****/
+  /*Outline effect style*/
+  .comment-list .panel.arrow.left:before {
+    left: 0px;
+    top: 30px;
+    /*Use boarder color of panel*/
+    border-right-color: inherit;
+    border-width: 16px;
+  }
+  /*Background color effect*/
+  .comment-list .panel.arrow.left:after {
+    left: 1px;
+    top: 31px;
+    /*Change for different outline color*/
+    border-right-color: #FFFFFF;
+    border-width: 15px;
+  }
+  /*****Right Arrow*****/
+  /*Outline effect style*/
+  .comment-list .panel.arrow.right:before {
+    right: -16px;
+    top: 30px;
+    /*Use boarder color of panel*/
+    border-left-color: inherit;
+    border-width: 16px;
+  }
+  /*Background color effect*/
+  .comment-list .panel.arrow.right:after {
+    right: -14px;
+    top: 31px;
+    /*Change for different outline color*/
+    border-left-color: #FFFFFF;
+    border-width: 15px;
+  }
+}
+.comment-list .comment-post {
+  margin-top: 6px;
 }
 /*
 END OF CUSTOME CSS

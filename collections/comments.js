@@ -15,7 +15,7 @@ Comments.attachSchema(new SimpleSchema({
 	comment: {
 		type: String,
 		label: "Leave a Review",
-		max: 200,
+		max: 500,
 		autoform: {
 			rows: 4
 		}

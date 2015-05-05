@@ -42,11 +42,10 @@ AutoForm.hooks({
 
 });
 // AutoForm.hooks({
-// 	insertBookingForm: {
+// 	insertEventsForm: {
 // 		formToDoc: function(doc, ss, formId) {
 // 			console.log(doc);
-// 			// doc.eventsid = Session.get('eventId');
-// 			doc.eventname = Session.get('eventname');
+// 			doc.likes = Session.get('eventId');
 // 			console.log(doc);
 // 			return doc;
 // 		}
