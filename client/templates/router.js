@@ -70,41 +70,6 @@ Router.route('/events/:_id/view_event_pictures', function(){
 	}
 
 });
-// Router.route('/events/:_id/join', function(){
-// 	this.render('bookings');
-// },
-// {
-// 	name: 'bookings',
-
-// 	data: function(){
-// 		var _id = this.params._id;
-// 		return {
-// 			eventsid: Events.findOne(_id),
-// 			bookings: Bookings.find({eventsid:_id}).fetch()
-// 		}
-// 	}
-
-// });
-
-// Router.route('dashboard/event/booking/:_id', function(){
-// 	this.render('view_bookings');
-// },
-// { 
-// 	name: 'view_bookings',
-// 	// var _id = this.params._id;
-// 	// return{
-// 	// 	Bookings.find(_id)
-// 	// },
-// 	data: function(){
-// 		var _id = this.params._id;
-// 		return {
-// 			bookevents: Events.findOne(_id),
-// 			bookings: Bookings.find({eventsid: _id}).fetch()
-// 		} 
-
-// 	}
-
-// });
 
 Router.route('/signin',function(){
 	this.render('signin')
@@ -158,17 +123,17 @@ Router.route('/event/:location/', function(){
 	}
 
 });
-Router.route('/event/:_id/picturedetail', function(){
-	this.render('pictureDetail')
+Router.route('/events/eventpicture/:_id/detail/', function(){
+	this.render('pictureDetails')
 },
 {
-	name: 'picturedetail',
+	name: 'pictureDetails',
 	data: function(){
 		var _id = this.params._id;
 		return {
-			// createevents: Events.findOne(_id),
-			// eventpictures: EventPictures.findOne({createevents:_id}).fetch()
-			picturedetail: EventPictures.findOne(_id)
-		}
+		// 	// createevents: Events.findOne(_id),
+		// 	// eventpictures: EventPictures.findOne({createevents:_id}).fetch()
+		picturedetail: EventPictures.findOne(_id)
 	}
+}
 });

@@ -13,12 +13,14 @@ EventPictures.attachSchema(new SimpleSchema({
 	},
 	pictureName:{
 		type:String,
+		optional: true,
 		label: "PictureName"
 	},
 
 	history: {
 		type: String,
 		label: "History",
+		optional: true,
 		max: 200,
 		autoform: {
 			rows: 2

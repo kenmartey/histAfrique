@@ -14,7 +14,7 @@
 							<div class="col-md-12">
 								<div class="content">
 									<h1>Know your History</h1>
-									<h3>Discover Historical Places</h3>
+									<h3>Discover Historical Places in Africa with histAfrique</h3>
 									{{#if currentUser}}
 									<div class="btn-orange"><a href="{{pathFor 'events'}}">Take a Tour</a></div> 
 									{{else}}
@@ -31,8 +31,8 @@
 						<div class="container">
 							<div class="col-md-12">
 								<div class="content">
-									<h1>Amazing People</h1>
-									<h2>Join the family for Trips</h2>
+									<h1>Amazing Histories</h1>
+									<h2>histAfrique provides you with authentic African history</h2>
 									{{#if currentUser}}
 									<div class="btn-orange"><a href="{{pathFor 'events'}}">Take a Tour</a></div> 
 									{{else}}
@@ -50,7 +50,7 @@
 							<div class="col-md-12">
 								<div class="content">
 									<h1>Simple & Easy</h1>
-									<h2>Register,view interesting places, Join to go !</h2>
+									<h2>Register, view interesting historical places with images and visit!</h2>
 									{{#if currentUser}}
 									<div class="btn-orange"><a href="{{pathFor 'events'}}">Take a Tour</a></div> 
 									{{else}}
@@ -82,9 +82,9 @@
 		<div id="about-section">
 			<div class="container">
 				<div class="title-section animated out" data-animation="fadeInUp" data-delay="0">
-					<h3>About TripGh</h3>
+					<h3>About histAfrique</h3>
 					<hr>
-					<p>TourGh is an online application that displays all historical places in Ghana to world with pictures with detailed history and allows anyone to leave a review of the place based on their experience.</p>
+					<p>histAfrique is an online application that displays all historical places in Africa to world with pictures with detailed history and allows anyone to leave a review of the place based on their experience.</p>
 				</div> <!-- end title-section -->
 
 				<div class="about-us">
@@ -99,11 +99,18 @@
 						<div class="col-md-5">
 							<div class="about-text animated out" data-animation="fadeInRight" data-delay="0">
 								<h1>It's just Amazing</h1>
-								<p>Lorem ipsum dolor amet, consectetur adipiscing elit. Pellentesque ut lacus at velit consequat sodales. Ut posuere neque in molestie gravida. Integer neque lementum posuere purus. Nam convallis ipsum. Maecenas a vulputate ipsum.</p>
+								<p> This platform is open to anyone who would like to know the beautiful history behind some beautiful historical places in Africa even before they first visit these places. histAfric content is reviewed by top scholars of African history across the continent and is also open to any person who has indepth knowledge and interest in the subject.</p>
+								{{#if currentUser}}
 								<div class="about-action-btns">
-									<a href="#" class="btn clean">Let's Tour</a>
+									<a href="{{pathFor 'events'}}" class="btn clean">Let's Tour</a>
 									<a href="#" class="btn clean">What is here?</a>
 								</div> <!-- end about-action-btns -->
+								{{else}}
+								<div class="about-action-btns">
+									<a href="{{pathFor 'signup'}}" class="btn clean">Register</a>
+									<a href="{{pathFor 'signin'}}" class="btn clean">Sign-In</a>
+								</div> <!-- end about-action-btns -->
+								{{/if}}
 							</div> <!-- end about-text -->
 						</div> <!-- end col-md-5 -->
 					</div> <!-- end row -->

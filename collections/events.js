@@ -97,5 +97,10 @@ Events.attachSchema(new SimpleSchema({
 			return Meteor.userId();
 		}
 	},
-
+	countries:{
+		type: String,
+		autoform:{
+			omit: true
+		}
+	}
 }));

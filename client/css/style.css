@@ -667,7 +667,7 @@
                 /*footer default***************/
 
                 #footer{
-                    padding-top: 80px;
+                 /* padding-top: 80px;*/
                     padding-bottom: 65px;
                     background-color: #FF9800;
                     color:#eee;
@@ -1624,11 +1624,11 @@
         .social li a i{
             color:#fff;
             font-size: 17px;
-            width:35px;
+           /* width:35px;
             height: 35px;
-            line-height: 35px;
+            line-height: 35px;*/
             text-align: center;
-            background-color: #333b4d;
+            /*background-color: #333b4d;*/
             -webkit-transition: all 0.4s;
             -moz-transition: all 0.4s;
             -o-transition: all 0.4s;

@@ -180,3 +180,42 @@ Are you sure you want to proceed deleting this event with it's history and image
 </div> -->
 <!-- end of Modal for deleting of Events-->
 
+
+
+
+
+// Router.route('/events/:_id/join', function(){
+// 	this.render('bookings');
+// },
+// {
+// 	name: 'bookings',
+
+// 	data: function(){
+// 		var _id = this.params._id;
+// 		return {
+// 			eventsid: Events.findOne(_id),
+// 			bookings: Bookings.find({eventsid:_id}).fetch()
+// 		}
+// 	}
+
+// });
+
+// Router.route('dashboard/event/booking/:_id', function(){
+// 	this.render('view_bookings');
+// },
+// { 
+// 	name: 'view_bookings',
+// 	// var _id = this.params._id;
+// 	// return{
+// 	// 	Bookings.find(_id)
+// 	// },
+// 	data: function(){
+// 		var _id = this.params._id;
+// 		return {
+// 			bookevents: Events.findOne(_id),
+// 			bookings: Bookings.find({eventsid: _id}).fetch()
+// 		} 
+
+// 	}
+
+// });
