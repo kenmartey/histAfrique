@@ -9,6 +9,17 @@ Template.events.events({
 	}
 	
 });
+//This template helper pulls the id of the countries and gives it to Province with Session.set
+Template.province.events({
+	'change #test': function (e,t) {
+		// var id = this._id
+		var id = $(e.currentTarget).find(':selected').data("id");
+		Session.set('countriesId', id);
+		console.log(id)
+	}
+
+});
+
 
 //This template pulls the id of the event picture
 Template.events.events({
@@ -40,6 +51,7 @@ Template.createEventPicture.helpers({
 });
 
 
+
 Template.view_profile.helpers({
 	isOwner: function(e,t){
 		return this.owner === Meteor.userId();
@@ -64,21 +76,12 @@ Template.events.helpers({
 	}
 });
 Template.events.events({
-	// 'click .likes': function(){
-	// 	var eventsId = this._id;
-	// 	Session.set('selectedevents', eventsId);
-
-	// },
 	'click .likes': function(){
 		eventsId = Session.get('eventId');
 		console.log(eventsId)
 		myevents = Events.update(eventsId, {$inc:{likes: +1 }});
 		console.log(myevents)
 	}
-
-// 'click .likes':function(){
-// 		Session.set('eventId', this._id);
-// }
 })
 
 // i am yet to add likes code....
@@ -89,7 +92,7 @@ Template.myBoard.helpers({
 		return Events.find();
 	},
 	onError: function () {
-		return function (error) { alert("BOO!"); console.log(error); };
+		return function (error) { alert("Error, Delete wasn't successful!"); console.log(error); };
 	},
 	onSuccess: function () {
 		return function (result) { alert("You have successfully Delete a historical place"); console.log(result); };
@@ -103,3 +106,38 @@ Template.myBoard.helpers({
 		};
 	}
 });
+//This helps collect the id from a clicked card and makes it available for editing.
+Template.myBoard.events({
+	'click .edit': function(e, t) {
+		Session.set('cardId', this._id);
+	}
+})
+
+Template.modals.helpers({
+	doc: function() {
+		return Events.findOne(Session.get('cardId'));
+	},
+	profiledoc: function () {
+		console.log(Session.get('profileId'));
+		return Profiles.findOne(Session.get('profileId'));
+	},
+	imagedoc: function(){
+		// console.log(Session.get('imageUrl'));
+		return Session.get('imageUrl')
+		
+	}
+});
+
+Template.view_profile.events({
+	'click .editprofile': function(e, t){
+		console.log(this._id);
+		Session.set('profileId', this._id);
+	}
+})
+Template.createEventPicture.events({
+	'click .imageclick': function(e,t){
+		console.log(this.url());
+		Session.set('imageUrl', this.url());
+	}
+})
+

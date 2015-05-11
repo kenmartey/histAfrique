@@ -19,7 +19,6 @@
 					<li class="dropdown"><a href="#portfolio" class="dropdown-toggle js-activated" data-toggle="dropdown">Profile</a>
 						<ul class="dropdown-menu">
 							<li><a href="{{pathFor 'view_profile'}}">Edit Profile</a></li>
-							<li><a href="portfolio-single.html">Portfolio single</a></li>
 						</ul>
 					</li>
 					<li><a href="{{pathFor 'events'}}">places</a></li>
@@ -27,7 +26,7 @@
 					<li><a href="{{pathFor 'myBoard'}}">dashboard</a></li>
 					{{/if}}
 
-					<li><a href="contact.html">Contact</a></li>
+					<!-- <li><a href="contact.html">Contact</a></li> -->
 					{{#if currentUser}}
 					<li><a href="{{pathFor 'signout'}}">Sign-Out</a>
 					</li>

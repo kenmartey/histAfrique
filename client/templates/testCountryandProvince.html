@@ -1,0 +1,35 @@
+<template name="provincetest">
+	<div class="body">
+		<div class="province">
+
+
+			<select class="combobox" id="test">
+
+				<option>select Country</option>
+				{{#each countries}}
+				<option data-id="{{_id}}">
+					{{countries}}<br>
+				</option>
+				{{/each}}
+
+			</select>
+
+			{{#each countries}}
+			<a href="" id="test1">
+				{{countries}}
+			</a>
+			{{/each}}
+
+			<select class="combobox" id="">
+				<option>Select a Province</option>
+				{{#each province}}
+				<option value="">
+					{{province}}<br>
+				</option>
+				{{/each}}
+			</select>
+		</div>
+
+	</div>
+
+</template>

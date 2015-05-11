@@ -1,5 +1,5 @@
 <template name="view_profile">
-	<div class="body">
+	<div class="body view_profile">
 
 		<link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
 
@@ -9,21 +9,24 @@
 		{{#if isOwner}}
 		<div class="container">
 			<div class="fb-profile">
-				<img align="left" class="fb-image-lg" src="images/blacklinux.jpg" alt="Profile image example"/>
+				<img align="left" class="fb-image-lg" src="/images/blacklinux.jpg" alt="Profile image example"/>
 				{{#with FS.GetFile 'images' picture}}
 				<img align="left" class="fb-image-profile thumbnail" width="170px" height="200px" src="{{this.url}}" alt="" >
 				{{/with}}
 				<!-- <img align="left" class="fb-image-profile thumbnail" src="images/profilepic.jpg" alt="Profile image example"/> -->
 				<div class="fb-profile-text">
-					<h1>{{fullName}}</h1>
+					<h1>{{fullName}} <a href="#"> <i class="fa fa-pencil edit fa-0.5x" data-toggle="modal"  data-target="#UpdateProfile"></i></a></h1>
 					<p>{{username}}</p>
 					<p>{{email}}</p>
 				</div>
 			</div>
 		</div> <!-- /container -->  
+		<!-- <div class="btn btn-primary editprofile" data-toggle="modal" data-target="#UpdateProfile">Update Profile</div> -->
+
+		
 		{{/if}}
 		{{/each}}
-		<div class="btn btn-primary" data-toggle="modal" data-target="#UpdateProfile">Update Profile</div>
+		
 		{{else}}
 		Please Register/signin to view your profile
 		{{/if}}

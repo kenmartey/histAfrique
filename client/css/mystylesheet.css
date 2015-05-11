@@ -199,6 +199,18 @@
   .btn-primary:hover{
     background-color: #FFA726;
   }
+  .countries {
+    width: 400px;
+    height: 200px;
+    margin-left: 500px;
+  }
+  .province {
+    width: 400px;
+    height: 400px;
+    margin-left: 500px;
+    margin-bottom: 100px;
+    
+  }
 /*===============COMMENTS==============
 */
 /*font Awesome http://fontawesome.io*/
@@ -289,6 +301,10 @@ END OF CUSTOME CSS
 
 /* Footer styles
 -------------------------------------------------- */
+.footer-social-media{
+  margin-top: 128px;
+  margin-left: 95px;
+}
 .full {
   width: 100%;  
 }
@@ -300,7 +316,7 @@ END OF CUSTOME CSS
 }
 .footer {
   background: #EDEFF1;
-  height: 246px;
+  height: 190px;
   padding-bottom: 30px;
   position: relative;
   width: 100%;
@@ -315,7 +331,7 @@ END OF CUSTOME CSS
 }
 .footer h3 {
   border-bottom: 1px solid #BAC1C8;
-  color: #54697E;
+  color: white;
   font-size: 18px;
   font-weight: 600;
   line-height: 27px;
@@ -335,7 +351,10 @@ END OF CUSTOME CSS
   display: block;
 }
 .footer a {
-  color: #78828D
+  color: white;
+}
+.footer a:hover{
+  color: black;
 }
 .supportLi h4 {
   font-size: 20px;
@@ -363,7 +382,7 @@ END OF CUSTOME CSS
   height: 40px;
   padding: 0;
   width: 100%;
-  color: #fff;
+  color: orange;
 }
 .newsletter-box {
   overflow: hidden;
@@ -423,4 +442,7 @@ END OF CUSTOME CSS
   }
   .payments {
     font-size: 1.5em; 
+  }
+  .view_profile{
+    height: 550px;
   }

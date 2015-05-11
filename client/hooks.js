@@ -29,6 +29,19 @@ AutoForm.hooks({
 	}
 
 });
+// this section collects the id of the country and add it to Province collection with Session.get
+AutoForm.hooks({
+	insertProvinceForm: {
+		formToDoc: function(doc, ss, formId) {
+			console.log(doc);
+			doc.country = Session.get('countriesId');
+			console.log(doc);
+			return doc;
+		}
+	}
+
+});
+
 // this section collects the id of the Event and add it to the Comment collection
 AutoForm.hooks({
 	insertCommentForm: {
@@ -61,10 +74,21 @@ AutoForm.hooks({
 			return $('#eventSuccess').modal('show');
 		}
 	},
+	updateEventForm:{
+		onSuccess: function(formType, result){
+			return $('#editEvent').modal('hide');
+		}
+	},
 	insertProfileForm: {
 		onSuccess: function(formType, result) {
 			return $('#profileSuccess').modal('show');
 			Router.go ('/events');
+		}
+
+	},
+	updateProfileForm:{
+		onSuccess: function(formType, result){
+			return	$('#UpdateProfile').modal('hide');
 		}
 	},
 	insertEventPictureForm:{

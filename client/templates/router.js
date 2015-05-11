@@ -88,12 +88,13 @@ Router.route('/signup', function(){
 });
 
 Router.route('/signout', function(){
-	this.render('signout')
+	this.render('signin')
 },
 {
 	name: 'signout',
 	data: function(){
 		return Meteor.logout();
+
 	}
 });
 Router.route('/event/:_id/comments', function(){
@@ -137,3 +138,49 @@ Router.route('/events/eventpicture/:_id/detail/', function(){
 	}
 }
 });
+
+Router.route('/countries',function(){
+	this.render('countries')
+},
+{
+	name: 'countries',
+	data: function(){
+		var _id = this.params._id;
+		return {
+		// 	// createevents: Events.findOne(_id),
+		// 	// eventpictures: EventPictures.findOne({createevents:_id}).fetch()
+		countries: Countries.find().fetch()
+	}
+}
+});
+
+Router.route('/province',function(){
+	this.render('province')
+},
+{
+	name: 'province',
+	data: function(){
+		var _id = this.params._id;
+		return {
+		// 	// createevents: Events.findOne(_id),
+		// 	// eventpictures: EventPictures.findOne({createevents:_id}).fetch()
+		countries: Countries.find().fetch(),
+		province: Province.find().fetch()
+	}
+}
+});
+Router.route('/provincetest',function(){
+	this.render('provincetest')
+},
+{
+	name: 'provincetest',
+	data: function(){
+		var _id = this.params._id;
+		return {
+		// 	// createevents: Events.findOne(_id),
+		// 	// eventpictures: EventPictures.findOne({createevents:_id}).fetch()
+		countries: Countries.find().fetch(),
+		province: Province.find().fetch()
+	}
+}
+})

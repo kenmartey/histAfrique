@@ -9,7 +9,7 @@ EventPictures.attachSchema(new SimpleSchema({
 				collection: 'Images'
 			}
 		},
-		label: 'Choose file'
+		label: 'Add an Image'
 	},
 	pictureName:{
 		type:String,

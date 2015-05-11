@@ -2,7 +2,7 @@
 	<div class="body">
 		{{#if currentUser}}
 		<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#createEvent">
-			<h4>Add place</h4>
+			<h4>Add history</h4>
 		</button>
 		<div class="container">
 			<div class="row">
@@ -26,13 +26,11 @@
 							<!-- <i class="fa fa-envelope-o"></i><a href="" target="new_blank"></a> -->
 							<a href="#">{{location}}</a>
 							
-							<a href="#"> <i class="fa fa-pencil" data-toggle="modal"  data-target="#editEvent"></i></a>
+							<a href="#"> <i class="fa fa-pencil edit" data-toggle="modal"  data-target="#editEvent"></i></a>
 
-							
-							
-							{{> quickRemoveButton collection="Events" _id=this._id onError=onError onSuccess=onSuccess beforeRemove=beforeRemove class="btn btn-danger"}}<i class="fa fa-trash-o"></i>
+							{{> quickRemoveButton collection="Events" _id=this._id onError=onError onSuccess=onSuccess beforeRemove=beforeRemove class="btn btn-danger"}}
 
-							
+
 						</div>
 					</div>
 				</div>

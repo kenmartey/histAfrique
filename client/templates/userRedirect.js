@@ -12,6 +12,13 @@ AccountsTemplates.configureRoute('signUp', {
 	// layoutTemplate: 'myLayout',
 	redirect: '/create_profile'
 });
+AccountsTemplates.configureRoute('signOut', {
+	// name: 'signin',
+	// path: '/login',
+	// template: 'myLogin',
+	// layoutTemplate: 'myLayout',
+	redirect: '/events'
+});
 var mySubmitFunc = function(error, state){
 	if (!error) {
 		if (state === "signIn") {
@@ -29,3 +36,12 @@ var mySubmitFunc = function(error, state){
 AccountsTemplates.configure({
 	onSubmitHook: mySubmitFunc
 });
+// Router.route('/sign-out', {
+// 	name: 'signOut',
+// 	onBeforeAction: function() {
+// 		Meteor.logout(function() {
+// 			return Router.go('/signIn');
+// 		});
+// 		this.next();
+// 	}
+// });

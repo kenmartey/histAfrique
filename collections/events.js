@@ -102,5 +102,11 @@ Events.attachSchema(new SimpleSchema({
 		autoform:{
 			omit: true
 		}
+	},
+	province:{
+		type: String,
+		autoform:{
+			omit: true
+		}
 	}
 }));

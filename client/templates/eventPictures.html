@@ -2,7 +2,7 @@
 	<div class="body">
 
 		<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#createEventPicture">
-			Add Picture
+			<h4>Add more picture</h4>
 		</button>
 		<br>
 		
@@ -27,58 +27,48 @@
 	 					<div class="col-md-4">
 	 						<div class="entry-post animated out" data-animation="fadeInLeft" data-delay="0">
 	 							<div class="entry-image">
-	 								<a href="{{pathFor 'pictureDetails'  _id=_id}}">
-	 									{{#with FS.GetFile 'images' picture}}
+	 								{{#with FS.GetFile 'images' picture}}
+	 								<a href="#" data-toggle="modal" data-target="#picturedropdown" class="imageclick">
+	 									
 	 									<img class="img-thumbnail" width="560px" height="700px" src="{{this.url}}" alt="" >
 	 									<span class="card-title">{{pictureName}}</span>
-	 									{{/with}}
+	 									
 	 									<div class="hover-item">
 	 										<span class="link-icon"><i class="fa fa-ellipsis-h"></i></span>
 	 									</div> <!-- end hover-item -->
 	 								</a>
+	 								{{/with}}
 	 							</div> <!-- end entry-image -->
 
-	 							<div class="post-meta">
-	 								<p>
-	 									{{#if currentUser}}
-	 									<span class="join"><a href="#" data-toggle="modal" book-event="{{_id}}" data-target="#bookEvent">Join</a></span> {{else}}
-	 									<span class="join"><a href="#" data-toggle="modal" data-target="#pleaseSignIn">Join</a></span>
-	 									{{/if}}
-
-	 									<span class="comments">0 Comments</span></p>
-
-	 								</div> <!-- end post-meta -->
-	 								<h4 class="post-title"><a href="blog-single.html">POST WITH IMAGE</a></h4>
-	 								<div class="post-body">
-	 									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque ut lacus at velit consequat sodales. Ut posuere neque in molestie gravida. Integer eu feugiat neque, elementum posuere purus.</p>
-	 								</div> <!-- end post-body -->
-	 							</div> <!-- end entry-post -->
-	 						</div> <!-- end col-md-4 -->
-	 						{{/each}}
-	 						{{else}}
-	 						<h1>No Data found here</h1>
-	 						{{/if}}
-	 						
-
-	 					</div> <!-- end row -->
-	 				</div> <!-- end blog-posts -->
-	 			</div> <!-- end container -->
-	 		</div>
-	 	</section>
-	 	<!-- End blog section -->
-
-	 	<!-- Action -->
-	 	<section>
-	 		<div id="action-section">
-	 			<div class="container">
-	 				<div class="call-to-action animated out" data-animation="fadeInUp" data-delay="0">
-	 					<a href="blog.html" class="btn clean">View all posts</a>
-	 				</div> <!-- end call-to-action -->
-	 			</div> <!-- end container -->
-	 		</div>
-	 	</section>
-	 	<!-- End action section -->
+	 						</div> <!-- end entry-post -->
+	 					</div> <!-- end col-md-4 -->
+	 					{{/each}}
+	 					{{else}}
+	 					<h1>No Data found here</h1>
+	 					{{/if}}
 
 
-	 	
-	 </template>
+	 				</div> <!-- end row -->
+	 			</div> <!-- end blog-posts -->
+	 		</div> <!-- end container -->
+	 	</div>
+	 </section>
+	 <!-- End blog section -->
+
+	 <!-- Action -->
+	 <section>
+	 	<div id="action-section">
+	 		<div class="container">
+	 			<div class="call-to-action animated out" data-animation="fadeInUp" data-delay="0">
+	 				<a href="#" class="btn clean">View all posts</a>
+	 			</div> <!-- end call-to-action -->
+	 		</div> <!-- end container -->
+	 	</div>
+	 </section>
+	 <!-- End action section -->
+
+
+
+
+
+	</template>

@@ -9,12 +9,14 @@
       		<div class="container">
       			<div class="col-md-12">
       				<div class="title-head-blog">
-      					<h1>Reviews and Hotels</h1>
-      					<hr>
-      				</div> <!-- end title-head-blog -->
-      			</div> <!-- end col-md-12 -->
-      		</div> <!-- end container -->
-      	</div>
+                {{#with eventscomment}}
+                <h1>{{placeName}}</h1>
+                {{/with}}
+                <hr>
+              </div> <!-- end title-head-blog -->
+            </div> <!-- end col-md-12 -->
+          </div> <!-- end container -->
+        </div>
       </section>
       <!-- end headblog section -->
 
@@ -44,104 +46,88 @@
       							<div class="post-media">
       								<div class="entry-image">
       									
-                                                        
-                                                        {{#with FS.GetFile 'images' picture}}
-                                                        <img class="img-thumbnail" width="560px" height="700px" src="{{this.url}}" alt="" >
-                                                        {{/with}}
 
-                                                        
-                                                  </div> <!-- end entry-image -->
-                                            </div> <!-- end post-media -->
+                        {{#with FS.GetFile 'images' picture}}
+                        <img class="img-thumbnail" width="560px" height="700px" src="{{this.url}}" alt="" >
+                        {{/with}}
 
-                                            <h3 class="post-title">{{placeName}}</h3>
-                                            <div class="post-meta">
-                                              <p class="author-post">Posted by <a href="#">John Doe</a> / <a href="#">Standard</a></p>
-                                        </div> <!-- end post-meta -->
 
-                                        <div class="post-body">
-                                              <p>
-                                                   {{history}}
-                                             </p>
-                                       </div> <!-- end post-body -->
+                      </div> <!-- end entry-image -->
+                    </div> <!-- end post-media -->
 
-                                 </div> <!-- end post -->
+                    <h3 class="post-title">{{placeName}}</h3>
 
-                           </div> <!-- end blog-post -->
-                           <div id="comments" class="clearfix">
-                              <h5 class="comments-title">
-                                   Comments - {{commentsCount _id}}
-                             </h5>
-                       </div>
-                       {{/with}}
-                       <div id="comments" class="clearfix">
+                    <div class="post-body">
+                      <p>
+                       {{history}}
+                     </p>
+                   </div> <!-- end post-body -->
 
-                        <div class="comment-body">
+                 </div> <!-- end post -->
 
-                             <!-- Blog Comment -->
-                             {{#each comments}}
-                             <div class="media">
-                                  <a class="media-left img-rounded" href="#">
-                                       <img src="/images/avatar.png" alt="Avatar">
-                                 </a>
-                                 <div class="media-body">
-                                       <h6 class="media-heading"><a href="#"> {{name}}
-                                            <p>{{email}}</p>
-                                      </a></h6>
-                                      <p>December 18, 2014 at 11:39 am</p>
-                                      <p>{{comment}}
-                                      </p>
-                                </div> <!-- end media-body -->
-                          </div> <!-- end media -->
-                          {{/each}}
-                          <!-- Blog Comment -->
+               </div> <!-- end blog-post -->
+               <div id="comments" class="clearfix">
+                <h5 class="comments-title">
+                 Comments - {{commentsCount _id}}
+               </h5>
+             </div>
+             {{/with}}
+             <div id="comments" class="clearfix">
 
-                    </div> <!-- end comment-body -->
-                    {{#if currentUser}}
-                    <button type="submit" class="btn clean" data-toggle="modal" data-target="#commentModal">Post comment</button>
-                    {{else}}
-                    <button type="submit" class="btn clean" data-toggle="modal" data-target="#signinBeforeComment">Post comment</button>
-                    {{/if}}
+              <div class="comment-body">
+
+               <!-- Blog Comment -->
+               {{#each comments}}
+               <div class="media">
+                <a class="media-left img-rounded" href="#">
+                 <img src="/images/avatar.png" alt="Avatar">
+               </a>
+               <div class="media-body">
+                 <h6 class="media-heading"><a href="{{pathFor 'view_profile'}}"> {{name}}
+                  <p>{{email}}</p>
+                </a></h6>
+                <p> {{ tm_now createdAt}}</p>
+                <p>{{comment}}
+                </p>
+              </div> <!-- end media-body -->
+            </div> <!-- end media -->
+            {{/each}}
+            <!-- Blog Comment -->
+
+          </div> <!-- end comment-body -->
+          {{#if currentUser}}
+          <button type="submit" class="btn clean" data-toggle="modal" data-target="#commentModal">Post comment</button>
+          {{else}}
+          <button type="submit" class="btn clean" data-toggle="modal" data-target="#signinBeforeComment">Post comment</button>
+          {{/if}}
 
 
 
 
-                    <!-- Comment form -->
+          <!-- Comment form -->
 
-              </div> <!-- end comments -->
+        </div> <!-- end comments -->
 
-        </div> <!-- end col-md-7 -->
+      </div> <!-- end col-md-7 -->
 
-        <div class="col-md-3">
-             <div class="sidebar">
-
-                  <!-- Search -->
-                  <div class="widget">
-                       <div class="widget-search">
-                            <form action="#" method="post" id="search-form">
-                                 <div class="input-group">
-                                      <input type="text" class="form-control search-input" placeholder="Search...">
-                                      <span class="input-group-btn">
-                                           <button class="btn btn-search" type="button"><i class="fa fa-search"></i></button>
-                                     </span>
-                               </div><!-- /input-group -->
-                         </form>
-                   </div> <!-- end widget-search -->
-             </div> <!-- end widget -->
+      <div class="col-md-3">
+       <div class="sidebar">
 
 
 
-             <!-- Recent Posts -->
-             <div class="widget">
-                 <h5>Recent Posts</h5>
-                 <ul>
-                      <li><a href="#" title="Post Title">Standard post with goodies.</a></li>
-                      <li><a href="#" title="Post Title">Fluid video. Yeah we got that.</a></li>
-                      <li><a href="#" title="Post Title">Gallery post with slider.</a></li>
-                </ul>
-          </div> <!-- end widget -->
-    </div> <!-- end sidebar -->
-</div> <!-- end col-md-3 -->
-</div> <!-- end row -->
+         <!-- Recent Posts -->
+         <div class="widget">
+          {{#with eventscomment}}
+          <h5>Recent Posts</h5>
+          <ul>
+           <li><a href="{{pathFor 'events'}}" title="historical places">More historical places</a></li>
+           <li><a href="{{pathFor 'eventPictures' _id=_id}}" title="image gallery">Picture Gallery</a></li>
+         </ul>
+         {{/with}}
+       </div> <!-- end widget -->
+     </div> <!-- end sidebar -->
+   </div> <!-- end col-md-3 -->
+ </div> <!-- end row -->
 
 </div> <!-- end container -->
 </div> <!-- end blog-content-section -->
