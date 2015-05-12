@@ -15,12 +15,13 @@
 
 				<ul class="nav navbar-nav navbar-right">
 					<li class="active"><a href="{{pathFor 'home'}}">Home</a></li>
-
+					{{#if currentUser}}
 					<li class="dropdown"><a href="#portfolio" class="dropdown-toggle js-activated" data-toggle="dropdown">Profile</a>
 						<ul class="dropdown-menu">
 							<li><a href="{{pathFor 'view_profile'}}">Edit Profile</a></li>
 						</ul>
 					</li>
+					{{/if}}
 					<li><a href="{{pathFor 'events'}}">places</a></li>
 					{{#if currentUser}}
 					<li><a href="{{pathFor 'myBoard'}}">dashboard</a></li>
