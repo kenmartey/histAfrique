@@ -30,17 +30,17 @@ AutoForm.hooks({
 
 });
 // this section collects the id of the country and add it to Province collection with Session.get
-AutoForm.hooks({
-	insertProvinceForm: {
-		formToDoc: function(doc, ss, formId) {
-			console.log(doc);
-			doc.country = Session.get('countriesId');
-			console.log(doc);
-			return doc;
-		}
-	}
+// AutoForm.hooks({
+// 	insertProvinceForm: {
+// 		formToDoc: function(doc, ss, formId) {
+// 			console.log(doc);
+// 			doc.country = Session.get('countriesId');
+// 			console.log(doc);
+// 			return doc;
+// 		}
+// 	}
 
-});
+// });
 
 // this section collects the id of the Event and add it to the Comment collection
 AutoForm.hooks({

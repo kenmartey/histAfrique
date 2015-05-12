@@ -10,15 +10,15 @@ Template.events.events({
 	
 });
 //This template helper pulls the id of the countries and gives it to Province with Session.set
-Template.province.events({
-	'change #test': function (e,t) {
-		// var id = this._id
-		var id = $(e.currentTarget).find(':selected').data("id");
-		Session.set('countriesId', id);
-		console.log(id)
-	}
+// Template.province.events({
+// 	'change #test': function (e,t) {
+// 		// var id = this._id
+// 		var id = $(e.currentTarget).find(':selected').data("id");
+// 		Session.set('countriesId', id);
+// 		console.log(id)
+// 	}
 
-});
+// });
 
 
 //This template pulls the id of the event picture
@@ -118,14 +118,33 @@ Template.modals.helpers({
 		return Events.findOne(Session.get('cardId'));
 	},
 	profiledoc: function () {
-		console.log(Session.get('profileId'));
 		return Profiles.findOne(Session.get('profileId'));
 	},
 	imagedoc: function(){
 		// console.log(Session.get('imageUrl'));
 		return Session.get('imageUrl')
 		
-	}
+	},
+//this is linked to the province field in the EVENTS collection
+provinceListings: function() {
+	//I am storing the items in province in config.js in provinceByCountry and filtering using 
+	// Underscore.js to provice _.filter
+	var provinceByCountry =  _.filter(Config.province, function(item, key){
+		//comparing items in the country in Events collection to countries in province
+		//if its true then return the provinces attached to it
+		if (item.country == Session.get ("countries"))
+			return true
+		else return false
+
+	});
+	//Returning the name from provinces attached to country
+	return _.map(provinceByCountry, function(item, key) {
+		return {
+			label: item.name,
+			value: item.name
+		}
+	});
+}
 });
 
 Template.view_profile.events({
@@ -140,4 +159,13 @@ Template.createEventPicture.events({
 		Session.set('imageUrl', this.url());
 	}
 })
+//This sections handles the click event on the customized form in the modal with the Id field
+Template.modals.events({
+	'change #listOfCountries': function (e,t) {
+		var countries = e.currentTarget.value
+		// var countries $(this).find(':selected').data("country");
+		Session.set('countries', countries);
 
+	}
+
+});
