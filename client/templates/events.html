@@ -10,32 +10,17 @@
 			</button>
 
 		</div>
-		<div class="btn-group"> <a class="btn btn-default dropdown-toggle btn-select2" data-toggle="dropdown" href="#">Display by Region  <span class="caret"></span></a>
-			<ul class="dropdown-menu">
-				<li><a href="{{pathFor 'events'}}">View All</a></li>
-				<li><a href="{{pathFor 'eventLocation' location='Ashanti Region'}}">Ashanti Region</a></li>
-				<li><a href="{{pathFor 'eventLocation' location='Brong Ahafo Region'}}">Brong Ahafo Region</a></li>
-				<li><a href="{{pathFor 'eventLocation' location='Central Region'}}">Central Region</a></li>
-				
-				<li><a href="{{pathFor 'eventLocation' location='Greater Accra'}}">Greater Accra</a>
-				</li><li><a href="{{pathFor 'eventLocation' location='Northern Region'}}">Northern Region</a>
-			</li><li><a href="{{pathFor 'eventLocation' location='Upper East'}}">Upper East</a>
-		</li><li><a href="{{pathFor 'eventLocation' location='Upper West'}}">Upper West</a>
-	</li><li><a href="{{pathFor 'eventLocation' location='Volta Region'}}">Volta Region</a>
-</li><li><a href="{{pathFor 'eventLocation' location='Western Region'}}">Western Region</a>
-</li>
-</ul>
-</div>
-{{else}}
-<div class="jumbotron">
-	<h4 align="center">please signIn to add historical place
-	</h4>
-	<p align="center">
+		
+		{{else}}
+		<div class="jumbotron">
+			<h4 align="center">please signIn to add historical place
+			</h4>
+			<p align="center">
 
-		<a href="{{pathFor 'signin'}}" class="btn clean">Sign-In</a>
-	</p>
-</div>
-{{/if}}
+				<a href="{{pathFor 'signin'}}" class="btn clean">Sign-In</a>
+			</p>
+		</div>
+		{{/if}}
 
 <!-- SEARCH BOX BUT N0T FUNCTIONING WELL
 		{{> esInput index="events" placeholder="Search..." }}
@@ -90,7 +75,7 @@
  							</div> <!-- end entry-image -->
 
  							<div class="post-meta">
- 								<p><span class="location">{{country}} | {{province}}</span> | <span class="comment"><a href="{{pathFor 'comments' _id=_id}}">{{commentsCount _id}} Review(s) </a></span> | <span class="likes"><a href="#" data-likes-event="{{_id}}">Like(s) {{likes}}</a></span> | <span class="comment"><a href="{{pathFor 'comments' _id=_id}}">Readmore... </a></span>
+ 								<p><span class="location">{{country}} | {{province}}</span> | <span class="comment"><a href="{{pathFor 'comments' _id=_id}}">{{commentsCount _id}} <i class="fa fa-weixin"></i></a></span> | <span class="likes"><a href="#" data-likes-event="{{_id}}"><i class="fa fa-thumbs-up"></i> {{likes}}</a></span> | <span class="comment"><a href="{{pathFor 'comments' _id=_id}}">Readmore... </a></span>
  								</p>
  							</div> <!-- end post-meta -->
  							<h4 class="post-title"><a href="{{pathFor 'comments'}}">{{placeName}}</a></h4>

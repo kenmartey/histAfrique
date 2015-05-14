@@ -129,12 +129,17 @@ Template.modals.helpers({
 provinceListings: function() {
 	//I am storing the items in province in config.js in provinceByCountry and filtering using 
 	// Underscore.js to provice _.filter
+	console.log(Config.province.length)
 	var provinceByCountry =  _.filter(Config.province, function(item, key){
 		//comparing items in the country in Events collection to countries in province
 		//if its true then return the provinces attached to it
-		if (item.country == Session.get ("countries"))
+
+		console.log(item)
+		if (item.country == Session.get ("countries")){
 			return true
-		else return false
+		} else {
+			return false
+		}
 
 	});
 	//Returning the name from provinces attached to country
