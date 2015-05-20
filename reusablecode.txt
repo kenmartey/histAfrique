@@ -219,3 +219,91 @@ Are you sure you want to proceed deleting this event with it's history and image
 // 	}
 
 // });
+
+
+
+
+
+
+
+
+{{#if currentUser}}
+<li class="dropdown"><a href="#portfolio" class="dropdown-toggle js-activated" data-toggle="dropdown">Profile</a>
+<ul class="dropdown-menu">
+<li><a href="{{pathFor 'view_profile'}}">Edit Profile</a></li>
+</ul>
+</li>
+{{/if}}
+<li><a href="{{pathFor 'events'}}">places</a></li>
+{{#if currentUser}}
+<li><a href="{{pathFor 'myBoard'}}">dashboard</a></li>
+{{/if}}
+
+<!-- <li><a href="contact.html">Contact</a></li> -->
+{{#if currentUser}}
+<li><a href="{{pathFor 'signout'}}">Sign-Out</a>
+</li>
+{{else}}
+<li><a href="{{pathFor 'signup'}}">Register</a>
+</li>
+<li><a href="{{pathFor 'signin'}}">Sign-In</a>
+</li>
+{{/if}}
+
+
+
+
+
+=========Countries field in a collection =============
+//for countries and provinces
+
+country: {
+type: String,
+autoform: {
+options: function() {
+return _.map(Config.countries, function(item, key) {
+return {
+label: item,
+value: item
+}
+});
+}
+}
+},
+province: {
+type: String,
+autoform: {
+options: []
+}
+
+}, 
+
+Template.modals.events{
+//this is linked to the province field in the EVENTS collection
+provinceListings: function() {
+//I am storing the items in province in config.js in provinceByCountry and filtering using 
+// Underscore.js to provice _.filter
+// console.log(Config.province.length)
+var index = _.pluck(Config.countries, 'country').indexOf(Session.get('countries'));
+console.log(index)
+// var provinceByCountry =  _.filter(Config.province, function(item, key){
+// 	//comparing items in the country in Events collection to countries in province
+// 	//if its true then return the provinces attached to it
+
+// 	// console.log(item)
+// 	if (item.country == Session.get ("countries")){
+// 		return true
+// 	} else {
+// 		return false
+// 	}
+
+// });
+// //Returning the name from provinces attached to country
+// return _.map(provinceByCountry, function(item, key) {
+// 	return {
+// 		label: item.province,
+// 		value: item.province
+// 	}
+// });
+}
+}

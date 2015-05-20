@@ -446,3 +446,19 @@ END OF CUSTOME CSS
   .view_profile{
     height: 550px;
   }
+/* 
+<======================Admin Dashboard Collection======================>
+*/
+.eventcollection{
+  margin-top: 200px;
+}
+
+.admin-layout{
+  /*margin-top: 200px;*/
+}
+.content-wrapper, .right-side{
+  margin-top: 40px;
+}
+.content{
+  margin-top: -13px;
+}

@@ -71,7 +71,8 @@ AutoForm.hooks({
 	insertEventForm: {
 		onSuccess: function(formType, result) {
 			$('#createEvent').modal('hide');
-			return $('#eventSuccess').modal('show');
+			// return $('#eventSuccess').modal('show');
+			swal("Good job!", "You have successfully added a historical place", "success");
 		}
 	},
 	updateEventForm:{
@@ -94,7 +95,9 @@ AutoForm.hooks({
 	insertEventPictureForm:{
 		onSuccess: function(formType, result) {
 			$('#createEventPicture').modal('hide');
-			return $('#EventPicturesSuccess').modal('show');
+			// return $('#EventPicturesSuccess').modal('show');
+			swal("Great Job!", "You have successfully added an image", "success");
+
 		}
 	},
 	insertBookingForm:{
@@ -111,7 +114,8 @@ AutoForm.hooks({
 	insertCommentForm:{
 		onSuccess: function(formType, result){
 			$('#commentModal').modal('hide');
-			return $('#successCommentModal').modal('show');
+			// return $('#successCommentModal').modal('show');
+			return swal("Good job!", "Thanks for your comment", "success")
 		}
 	}
 });

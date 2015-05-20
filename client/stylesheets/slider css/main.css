@@ -161,7 +161,7 @@
 	}
 
 	/*text content on banner*/
-	.content
+	.content-home-slider 
 	{
 		margin:0 auto;
 		text-align:center;
@@ -171,7 +171,7 @@
 		-webkit-transform: translateY(-50%);
 		-moz-transform: translateY(-50%);
 		-o-transform: translateY(-50%);
-
+		/*margin-top: 200px;*/
 
 	}
 

@@ -22,15 +22,18 @@
 		</div>
 		{{/if}}
 
-<!-- SEARCH BOX BUT N0T FUNCTIONING WELL
-		{{> esInput index="events" placeholder="Search..." }}
+		<!-- SEARCH BOX BUT N0T FUNCTIONING WELL -->
+		
 
-		<ul>
+		<!-- <ul>
 			{{#esEach index="events"}}
-			<li>Name of the place: {{placeName}}</li>
+			<li>{{placeName}}</li>
+			<li>{{country}}</li>
+			<li>{{province}}</li>
+
 			{{/esEach}}
 		</ul> -->
-
+		
 	</div>
 	<div class="container">
 		<div class="row search-row">
@@ -38,6 +41,7 @@
 				<form id="custom-search-form" class="form-search form-horizontal pull-right">
 					<div class="input-append span12">
 						<input type="text" class="search-query" placeholder="Search">
+						<!-- {{> esInput index="placeName" class="search-query" placeholder="Search..." }} -->
 						<button type="submit" class="btn"><i class="icon-search"></i></button>
 					</div>
 				</form>
@@ -57,7 +61,7 @@
  			</div> <!-- end title-section -->
  			<div class="blog-posts">
  				<div class="row">
-
+ 					
  					{{#each createevents}}
  					<!-- Post -->
  					<div class="col-md-4">
@@ -85,7 +89,7 @@
  						</div> <!-- end entry-post -->
  					</div> <!-- end col-md-4 -->
  					{{/each}}
-
+ 					
 
  				</div> <!-- end row -->
  			</div> <!-- end blog-posts -->

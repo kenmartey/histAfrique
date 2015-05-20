@@ -129,24 +129,27 @@ Template.modals.helpers({
 provinceListings: function() {
 	//I am storing the items in province in config.js in provinceByCountry and filtering using 
 	// Underscore.js to provice _.filter
-	console.log(Config.province.length)
-	var provinceByCountry =  _.filter(Config.province, function(item, key){
-		//comparing items in the country in Events collection to countries in province
-		//if its true then return the provinces attached to it
+	// console.log(Config.province.length)
+	var index = _.pluck(Config.countries, 'country').indexOf(Session.get('countries'));
+	console.log(index)
+	provinceByCountry = Config.countries[index].province
+	// var provinceByCountry =  _.filter(Config.province, function(item, key){
+	// 	//comparing items in the country in Events collection to countries in province
+	// 	//if its true then return the provinces attached to it
 
-		console.log(item)
-		if (item.country == Session.get ("countries")){
-			return true
-		} else {
-			return false
-		}
+	// 	// console.log(item)
+	// 	if (item.country == Session.get ("countries")){
+	// 		return true
+	// 	} else {
+	// 		return false
+	// 	}
 
-	});
-	//Returning the name from provinces attached to country
+	// });
+	// //Returning the name from provinces attached to country
 	return _.map(provinceByCountry, function(item, key) {
 		return {
-			label: item.name,
-			value: item.name
+			label: item,
+			value: item
 		}
 	});
 }

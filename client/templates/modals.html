@@ -10,15 +10,12 @@
 				<div class="modal-body">
 					{{#autoForm collection="Events" id="insertEventForm" type="insert"}}
 					<fieldset>
-
 						{{> afQuickField name='placeName'}}
 						{{> afQuickField name='history' rows=3}}
 						{{> afQuickField name='source'}}
 						{{> afQuickField name='country' id='listOfCountries'}}
 						{{> afQuickField name='province' options=provinceListings}}
 						{{> afQuickField name='picture'}}
-
-
 					</fieldset>
 					<button type="submit" class="btn btn-primary">Insert</button>
 					{{/autoForm}}
