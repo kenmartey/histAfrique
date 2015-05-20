@@ -302,8 +302,8 @@ END OF CUSTOME CSS
 /* Footer styles
 -------------------------------------------------- */
 .footer-social-media{
-  margin-top: 128px;
-  margin-left: 95px;
+  margin-top: 126px;
+  margin-left: 600px;
 }
 .full {
   width: 100%;  
@@ -445,6 +445,11 @@ END OF CUSTOME CSS
   }
   .view_profile{
     height: 550px;
+  }
+  .source{
+    width:300px;
+    margin-left: 370px;
+    margin-top: -29px;
   }
 /* 
 <======================Admin Dashboard Collection======================>

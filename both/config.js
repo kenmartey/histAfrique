@@ -58,9 +58,16 @@ Config = {
 
 	{country: "Botswana",
 	province:[
-	"Accra", 
-	"",
-	""
+	"Gaborone",
+	"Francistown",
+	"Molepolole",
+	"Selebi-Phikwe",
+	"Maun",
+	"Serowe",
+	"Kanye",
+	"Mahalapye",
+	"Mogoditshane",
+	"Mochudi"
 	]},
 
 	{country: "Burkina Faso",
@@ -159,12 +166,6 @@ Config = {
 	"Western Region"
 	]},
 
-	{country: "Canary Islands",
-	province:[
-	"UpperNigeria",
-	"",
-	""
-	]},
 	{country: "Cape Verde",
 	province:[
 	"Accra", 
@@ -559,9 +560,16 @@ Config = {
 
 	{country: "Senegal",
 	province:[
-	"",
-	"",
-	""
+	"Dakar",  
+	"Grand Dakar", 
+	"Pikine", 
+	"Touba",
+	"Thiès Nones",
+	"Saint-Louis", 
+	"Kaolack",
+	"Ziguinchor",
+	"Tiébo",
+	"Tambacounda"
 	]},
 	{country: "Seychelles",
 	province:[
@@ -578,16 +586,41 @@ Config = {
 	]},
 	{country: "Somalia",
 	province:[
-	"", 
-	"",
-	""
+	"Banaadir",
+	"Woqooyi Galbeed",
+	"Bari",
+	"Mudug	",
+	"Woqooyi Galbeed",
+	"Lower Shebelle",
+	"Lower Juba",
+	"Awdal",
+	"9Lower Juba",
+	"Bay"	,
+	"Togdheer",
+	"Lower Shebelle",
+	"Hiran"	,
+	"Lower Shebelle",
+	"Nugal"	,
+	"Middle Shebelle",
+	"Gedo",
+	"Bari",
+	"Sanaag",
+	"Gedo",
+	"Sool"
 	]},
 
 	{country: "South Africa",
 	province:[
-	"",
-	"",
-	""
+	"Cape Town",
+	"Durban",
+	"Johannesburg" ,
+	"Soweto",
+	"Pretoria" ,
+	"Port Elizabeth",
+	"Pietermaritzburg",
+	"Benoni",
+	"Tembisa",
+	"East London"
 	]},
 	{country: "Sudan",
 	province:[
@@ -655,6 +688,5 @@ Config = {
 	]}
 
 	]
-
 
 }

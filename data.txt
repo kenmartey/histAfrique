@@ -36,3 +36,85 @@ options: []
 // province: [{
 
 // },
+
+cape verde{
+Praia
+Mindelo 
+Santa Maria
+Cova Figueira
+Santa Cruz
+Pedra Badejo
+São Filipe
+Assomada
+1Espargos 
+}
+
+CENTRAL AFRI. REP{
+
+
+Bangui
+Mbaïki
+Berbérati
+Kaga-Bandoro
+Bozoum
+Carnot
+Sibut
+Bambari
+Bria 
+
+}
+
+CEUTA{
+Tetouan
+Tangier
+Cadiz
+Jerez
+Malaga
+Sevilla
+Fez
+Granada
+Huelva
+Kenitra
+Cordoba
+Jaen
+Rabat
+Almeria
+Casablanca
+Badajoz
+Ciudad Real
+Cáceres
+Wahran
+Cartagena
+Murcia
+Toledo
+Móstoles
+Salamanca
+
+}
+
+CHAD{
+N'Djamena
+Moundou
+Sarh
+Abéché
+Kélo
+Koumra
+Pala
+Am Timan
+Mongo
+Bongor
+}
+
+COMOROS{
+Moroni
+Moutsamoudou
+Fomboni
+Domoni
+Adda-Douéni
+Sima
+Ouani
+Mirontsi
+Mkiriwadjumoi
+Koni-Djodjo
+
+}
