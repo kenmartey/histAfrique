@@ -3,7 +3,7 @@
 		<!-- {{> Events}} -->
 		
 		{{#if currentUser}}
-		<div class="createevent">
+		<div class="createevent animated bounceIn">
 			
 			<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#createEvent">
 				<h4>Add history</h4>
@@ -24,16 +24,6 @@
 
 		<!-- SEARCH BOX BUT N0T FUNCTIONING WELL -->
 		
-
-		<!-- <ul>
-			{{#esEach index="events"}}
-			<li>{{placeName}}</li>
-			<li>{{country}}</li>
-			<li>{{province}}</li>
-
-			{{/esEach}}
-		</ul> -->
-		
 	</div>
 	<div class="container">
 		<div class="row search-row">
@@ -41,7 +31,7 @@
 				<form id="custom-search-form" class="form-search form-horizontal pull-right">
 					<div class="input-append span12">
 						<input type="text" class="search-query" placeholder="Search">
-						<!-- {{> esInput index="placeName" class="search-query" placeholder="Search..." }} -->
+						
 						<button type="submit" class="btn"><i class="icon-search"></i></button>
 					</div>
 				</form>
@@ -54,7 +44,7 @@
  <section>
  	<div id="blog-section">
  		<div class="container">
- 			<div class="title-section animated out" data-animation="fadeInUp" data-delay="0">
+ 			<div class="title-section animated bounceInUp" data-animation="fadeInUp" data-delay="0">
  				<h3>Historical places with images and History</h3>
  				<hr>
  				<p>Post historical place with its picture and people can share their experiences</p>
@@ -64,9 +54,9 @@
  					
  					{{#each createevents}}
  					<!-- Post -->
- 					<div class="col-md-4">
- 						<div class="entry-post animated out" data-animation="fadeInLeft" data-delay="0">
- 							<div class="entry-image resize">
+ 					<div class="col-md-4 wow zoomIn">
+ 						<div class="entry-post " data-animation="fadeInLeft" data-delay="0">
+ 							<div class="entry-image resize wow fadeInUp">
  								<a href="{{pathFor 'eventPictures'  _id=_id}}" id="eventpicture">
  									{{#with FS.GetFile 'images' picture}}
  									<img class="img-thumbnail" width="560px" height="700px" src="{{this.url}}" alt="" >

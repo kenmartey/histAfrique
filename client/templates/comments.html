@@ -85,13 +85,9 @@
                 <a class="media-left img-rounded" href="#">
                  <img src="/images/avatar.png" alt="Avatar">
                </a>
-               {{#each profiles}}
-               {{#with FS.GetFile 'images' picture}}
-               <img align="left" class="fb-image-profile thumbnail" width="170px" height="200px" src="{{this.url}}" alt="" >
-               {{/with}}
-               {{/each}}
+               
                <div class="media-body">
-                 <h6 class="media-heading"><a href="{{pathFor 'view_profile'}}"> {{name}}
+                 <h6 class="media-heading"><a href="#"> {{name}}
                   <p>{{email}}</p>
                 </a></h6>
                 <p> {{ tm_now createdAt}}</p>

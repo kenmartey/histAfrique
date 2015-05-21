@@ -10,7 +10,7 @@ AccountsTemplates.configureRoute('signUp', {
 	// path: '/login',
 	// template: 'myLogin',
 	// layoutTemplate: 'myLayout',
-	redirect: '/create_profile'
+	redirect: '/dashboard'
 });
 AccountsTemplates.configureRoute('signOut', {
 	// name: 'signin',
@@ -28,7 +28,9 @@ var mySubmitFunc = function(error, state){
   }
   if (state === "signUp") {
       // Successfully registered
-      return $('#signupSuccess').modal('show');
+      // return $('#signupSuccess').modal('show');
+      return swal("Good job!", "You have successfully signed up", "success");
+
   }
 }
 };

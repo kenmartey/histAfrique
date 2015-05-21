@@ -20,35 +20,24 @@
 
 					<!-- this is where the nav bar items(Profile, dashboard, signIn and signOut. it should be uncommented one by one ) should be. -->
 
-					<!-- {{#if currentUser}} -->
-					<!-- <li class="dropdown"><a href="#portfolio" class="dropdown-toggle js-activated" data-toggle="dropdown">Profile</a> -->
-					<!-- <ul class="dropdown-menu"> -->
-					<!-- <li><a href="{{pathFor 'view_profile'}}">Edit Profile</a></li> -->
-					<!-- </ul> -->
-					<!-- </li> -->
-					<!-- {{/if}} -->
-					<!-- <li><a href="{{pathFor 'events'}}">places</a></li> -->
-					<!-- {{#if currentUser}} -->
-					<!-- <li><a href="{{pathFor 'myBoard'}}">dashboard</a></li> -->
-					<!-- {{/if}} -->
-
-					<!-- <li><a href="contact.html">Contact</a></li> -->
-					<!-- {{#if currentUser}} -->
-					<!-- <li><a href="{{pathFor 'signout'}}">Sign-Out</a> -->
-					<!-- </li> -->
-					<!-- {{else}} -->
-					<!-- <li><a href="{{pathFor 'signup'}}">Register</a> -->
-					<!-- </li> -->
-					<!-- <li><a href="{{pathFor 'signin'}}">Sign-In</a> -->
-					<!-- </li> -->
-					<!-- {{/if}} -->
 					
-
-
-
+					<li><a href="{{pathFor 'events'}}">places</a></li> 
+					{{#if currentUser}}
+					<li><a href="{{pathFor 'myBoard'}}">dashboard</a></li>
+					{{/if}} 
+					<li><a href="contact.html">Contact</a></li> 
+					{{#if currentUser}}
+					<li><a href="{{pathFor 'signout'}}">Sign-Out</a>
+					</li>
+					{{else}}
+					<li><a href="{{pathFor 'signup'}}">Register</a>
+					</li>
+					<li><a href="{{pathFor 'signin'}}">Sign-In</a>
+					</li> 
+					{{/if}} 
 				</ul>
 			</div><!--/.nav-collapse -->
 		</div><!--/.container -->
 	</div><!--navbar-default end-->
-	
+
 </template>

@@ -131,7 +131,7 @@ provinceListings: function() {
 	// Underscore.js to provice _.filter
 	// console.log(Config.province.length)
 	var index = _.pluck(Config.countries, 'country').indexOf(Session.get('countries'));
-	console.log(index)
+	// console.log(index)
 	provinceByCountry = Config.countries[index].province
 	// var provinceByCountry =  _.filter(Config.province, function(item, key){
 	// 	//comparing items in the country in Events collection to countries in province
@@ -155,12 +155,12 @@ provinceListings: function() {
 }
 });
 
-Template.view_profile.events({
-	'click .editprofile': function(e, t){
-		console.log(this._id);
-		Session.set('profileId', this._id);
-	}
-})
+// Template.view_profile.events({
+// 	'click .editprofile': function(e, t){
+// 		console.log(this._id);
+// 		Session.set('profileId', this._id);
+// 	}
+// })
 Template.createEventPicture.events({
 	'click .imageclick': function(e,t){
 		console.log(this.url());
@@ -177,3 +177,6 @@ Template.modals.events({
 	}
 
 });
+Template.events.rendered = function () {
+	new WOW().init();
+};
