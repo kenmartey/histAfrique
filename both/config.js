@@ -140,16 +140,30 @@ Config = {
 	]},
 	{country: "Burundi",
 	province:[
-	"Accra", 
-	"",
-	""
+	"Bujumbura",
+	"Muyinga ",
+	"Ruyigi ",
+	"Gitega",
+	"Ngozi",
+	"Rutana",
+	"Bururi",
+	"Makamba",
+	"Kayanza",
+	"Muramvya"
 	]},
 
 	{country: "Cameroon",
 	province:[
-	"UpperNigeria",
-	"",
-	""
+	"Douala",
+	"Yaoundé",
+	"Garoua",
+	"Kousséri",
+	"Bamenda",
+	"Maroua",
+	"Bafoussam",
+	"Mokolo",
+	"Ngaoundéré",
+	"Bertoua"
 	]},
 	
 
@@ -325,9 +339,16 @@ Config = {
 
 	{country: "Djibouti",
 	province:[
-	"",
-	"",
-	""
+	"Djibouti",
+	"Ḏânan",
+	"Ali Sabih",
+	"Tadjoura",
+	"Obock",
+	"Dikhil",
+	"Arta",
+	"Holhol",
+	"Goubétto",
+	"Dorra"
 	]},
 	{country: "Egypt",
 	province:[
@@ -360,15 +381,21 @@ Config = {
 	"Talkha", 
 	"Tanta",
 	"Qena",
-	"Zagazig",
-	
+	"Zagazig"
 	]},
 
 	{country: "Equatorial Guinea",
 	province:[
-	"",
-	"",
-	""
+	"Bata",
+	"Malabo",
+	"Ebebiyin",
+	"Aconibe",
+	"Añisoc",
+	"Luba",
+	"Evinayong",
+	"Mongomo",
+	"Mikomeseng",
+	"Rebola"
 	]},
 	{country: "Eritrea",
 	province:[
@@ -379,22 +406,43 @@ Config = {
 
 	{country: "Ethiopia",
 	province:[
-	"",
-	"",
-	""
+	"Addis Ababa",
+	"Dire Dawa",
+	"Mek’elē",
+	"Nazrēt",
+	"Bahir Dar",
+	"Gonder",
+	"Dessie",
+	"Awasa",
+	"Jīma",
+	"Bishoftu"
 	]},
 	{country: "Gabon",
 	province:[
-	"", 
-	"",
-	""
+	"Libreville",
+	"Port-Gentil ",
+	"Franceville",
+	"Oyem",
+	"Moanda",
+	"Mouila",
+	"Lambaréné",
+	"Tchibanga",
+	"Koulamoutou",
+	"Makokou"
 	]},
 
 	{country: "Gambia",
 	province:[
-	"",
-	"",
-	""
+	"Brikama",
+	"Bakau",
+	"Banjul",
+	"Farafenni",
+	"Lamin",
+	"Sukuta",
+	"Basse Santa Su",
+	"Gunjur",
+	"Soma",
+	"Sabi"
 	]},
 	{country: "Ghana",
 	province:[
@@ -412,48 +460,97 @@ Config = {
 
 	{country: "Guinea",
 	province:[
-	"",
-	"",
-	""
+	"Camayenne",
+	"Conakry",
+	"Nzérékoré",
+	"Kindia",
+	"Kankan",
+	"Gueckedou",
+	"Coyah",
+	"Port Kamsar",
+	"Labé",
+	"Kissidougou"
 	]},
 	{country: "Guinea-Bissau",
 	province:[
-	"", 
-	"",
-	""
+	"Bissau",
+	"Bafatá",
+	"Gabú",
+	"Bissorã",
+	"Bolama",
+	"Cacheu",
+	"Catió",
+	"Bubaque",
+	"Mansôa",
+	"Buba"
 	]},
 
 	{country: "Kenya",
 	province:[
-	"",
-	"",
-	""
+	"Nairobi",
+	"Mombasa",
+	"Nakuru",
+	"Eldoret",
+	"Kisumu",
+	"Thika",
+	"Malindi",
+	"Kitale",
+	"Garissa",
+	"Kakamega"
 	]},
 	{country: "Lesotho",
 	province:[
-	"", 
-	"",
-	""
+	"Maseru",
+	"Mafeteng",
+	"Hlotse",
+	"Maputsoe ",
+	"Mohale's Hoek",
+	"Qacha's Nek",
+	"Quthing",
+	"Butha-Buthe",
+	"Nako",
+	"Mokhotlong"
 	]},
 
 	{country: "Liberia",
 	province:[
-	"",
-	"",
-	""
+	"Monrovia",
+	"Gbarnga",
+	"Kakata",
+	"Bensonville City",
+	"Harper City",
+	"Voinjama",
+	"Buchanan",
+	"Zwedru",
+	"New Yekepa",
+	"Greenville"
 	]},
 	{country: "Libya",
 	province:[
-	"", 
-	"",
-	""
+	"Tripoli",
+	"Benghazi",
+	"Misratah",
+	"Tarhuna",
+	"Al Khums",
+	"Az Zāwīyah",
+	"Zawiya",
+	"Ajdabiya",
+	"Sabha",
+	"Sirte"
 	]},
 
 	{country: "Madagascar",
 	province:[
-	"",
-	"",
-	""
+	"Antananarivo",
+	"Toamasina",
+	"Antsirabe",
+	"Fianarantsoa",
+	"Mahajanga",
+	"Toliara",
+	"Antsiranana",
+	"Antanifotsy",
+	"Ambovombe",
+	"Ambilobe"
 	]},
 	{country: "Madeira",
 	province:[
@@ -464,9 +561,16 @@ Config = {
 
 	{country: "Malawi",
 	province:[
-	"",
-	"",
-	""
+	"Lilongwe",
+	"Blantyre",
+	"Mzuzu",
+	"Zomba",
+	"Kasungu",
+	"Mangochi",
+	"Karonga",
+	"Salima",
+	"Nkhotakota",
+	"Liwonde"
 	]},
 	{country: "Mali",
 	province:[
@@ -497,16 +601,30 @@ Config = {
 	]},
 	{country: "Mauritius",
 	province:[
-	"", 
-	"",
-	""
+	"Port Louis",
+	"Vacoas",
+	"Curepipe",
+	"Quatre Bornes",
+	"Triolet",
+	"Goodlands",
+	"Centre de Flacq",
+	"Bel Air Rivière Sèche",
+	"Mahébourg",
+	"Saint Pierre"
 	]},
 
 	{country: "Mayotte",
 	province:[
-	"",
-	"",
-	""
+	"Mamoudzou",
+	"Koungou",
+	"Dzaoudzi",
+	"Dembeni",
+	"Sada",
+	"Pamandzi",
+	"Bandraboua",
+	"Mtsamboro",
+	"Tsingoni",
+	"Ouangani"
 	]},
 	{country: "Melilla",
 	province:[
@@ -611,9 +729,16 @@ Config = {
 	]},
 	{country: "Republic of the Congo",
 	province:[
-	"", 
-	"",
-	""
+	"Brazzaville",
+	"Pointe-Noire",
+	"Dolisie",
+	"Kayes",
+	"Owando",
+	"Ouésso",
+	"Loandjili",
+	"Madingou",
+	"Gamboma",
+	"Impfondo"
 	]},
 
 	{country: "Réunion",
@@ -645,15 +770,17 @@ Config = {
 
 	{country: "Saint Helena",
 	province:[
-	"",
-	"",
-	""
+	"Half Tree Hollow",
+	"Longwood",
+	"Jamestown",
+	"Georgetown",
+	"Levelwood",
+	"Edinburgh of the Seven Seas"
 	]},
 	{country: "São Tomé and Príncipe",
 	province:[
-	"", 
-	"",
-	""
+	"São Tomé",
+	"Santo António"
 	]},
 
 	{country: "Senegal",
@@ -815,9 +942,12 @@ Config = {
 	]},
 	{country: "Western Sahara",
 	province:[
-	"", 
-	"",
-	""
+	"Laâyoune / El Aaiún",
+	"Dakhla",
+	"Smara",
+	"Laayoune Plage",
+	"Daoura",
+	"Foum el Oued"
 	]},
 	{country: "Zambia",
 	province:[
