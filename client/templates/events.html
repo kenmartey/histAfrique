@@ -2,36 +2,35 @@
 	<div class="body">
 		<!-- {{> Events}} -->
 		
-		{{#if currentUser}}
 		<div class="createevent animated bounceIn">
+			{{#if currentUser}}
 			
-			<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#createEvent">
+			<button type="button" class="btn btn-primary btn-lg createeventbutton" data-toggle="modal" data-target="#createEvent">
 				<h4>Add history</h4>
 			</button>
-
+			{{/if}}
 		</div>
 		
-		{{else}}
-		<div class="jumbotron">
-			<h4 align="center">please signIn to add historical place
-			</h4>
-			<p align="center">
+		<!-- {{else}} -->
+		<!-- <div class="jumbotron"> -->
+			<!-- <h4 align="center">please signIn to add historical place
+		</h4> -->
+		<!-- <p align="center"> -->
 
-				<a href="{{pathFor 'signin'}}" class="btn clean">Sign-In</a>
-			</p>
-		</div>
-		{{/if}}
+		<!-- <a href="{{pathFor 'signin'}}" class="btn clean">Sign-In</a> -->
+		<!-- </p> -->
+		<!-- </div> -->
+		<!-- {{/if}} -->
 
 		<!-- SEARCH BOX BUT N0T FUNCTIONING WELL -->
-		
+
 	</div>
 	<div class="container">
-		<div class="row search-row">
+		<div class="row">
 			<div class="span12">
 				<form id="custom-search-form" class="form-search form-horizontal pull-right">
 					<div class="input-append span12">
 						<input type="text" class="search-query" placeholder="Search">
-						
 						<button type="submit" class="btn"><i class="icon-search"></i></button>
 					</div>
 				</form>

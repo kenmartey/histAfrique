@@ -62,7 +62,12 @@
                        {{history}}
                      </p>
                      <p>
-                       Source of Information: {{source}}
+                       Source of Information: {{source}}<br>
+                       <!-- {{> lmSocialShare opts=opts}} -->
+                       <!-- {{> shareit dataContext}} -->
+                       <!-- <div class="fb-share-button" data-href="http://histafrique.meteor.com/" data-layout="button_count"></div> -->
+                       
+                       <!-- posted by: {{username}} -->
                      </p>
                    </div> <!-- end post-body -->
 
@@ -83,7 +88,7 @@
                {{#each comments}}
                <div class="media">
                 <a class="media-left img-rounded" href="#">
-                 <img src="/images/avatar.png" alt="Avatar">
+                 <i class="fa fa-comments fa-3x"></i>
                </a>
                
                <div class="media-body">
@@ -126,6 +131,9 @@
           <ul>
            <li><a href="{{pathFor 'events'}}" title="historical places">More historical places</a></li>
            <li><a href="{{pathFor 'eventPictures' _id=_id}}" title="image gallery">Picture Gallery</a></li>
+
+           <li> <a href="http://www.facebook.com/sharer.php?u={{urlFor 'comments' _id=_id}}" target="_blank" class="btn btn-block btn-social btn-facebook"><i class="fa fa-facebook"></i>Share on facebook</a></li>
+           <li> <a href="http://twitter.com/share?url={{urlFor 'comments' _id=_id}}" target="_blank" class="btn btn-block btn-social btn-twitter"><i class="fa fa-facebook"></i>Share on twitter</a></li>
          </ul>
          {{/with}}
        </div> <!-- end widget -->

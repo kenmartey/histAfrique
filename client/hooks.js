@@ -1,3 +1,20 @@
+Router.onBeforeAction(function(pause) {
+	if (!Meteor.user()) {
+    // pause();
+    swal({   title: "histAfrique alert!",   text: "you need to be logged-in to view this page, Redirecting you to Home!",   timer: 4000,   showConfirmButton: false });
+
+    // alert(
+    // 	"you need to be logged-in to view this page, Redirecting you to Home!"
+    // 	)
+Router.go('\home');
+} else {
+	this.next();
+}
+}, {
+	except: ['home', 'events', 'signup', 'signin', 'signout']
+});
+
+
 AutoForm.addHooks(null, {
 	onError: function(operation, error, template) {
 		console.log('Error: ' + error);
@@ -119,3 +136,5 @@ AutoForm.hooks({
 		}
 	}
 });
+
+

@@ -12,19 +12,20 @@ AccountsTemplates.configureRoute('signUp', {
 	// layoutTemplate: 'myLayout',
 	redirect: '/dashboard'
 });
-AccountsTemplates.configureRoute('signOut', {
-	// name: 'signin',
-	// path: '/login',
-	// template: 'myLogin',
-	// layoutTemplate: 'myLayout',
-	redirect: '/events'
-});
+// AccountsTemplates.configureRoute('signOut', {
+// 	// name: 'signin',
+// 	// path: '/login',
+// 	// template: 'myLogin',
+// 	// layoutTemplate: 'myLayout',
+// 	redirect: '/events'
+// });
 var mySubmitFunc = function(error, state){
 	if (!error) {
 		if (state === "signIn") {
       // Successfully logged in
-      return $('#signinSuccess').modal('show');
-      
+      // return $('#signinSuccess').modal('show');
+      return swal("Welcome!", "You have successfully signedIn", "success");
+
   }
   if (state === "signUp") {
       // Successfully registered

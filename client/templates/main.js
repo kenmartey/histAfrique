@@ -76,12 +76,24 @@ Template.events.helpers({
 	}
 });
 Template.events.events({
+
 	'click .likes': function(){
 		eventsId = Session.get('eventId');
 		console.log(eventsId)
 		myevents = Events.update(eventsId, {$inc:{likes: +1 }});
 		console.log(myevents)
 	}
+	// 'click .createeventbutton': function(event, template){
+	// 	event.preventDefault();
+	// 	if (!Meteor.userId()){
+	// 		alert("yupi have clicke me")
+	// 		return $('#createEvent').modal('hide');
+	// 	}
+	// 	else{
+	// 		Router.go('events')
+	// 	}
+	// }
+
 })
 
 // i am yet to add likes code....
@@ -124,49 +136,8 @@ Template.modals.helpers({
 		// console.log(Session.get('imageUrl'));
 		return Session.get('imageUrl')
 		
-	},
-//this is linked to the province field in the EVENTS collection
-provinceListings: function() {
-	//I am storing the items in province in config.js in provinceByCountry and filtering using 
-	// Underscore.js to provice _.filter
-	// console.log(Config.province.length)
-	var index = _.pluck(Config.countries, 'country').indexOf(Session.get('countries'));
-	// console.log(index)
-	provinceByCountry = Config.countries[index].province
-	// var provinceByCountry =  _.filter(Config.province, function(item, key){
-	// 	//comparing items in the country in Events collection to countries in province
-	// 	//if its true then return the provinces attached to it
-
-	// 	// console.log(item)
-	// 	if (item.country == Session.get ("countries")){
-	// 		return true
-	// 	} else {
-	// 		return false
-	// 	}
-
-	// });
-	// //Returning the name from provinces attached to country
-	return _.map(provinceByCountry, function(item, key) {
-		return {
-			label: item,
-			value: item
-		}
-	});
-}
-});
-
-// Template.view_profile.events({
-// 	'click .editprofile': function(e, t){
-// 		console.log(this._id);
-// 		Session.set('profileId', this._id);
-// 	}
-// })
-Template.createEventPicture.events({
-	'click .imageclick': function(e,t){
-		console.log(this.url());
-		Session.set('imageUrl', this.url());
 	}
-})
+});
 //This sections handles the click event on the customized form in the modal with the Id field
 Template.modals.events({
 	'change #listOfCountries': function (e,t) {
@@ -177,6 +148,53 @@ Template.modals.events({
 	}
 
 });
+Template.registerHelper('provinceListings', function () {
+//this is linked to the province field in the EVENTS collection
+
+
+var index = _.pluck(Config.countries, 'country').indexOf(Session.get('countries'));
+
+var provinceByCountry = Config.countries[index] ? (Config.countries[index]).province : null
+
+	// //Returning the name from provinces attached to country
+
+	return _.map(provinceByCountry, function(item, key) {
+		return {
+			label: item,
+			value: item
+		}
+	});
+	
+});
+
+Template.createEventPicture.events({
+	'click .imageclick': function(e,t){
+		console.log(this.url());
+		Session.set('imageUrl', this.url());
+	}
+})
+
 Template.events.rendered = function () {
 	new WOW().init();
 };
+
+Template.myBoard.rendered = function () {
+
+	$('[data-toggle=offcanvas]').click(function() {
+		$('.row-offcanvas').toggleClass('active');
+	});
+
+};
+
+Template.comments.rendered = function() {
+	try {
+		FB.XFBML.parse();
+	}catch(e) {}   
+};
+
+Template.registerHelper('username', function(_id){
+	var user = Meteor.user();
+	if (user && user.emails)
+		return user.emails[0].address;
+})
+

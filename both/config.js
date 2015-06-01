@@ -397,12 +397,6 @@ Config = {
 	"Mikomeseng",
 	"Rebola"
 	]},
-	{country: "Eritrea",
-	province:[
-	"", 
-	"",
-	""
-	]},
 
 	{country: "Ethiopia",
 	province:[
@@ -552,12 +546,7 @@ Config = {
 	"Ambovombe",
 	"Ambilobe"
 	]},
-	{country: "Madeira",
-	province:[
-	"", 
-	"",
-	""
-	]},
+	
 
 	{country: "Malawi",
 	province:[
@@ -626,12 +615,7 @@ Config = {
 	"Tsingoni",
 	"Ouangani"
 	]},
-	{country: "Melilla",
-	province:[
-	"", 
-	"",
-	""
-	]},
+	
 
 	{country: "Morocco",
 	province:[

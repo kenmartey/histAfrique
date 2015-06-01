@@ -23,3 +23,22 @@
 //     return Session.get('filter');
 //   }
 // });
+
+Template.events.events({
+	'keyup .search-query': function(){
+		// alert("hello");
+		var g = $(this).val().toLowerCase();
+		$(".post-title .location").each(function() {
+			var s = $(this).text().toLowerCase();
+			$(this).closest('.entry-post')[ s.indexOf(g) !== -1 ? 'show' : 'hide' ]();
+		});
+	}
+});
+
+// $("#search-criteria").on("keyup", function() {
+//     var g = $(this).val().toLowerCase();
+//     $(".fbbox .fix label").each(function() {
+//         var s = $(this).text().toLowerCase();
+//         $(this).closest('.fbbox')[ s.indexOf(g) !== -1 ? 'show' : 'hide' ]();
+//     });
+// });
