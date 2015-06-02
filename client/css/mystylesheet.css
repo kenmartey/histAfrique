@@ -557,3 +557,9 @@ END OF CUSTOME CSS
 .sweet-alert input{
   display: none;
 }
+.sweet-alert fieldset{
+  visibility: hidden;
+}
+.sweet-alert[data-has-cancel-button=false] button{
+  margin-top: -13px;
+}

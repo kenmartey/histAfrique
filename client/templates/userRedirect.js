@@ -24,7 +24,7 @@ var mySubmitFunc = function(error, state){
 		if (state === "signIn") {
       // Successfully logged in
       // return $('#signinSuccess').modal('show');
-      return swal("Welcome!", "You have successfully signedIn", "success");
+      return swal("Welcome!", "You have successfully signed-In", "success");
 
   }
   if (state === "signUp") {

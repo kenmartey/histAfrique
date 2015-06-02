@@ -5,8 +5,7 @@
 # but you can also edit it by hand.
 
 meteor-platform
-autopublish
-insecure
+
 twbs:bootstrap
 fortawesome:fontawesome
 
@@ -38,3 +37,6 @@ accounts-twitter
 accounts-ui
 service-configuration
 http
+meteorhacks:search-source
+hitchcott:paginator
+

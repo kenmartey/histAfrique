@@ -24,16 +24,16 @@
 //   }
 // });
 
-Template.events.events({
-	'keyup .search-query': function(){
-		// alert("hello");
-		var g = $(this).val().toLowerCase();
-		$(".post-title .location").each(function() {
-			var s = $(this).text().toLowerCase();
-			$(this).closest('.entry-post')[ s.indexOf(g) !== -1 ? 'show' : 'hide' ]();
-		});
-	}
-});
+// Template.events.events({
+// 	'keyup .search-query': function(){
+// 		// alert("hello");
+// 		var g = $(this).val().toLowerCase();
+// 		$(".post-title .location").each(function() {
+// 			var s = $(this).text().toLowerCase();
+// 			$(this).closest('.entry-post')[ s.indexOf(g) !== -1 ? 'show' : 'hide' ]();
+// 		});
+// 	}
+// });
 
 // $("#search-criteria").on("keyup", function() {
 //     var g = $(this).val().toLowerCase();
@@ -42,3 +42,10 @@ Template.events.events({
 //         $(this).closest('.fbbox')[ s.indexOf(g) !== -1 ? 'show' : 'hide' ]();
 //     });
 // });
+// var options = {
+// 	keepHistory: 1000 * 60 * 5,
+// 	localSearch: true
+// };
+// var fields = ['placeName', 'country'];
+
+// Events = new Events('events', fields, options);

@@ -198,3 +198,35 @@ Template.registerHelper('username', function(_id){
 		return user.emails[0].address;
 })
 
+// Template.events.helpers({
+// 	getPackages: function() {
+// 		return Events.getData({
+// 			transform: function(matchText, regExp) {
+// 				return matchText.replace(regExp, "<b>$&</b>")
+// 			},
+// 			sort: {isoScore: -1}
+// 		});
+// 	},
+
+// 	isLoading: function() {
+// 		return Events.getStatus().loading;
+// 	}
+// });
+// Template.events.events({
+// 	"keyup #custom-search-form": _.throttle(function(e) {
+// 		var text = $(e.target).val().trim();
+// 		Events.search(text);
+// 	}, 200)
+// });
+
+Template.registerHelper('images', function(){
+	return Images.find();
+});
+
+Template.events.helpers({
+	events: function() {
+		return myPagination.find({}, {
+			itemsPerPage: 3
+		});
+	}
+});
