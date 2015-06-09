@@ -11,7 +11,7 @@ Router.go('\home');
 	this.next();
 }
 }, {
-	except: ['home', 'events', 'signup', 'signin', 'signout','eventPictures','comments']
+	except: ['home', 'events', 'signup', 'signin', 'signout','eventPictures','comments','aboutHistafrique']
 });
 
 

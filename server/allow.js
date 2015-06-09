@@ -7,12 +7,12 @@ Events.allow({
     }
   },
   update: function(userId, doc, fields, modifier) {
-    if (userId  && userId === doc.owned) {
+    if (userId) {
       return true;
     }
   },
   remove: function(userId, doc) {
-    if (userId  && userId === doc.owned) {
+    if (userId) {
       return true;
     }
   }
