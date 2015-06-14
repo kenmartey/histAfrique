@@ -48,3 +48,6 @@ AccountsTemplates.configure({
 // 		this.next();
 // 	}
 // });
+Accounts.onLogout(function() {
+	return swal("histAfrique", "You have successfully signed out. Thanks for your time!", "success");
+});

@@ -50,7 +50,7 @@
  			</div> <!-- end title-section -->
  			<div class="blog-posts">
  				<div class="row">
- 					
+ 					{{#if Template.subscriptionsReady}}
  					{{#each createevents}}
  					<!-- Post -->
  					<div class="col-md-4 wow zoomIn">
@@ -78,11 +78,17 @@
  						</div> <!-- end entry-post -->
  					</div> <!-- end col-md-4 -->
  					{{/each}}
- 					
+ 					{{else}}
+ 					<!-- Loading... -->
+ 					<!-- {{> spinner}} -->
+ 					<center><h3 id="loading-message"> Loading... </h3></center>
+
+ 					{{/if}}
 
  				</div> <!-- end row -->
  			</div> <!-- end blog-posts -->
  		</div> <!-- end container -->
+
  	</div>
  </section>
  <!-- End blog section -->

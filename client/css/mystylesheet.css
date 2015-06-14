@@ -506,14 +506,14 @@ END OF CUSTOME CSS
   transition: all 0.25s ease-out;
 }
 
-.row-offcanvas-left
+/*.row-offcanvas-left
 .sidebar-offcanvas {
   left: -33%;
 }
 
 .row-offcanvas-left.active {
   left: 33%;
-}
+  }
 
 .sidebar-offcanvas {
   position: absolute;
@@ -522,7 +522,7 @@ END OF CUSTOME CSS
   margin-left: 10px;
 }
 
-
+*/
 
 /* Sidebar navigation */
 .nav-sidebar {
@@ -567,4 +567,14 @@ END OF CUSTOME CSS
 }
 .sweet-alert[data-has-cancel-button=false] button{
   margin-top: -13px;
+}
+#loading-message {
+  color: #fff;
+  font-size: 25px;
+  font-weight: 300;
+  font-family: sans-serif;
+}
+
+.sk-spinner-rotating-plane.sk-spinner {
+  background-color: #fff;
 }

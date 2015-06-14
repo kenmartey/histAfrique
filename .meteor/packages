@@ -37,4 +37,6 @@ service-configuration
 http
 meteorhacks:search-source
 hitchcott:paginator
-
+gwendall:auth-client-callbacks
+lepozepo:s3
+pcel:loading
