@@ -1,8 +1,19 @@
-<template name="signup">
+<!-- <template name="signup">
 	<div class="body">
 		<div class="signup">
-			<!-- {{> loginButtons}} -->
+			{{> loginButtons}}
 			{{> atForm state= 'signUp'}}
+		</div>
+	</div>
+</template> -->
+<template name="signup">
+	<div class="body">
+		<div class="row">
+			<div class="col-lg-4 col-md-3 col-xs-1"></div>
+			<div class="signin col-lg-4 col-md-6 col-xs-10">
+				{{> atForm state= 'signUp'}}
+			</div>
+			<div class="col-lg-4 col-md-3 col-xs-1"></div>
 		</div>
 	</div>
 </template>
