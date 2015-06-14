@@ -17,7 +17,6 @@ cfs:standard-packages
 cfs:ui
 cfs:autoform
 iron:router
-
 useraccounts:core
 accounts-password
 useraccounts:bootstrap
@@ -29,7 +28,6 @@ kevohagan:sweetalert
 buduguru:admin
 timmyg:wow
 manuelschoebel:ms-seo
-
 biasport:facebook-sdk
 joshowens:shareit
 meteorhacks:fast-render
