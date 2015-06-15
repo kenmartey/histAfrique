@@ -1,0 +1,364 @@
+/*
+ * Title: Pure CSS3 Loading
+ * Author: Clear
+ * Version: 1.0.0
+ * Create: 2015-06-05
+ * Update: 2015-06-08
+ */
+ /* CSS Reset */
+ .spinner{
+ 	margin-top: -270px;
+ }
+ .spinner .container {
+ 	width: 100%;
+ 	max-width: 1200px;
+ 	margin: 0 auto;
+ }
+
+ .spinner * {
+ 	padding: 0;
+ 	margin: 0;
+ 	list-style: none;
+ 	box-sizing: border-box;
+ 	outline: none;
+ 	font-weight: normal;
+ }
+
+ .spinner body {
+ 	background: #3498DB;
+ 	font-family: "Segoe UI","Microsoft YaHei";
+
+ }
+
+ .spinner a {
+ 	color: #fff;
+ 	text-decoration: none;
+ }
+
+ .spinner header {
+ 	color: #fff;
+ 	text-align: center;
+ 	min-height: 140px;
+ 	margin-bottom: 60px;
+ }
+
+ .spinner header h1{
+ 	margin-top: 100px;
+ 	font-size: 50px;
+ 	margin-bottom: 20px;
+ 	font-weight: 100;
+ }
+
+ .spinner header a{
+ 	font-size: 18px;
+ 	margin-left: 20px;
+ }
+
+ /* Clear Loading */
+
+ .spinner .clear-loading {
+ 	text-align: center;
+ 	margin: 0 auto;
+ 	position: relative;
+ 	box-sizing: border-box;
+ }
+
+ /* Loading Effect One */
+
+ .spinner .loading-effect-1 {
+ 	width: 100px;
+ 	height: 100px;
+ }
+
+ .spinner .loading-effect-1 span {
+ 	display: block;
+ 	border-radius: 50%;
+ 	border: 4px solid #fff;
+ 	position: absolute;
+ 	top: 50%;
+ 	left: 50%;
+ 	-webkit-transform: translate(-50%,-50%);
+ 	-moz-transform: translate(-50%,-50%);
+ 	-o-transform: translate(-50%,-50%);
+ 	transform: translate(-50%,-50%);
+ }
+
+ .spinner .loading-effect-1 span:first-child {
+ 	width: 100%;
+ 	height: 100%;
+ 	border-color: rgba(25,190,155,1);
+ 	border-left-color: transparent;
+ 	top: 0;
+ 	left: 0;
+ 	-webkit-animation: effect-1-1 4s infinite linear;
+ 	-moz-animation: effect-1-1 4s infinite linear;
+ 	-o-animation: effect-1-1 4s infinite linear;
+ 	animation: effect-1-1 4s infinite linear;
+ }
+
+ .spinner .loading-effect-1 span:nth-child(2) {
+ 	width: 75%;
+ 	height: 75%;
+ 	border-color: rgba(230,75,60,1);
+ 	border-right-color: transparent;
+ 	top: 12.5%;
+ 	left: 12.5%;
+ 	-webkit-animation: effect-1-2 3s infinite linear;
+ 	-moz-animation: effect-1-2 3s infinite linear;
+ 	-o-animation: effect-1-2 3s infinite linear;
+ 	animation: effect-1-2 3s infinite linear;
+ }
+
+ .spinner .loading-effect-1 span:last-child {
+ 	width: 50%;
+ 	height: 50%;
+ 	border-color: rgba(50,70,95,1);
+ 	border-bottom-color: transparent;
+ 	top: 25%;
+ 	left: 25%;
+ 	-webkit-animation: effect-1-1 2s infinite linear;
+ 	-moz-animation: effect-1-1 2s infinite linear;
+ 	-o-animation: effect-1-1 2s infinite linear;
+ 	animation: effect-1-1 2s infinite linear;
+ }
+
+ @-webkit-keyframes effect-1-1 { 
+ 	from{
+ 		transform: rotate(0deg);
+ 	}
+ 	to{
+ 		transform: rotate(360deg);
+ 	}
+ }
+
+ @keyframes effect-1-1 {
+ 	from{
+ 		transform: rotate(0deg);
+ 	}
+ 	to{
+ 		transform: rotate(360deg);
+ 	}
+ }
+
+ @-webkit-keyframes effect-1-2 { 
+ 	from{
+ 		transform: rotate(0deg);
+ 	}
+ 	to{
+ 		transform: rotate(-360deg);
+ 	}
+ }
+
+ @keyframes effect-1-2 {
+ 	from{
+ 		transform: rotate(0deg);
+ 	}
+ 	to{
+ 		transform: rotate(-360deg);
+ 	}
+ }
+
+ /* Loading Effect Two */
+
+ .spinner .loading-effect-2 {
+ 	width: 100px;
+ 	height: 100px;
+ }
+
+ .spinner .loading-effect-2 > span,
+ .spinner .loading-effect-2 > span:before,
+ .spinner .loading-effect-2 > span:after {
+ 	content: "";
+ 	display: block;
+ 	border-radius: 50%;
+ 	border: 2px solid #fff;
+ 	position: absolute;
+ 	top: 50%;
+ 	left: 50%;
+ 	-webkit-transform: translate(-50%,-50%);
+ 	-moz-transform: translate(-50%,-50%);
+ 	-o-transform: translate(-50%,-50%);
+ 	transform: translate(-50%,-50%);
+
+ }
+
+ .spinner .loading-effect-2 > span {
+ 	width: 100%;
+ 	height: 100%;
+ 	top: 0;
+ 	left: 0;
+ 	border-left-color: transparent;
+ 	-webkit-animation: effect-2 2s infinite linear;
+ 	-moz-animation: effect-2 2s infinite linear;
+ 	-o-animation: effect-2 2s infinite linear;
+ 	animation: effect-2 2s infinite linear;
+ }
+
+ .spinner .loading-effect-2 > span:before {
+ 	width: 75%;
+ 	height: 75%;
+ 	border-right-color: transparent;
+ }
+
+ .spinner .loading-effect-2 > span:after {
+ 	width: 50%;
+ 	height: 50%;
+ 	border-bottom-color: transparent;
+ }
+
+ @-webkit-keyframes effect-2 { 
+ 	from{
+ 		transform: rotate(0deg);
+ 	}
+ 	to{
+ 		transform: rotate(360deg);
+ 	}
+ }
+
+ @keyframes effect-2 {
+ 	from{
+ 		transform: rotate(0deg);
+ 	}
+ 	to{
+ 		transform: rotate(360deg);
+ 	}
+ }
+
+ /* Loading Effect Three */
+
+ .spinner .loading-effect-3 {
+ 	width: 100px;
+ 	height: 100px;
+ }
+
+ .spinner .loading-effect-3 div {
+ 	display: block;
+ 	width: 100%;
+ 	height: 100%;
+ 	border: 1px solid #fff;
+ 	border-radius: 50%;
+ }
+
+ .spinner .loading-effect-3 div > span{
+ 	background: #fff;
+ 	width: 10px;
+ 	height: 10px;
+ 	display: block;
+ 	border-radius: 50%;
+ 	position: relative;
+ 	top: -5px;
+ 	left: 50%;
+ 	-webikt-transform-origin: 0 55px;
+ 	-moz-transform-origin: 0 55px;
+ 	-o-transform-origin: 0 55px;
+ 	transform-origin: 0 55px;
+ 	-webkit-animation: effect-3 2s infinite linear;
+ 	-moz-animation: effect-3 2s infinite linear;
+ 	-o-animation: effect-3 2s infinite linear;
+ 	animation: effect-3 2s infinite linear;
+ }
+
+ @-webkit-keyframes effect-3 { 
+ 	from{
+ 		transform: rotate(0deg);
+ 	}
+ 	to{
+ 		transform: rotate(360deg);
+ 	}
+ }
+
+ @keyframes effect-3 {
+ 	from{
+ 		transform: rotate(0deg);
+ 	}
+ 	to{
+ 		transform: rotate(360deg);
+ 	}
+ }
+
+ /* Loading Effect Four */
+
+ .spinner .loading-effect-4 {
+ 	width: 100px;
+ 	height: 100px;
+ }
+
+ .spinner .loading-effect-4 > div {
+ 	width: 100%;
+ 	height: 100%;
+ 	border: 1px solid #fff;
+ 	border-radius: 50%;
+ }
+
+ .spinner .loading-effect-4 span {
+ 	background: #fff;
+ 	display: block;
+ 	width: 15%;
+ 	height: 15%;
+ 	border-radius: 50%;
+ 	position: absolute;
+ 	left: 50%;
+ 	-webkit-transform: translate(-50%,0);
+ 	-moz-transform: translate(-50%,0);
+ 	-o-transform: translate(-50%,0);
+ 	transform: translate(-50%,0);
+ 	-webikt-transform-origin: 0 49px;
+ 	-moz-transform-origin: 0 49px;
+ 	-o-transform-origin: 0 49px;
+ 	transform-origin: 0 49px;
+
+ }
+
+ .spinner .loading-effect-4 span:first-child {
+ 	background: rgba(25,190,155,1);
+ 	-webkit-animation: effect-4-1 1.5s infinite linear;
+ 	-moz-animation: effect-4-1 1.5s infinite linear;
+ 	-o-animation: effect-4-1 1.5s infinite linear;
+ 	animation: effect-4-1 1.5s infinite linear;
+
+ }
+
+ .spinner .loading-effect-4 span:nth-child(2) {
+ 	background: rgba(255,255,255,1);
+ 	-webkit-animation: effect-4-1 2s infinite linear;
+ 	-moz-animation: effect-4-1 2s infinite linear;
+ 	-o-animation: effect-4-1 2s infinite linear;
+ 	animation: effect-4-1 2s infinite linear;
+
+ }
+
+ .spinner .loading-effect-4 span:nth-child(3) {
+ 	background: rgba(230,75,60,1);
+ 	-webkit-animation: effect-4-1 2.5s infinite linear;
+ 	-moz-animation: effect-4-1 2.5s infinite linear;
+ 	-o-animation: effect-4-1 2.5s infinite linear;
+ 	animation: effect-4-1 2.5s infinite linear;
+
+ }
+
+ .spinner .loading-effect-4 span:nth-child(4) {
+ 	background: rgba(50,70,95,1);
+ 	-webkit-animation: effect-4-1 3s infinite linear;
+ 	-moz-animation: effect-4-1 3s infinite linear;
+ 	-o-animation: effect-4-1 3s infinite linear;
+ 	animation: effect-4-1 3s infinite linear;
+
+ }
+
+ @-webkit-keyframes effect-4-1 { 
+ 	from{
+ 		transform: rotate(0deg);
+ 	}
+ 	to{
+ 		transform: rotate(360deg);
+ 	}
+ }
+
+ @keyframes effect-4-1 {
+ 	from{
+ 		transform: rotate(0deg);
+ 	}
+ 	to{
+ 		transform: rotate(360deg);
+ 	}
+ }

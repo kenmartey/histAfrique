@@ -51,6 +51,7 @@
  			<div class="blog-posts">
  				<div class="row">
  					{{#if Template.subscriptionsReady}}
+ 					<!-- {{#if createeventsLoaded}} -->
  					{{#each createevents}}
  					<!-- Post -->
  					<div class="col-md-4 wow zoomIn">
@@ -79,10 +80,25 @@
  					</div> <!-- end col-md-4 -->
  					{{/each}}
  					{{else}}
- 					<!-- Loading... -->
  					<!-- {{> spinner}} -->
- 					<center><h3 id="loading-message"> Loading... </h3></center>
+ 					<div class="spinner">
+ 						<div class="container">
+ 							<header class="header">
+ 								<a href="index.html">Effect One</a>
+ 								<a href="effect2.html">Effect Two</a>
+ 								<a href="effect3.html">Effect Three</a>
+ 								<a href="effect4.html">Effect Four</a>
+ 							</header>
 
+ 							<div class="clear-loading loading-effect-1">
+ 								<span></span>
+ 								<span></span>
+ 								<span></span>
+ 							</div>
+
+ 						</div>
+ 					</div>
+ 					<!-- <center><h3> Loading... </h3></center> -->
  					{{/if}}
 
  				</div> <!-- end row -->

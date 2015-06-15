@@ -21,6 +21,7 @@
 	 			</div> <!-- end title-section -->
 	 			<div class="blog-posts">
 	 				<div class="row">
+	 					{{#if Template.subscriptionsReady}}
 	 					{{#if eventpictures}}
 	 					{{#each eventpictures}}
 	 					<!-- Post -->
@@ -46,7 +47,27 @@
 	 					{{else}}
 	 					<h1>No Data found here</h1>
 	 					{{/if}}
+	 					{{else}}
+	 					<!-- {{> spinner}} -->
+	 					<div class="spinner">
+	 						<div class="container">
+	 							<header class="header">
+	 								<a href="index.html">Effect One</a>
+	 								<a href="effect2.html">Effect Two</a>
+	 								<a href="effect3.html">Effect Three</a>
+	 								<a href="effect4.html">Effect Four</a>
+	 							</header>
 
+	 							<div class="clear-loading loading-effect-1">
+	 								<span></span>
+	 								<span></span>
+	 								<span></span>
+	 							</div>
+
+	 						</div>
+	 					</div>
+	 					<!-- <center><h3> Loading... </h3></center> -->
+	 					{{/if}}
 
 	 				</div> <!-- end row -->
 	 			</div> <!-- end blog-posts -->
