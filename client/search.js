@@ -49,3 +49,12 @@
 // var fields = ['placeName', 'country'];
 
 // Events = new Events('events', fields, options);
+// Template.events.events({
+// 	'keyup .search-query': function(){
+// 		// alert("helloworld")
+// 		var options = {
+// 			valueNames: [ 'post-title', 'location' ]
+// 		};
+// 		var userList = new List('blog-posts', options);
+// 	}
+// })
