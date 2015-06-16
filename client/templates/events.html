@@ -1,12 +1,14 @@
 <template name="events">
-	<div class="body">
-		<div class="createevent animated bounceIn">
-			{{#if currentUser}}
+	<div class="createevent animated bounceIn row">
+		{{#if currentUser}}
+		<div class="col-lg-4 col-md-3 col-xs-1">&nbsp;</div>
+		<div class="col-lg-4 col-md-6 col-xs-10 addhistory-btn">
 			<button type="button" class="btn btn-primary btn-lg createeventbutton" data-toggle="modal" data-target="#createEvent">
 				<h4>Add history</h4>
 			</button>
-			{{/if}}
 		</div>
+		<div class="col-lg-4 col-md-3 col-xs-1">&nbsp;</div>
+		{{/if}}
 	</div>
 	<div class="container">
 		<div class="row">

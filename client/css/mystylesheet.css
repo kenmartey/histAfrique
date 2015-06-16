@@ -182,7 +182,6 @@
   }
   .createevent{
     margin-top: 100px;
-    margin-left: 600px;
   }
   .btn-primary{
     background: #FF9800;
@@ -196,6 +195,12 @@
 .error404{
   margin-left: 200px;
 }
+
+.addhistory-btn button{
+  margin: 0px 30%;
+}
+
+
 /*.search-form{
   margin-left: 900px;
   }*/
@@ -612,4 +617,15 @@ END OF CUSTOME CSS
 
 .sk-spinner-rotating-plane.sk-spinner {
   background-color: #fff;
+}
+
+
+/*media query for btn*/
+
+@media(max-width: 320px){
+  .addhistory-btn button{
+    width: 60%;
+    padding: 18px 20px;
+    margin: 0px 20%;
+  }
 }
