@@ -1,37 +1,19 @@
 <template name="events">
 	<div class="body">
-		<!-- {{> Events}} -->
-		
 		<div class="createevent animated bounceIn">
 			{{#if currentUser}}
-			
 			<button type="button" class="btn btn-primary btn-lg createeventbutton" data-toggle="modal" data-target="#createEvent">
 				<h4>Add history</h4>
 			</button>
 			{{/if}}
 		</div>
-		
-		<!-- {{else}} -->
-		<!-- <div class="jumbotron"> -->
-			<!-- <h4 align="center">please signIn to add historical place
-		</h4> -->
-		<!-- <p align="center"> -->
-
-		<!-- <a href="{{pathFor 'signin'}}" class="btn clean">Sign-In</a> -->
-		<!-- </p> -->
-		<!-- </div> -->
-		<!-- {{/if}} -->
-
-		<!-- SEARCH BOX BUT N0T FUNCTIONING WELL -->
-
 	</div>
 	<div class="container">
 		<div class="row">
 			<div class="span12">
 				<form id="custom-search-form" class="form-search form-horizontal pull-right">
 					<div class="input-append span12">
-						<input type="text" class="search-query" placeholder="Search">
-						<button type="submit" class="btn"><i class="icon-search"></i></button>
+						<input type="text" id="searchtext" class="search-query" placeholder="Search by Place name">
 					</div>
 				</form>
 			</div>
@@ -51,7 +33,6 @@
  			<div class="blog-posts">
  				<div class="row">
  					{{#if Template.subscriptionsReady}}
- 					<!-- {{#if createeventsLoaded}} -->
  					{{#each createevents}}
  					<!-- Post -->
  					<div class="col-md-4 wow zoomIn">
@@ -98,7 +79,6 @@
 
  						</div>
  					</div>
- 					<!-- <center><h3> Loading... </h3></center> -->
  					{{/if}}
 
  				</div> <!-- end row -->
@@ -119,6 +99,5 @@
  			</div> <!-- end call-to-action -->
  		</div> <!-- end container -->
  	</div>
- 	<!-- {{> Paginator_UI events}} -->
  </section>
 </template>
