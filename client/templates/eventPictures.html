@@ -28,17 +28,17 @@
 	 					<div class="col-md-4">
 	 						<div class="entry-post " data-animation="fadeInLeft" data-delay="0">
 	 							<div class="entry-image wow fadeInUp">
-	 								{{#with FS.GetFile 'images' picture}}
-	 								<a href="#" data-toggle="modal" data-target="#picturedropdown" class="imageclick">
+	 								
+	 								<a href="#" data-toggle="modal" data-target="#picturedropdown" class="imageclick" data-id="{{_id}}">
 	 									
-	 									<img class="img-thumbnail" width="560px" height="700px" src="{{this.url}}" alt="" >
+	 									<img class="img-thumbnail" width="560px" height="700px" src="{{absoluteImageUrl}}" alt="" >
 	 									<span class="card-title">{{pictureName}}</span>
 	 									
 	 									<div class="hover-item">
 	 										<span class="link-icon"><i class="fa fa-ellipsis-h"></i></span>
 	 									</div> <!-- end hover-item -->
 	 								</a>
-	 								{{/with}}
+	 								
 	 							</div> <!-- end entry-image -->
 
 	 						</div> <!-- end entry-post -->
@@ -68,7 +68,6 @@
 	 					</div>
 	 					<!-- <center><h3> Loading... </h3></center> -->
 	 					{{/if}}
-
 	 				</div> <!-- end row -->
 	 			</div> <!-- end blog-posts -->
 	 		</div> <!-- end container -->
@@ -81,7 +80,7 @@
 	 	<div id="action-section">
 	 		<div class="container">
 	 			<div class="call-to-action animated out" data-animation="fadeInUp" data-delay="0">
-	 				<a href="#" class="btn clean">View all posts</a>
+	 				<a href="{{pathFor 'events'}}" class="btn clean">All history</a>
 	 			</div> <!-- end call-to-action -->
 	 		</div> <!-- end container -->
 	 	</div>

@@ -1,4 +1,5 @@
 <template name="events">
+
 	<div class="createevent animated bounceIn row">
 		{{#if currentUser}}
 		<div class="col-lg-4 col-md-3 col-xs-1">&nbsp;</div>
@@ -7,8 +8,10 @@
 				<h4>Add history</h4>
 			</button>
 		</div>
+
 		<div class="col-lg-4 col-md-3 col-xs-1">&nbsp;</div>
 		{{/if}}
+
 	</div>
 	<div class="container">
 		<div class="row">
@@ -41,16 +44,15 @@
  						<div class="entry-post " data-animation="fadeInLeft" data-delay="0">
  							<div class="entry-image resize wow fadeInUp">
  								<a href="{{pathFor 'eventPictures'  _id=_id}}" id="eventpicture">
- 									{{#with FS.GetFile 'images' picture}}
- 									<img class="img-thumbnail" width="560px" height="700px" src="{{this.url}}" alt="" >
+ 									
+ 									<img class="img-thumbnail" width="560px" height="700px" src="{{absoluteImageUrl}}" alt="" >
  									<span class="card-title">{{pictureName}}</span>
- 									{{/with}}
+ 									
  									<div class="hover-item">
  										<span class="link-icon"><i class="fa fa-ellipsis-h"></i></span>
  									</div> <!-- end hover-item -->
  								</a>
  							</div> <!-- end entry-image -->
-
  							<div class="post-meta">
  								<p><span class="location">{{country}} | {{province}}</span> | <span class="comment"><a href="{{pathFor 'comments' _id=_id}}">{{commentsCount _id}} <i class="fa fa-weixin"></i></a></span> | <span class="likes"><a href="#" data-likes-event="{{_id}}"><i class="fa fa-thumbs-up"></i> {{likes}}</a></span> | <span class="comment"><a href="{{pathFor 'comments' _id=_id}}">Readmore... </a></span>
  								</p>
@@ -86,7 +88,6 @@
  				</div> <!-- end row -->
  			</div> <!-- end blog-posts -->
  		</div> <!-- end container -->
-
  	</div>
  </section>
  <!-- End blog section -->
@@ -101,5 +102,6 @@
  			</div> <!-- end call-to-action -->
  		</div> <!-- end container -->
  	</div>
+ 	<!-- {{> Paginator_UI events}} -->
  </section>
 </template>
