@@ -1,29 +1,12 @@
 <template name="events">
 	<div class="body">
-		<!-- {{> Events}} -->
-		
 		<div class="createevent animated bounceIn">
 			{{#if currentUser}}
-			
 			<button type="button" class="btn btn-primary btn-lg createeventbutton" data-toggle="modal" data-target="#createEvent">
 				<h4>Add history</h4>
 			</button>
 			{{/if}}
 		</div>
-		
-		<!-- {{else}} -->
-		<!-- <div class="jumbotron"> -->
-			<!-- <h4 align="center">please signIn to add historical place
-		</h4> -->
-		<!-- <p align="center"> -->
-
-		<!-- <a href="{{pathFor 'signin'}}" class="btn clean">Sign-In</a> -->
-		<!-- </p> -->
-		<!-- </div> -->
-		<!-- {{/if}} -->
-
-		<!-- SEARCH BOX BUT N0T FUNCTIONING WELL -->
-
 	</div>
 	<div class="container">
 		<div class="row">
@@ -57,52 +40,54 @@
  						<div class="entry-post " data-animation="fadeInLeft" data-delay="0">
  							<div class="entry-image resize wow fadeInUp">
  								<a href="{{pathFor 'eventPictures'  _id=_id}}" id="eventpicture">
- 									{{#with FS.GetFile 'images' picture}}
- 									<img class="img-thumbnail" width="560px" height="700px" src="{{this.url}}" alt="" >
+ 									
+ 									<img class="img-thumbnail" width="560px" height="700px" src="{{absoluteImageUrl}}" alt="" >
  									<span class="card-title">{{pictureName}}</span>
- 									{{/with}}
+ 									
  									<div class="hover-item">
  										<span class="link-icon"><i class="fa fa-ellipsis-h"></i></span>
  									</div> <!-- end hover-item -->
  								</a>
  							</div> <!-- end entry-image -->
-
  							<div class="post-meta">
- 								<p><span class="location">{{country}} | {{province}}</span> | <span class="comment"><a href="{{pathFor 'comments' _id=_id}}">{{commentsCount _id}} <i class="fa fa-weixin"></i></a></span> | <span class="likes"><a href="#" data-likes-event="{{_id}}"><i class="fa fa-thumbs-up"></i> {{likes}}</a></span> | <span class="comment"><a href="{{pathFor 'comments' _id=_id}}">Readmore... </a></span>
- 								</p>
- 							</div> <!-- end post-meta -->
- 							<h4 class="post-title"><a href="{{pathFor 'comments'}}">{{placeName}}</a></h4>
- 							<div class="post-body">
- 								<p class="history">{{history}}</p>
- 							</div> <!-- end post-body -->
- 						</div> <!-- end entry-post -->
- 					</div> <!-- end col-md-4 -->
- 					{{/each}}
- 					{{else}}
- 					<!-- Loading... -->
- 					<!-- {{> spinner}} -->
- 					<center><h3 id="loading-message"> Loading... </h3></center>
+ 								<p><span class="location">{{country}} | {{province}}</span> | <span class="comment">
+ 									<a href="{{pathFor 'comments' _id=_id}}">{{commentsCount _id}} <i class="fa fa-weixin"></i></a>
+ 								</span> | <span class="likes"><a href="#" data-likes-event="{{_id}}"><i class="fa fa-thumbs-up"></i> {{likes}}</a></span> | <span class="comment"><a href="{{pathFor 'comments' _id=_id}}">Readmore... </a></span>
+ 							</p>
+ 						</div> <!-- end post-meta -->
 
- 					{{/if}}
+ 						<h4 class="post-title"><a href="{{pathFor 'comments'}}">{{placeName}}</a></h4>
+ 						<div class="post-body">
+ 							<p class="history">{{history}}</p>
+ 						</div> <!-- end post-body -->
+ 					</div> <!-- end entry-post -->
+ 				</div> <!-- end col-md-4 -->
+ 				{{/each}}
+ 				{{else}}
+ 				<!-- Loading... -->
+ 				<!-- {{> spinner}} -->
+ 				<center><h3 id="loading-message"> Loading... </h3></center>
 
- 				</div> <!-- end row -->
- 			</div> <!-- end blog-posts -->
- 		</div> <!-- end container -->
+ 				{{/if}}
 
- 	</div>
- </section>
- <!-- End blog section -->
+ 			</div> <!-- end row -->
+ 		</div> <!-- end blog-posts -->
+ 	</div> <!-- end container -->
 
- <!-- Action -->
- <section>
- 	<div id="action-section">
- 		<div class="container">
- 			<div class="call-to-action animated out" data-animation="fadeInUp" data-delay="0">
- 				<!-- {{> Paginator_UI events}} -->
- 				<a href="#" class="btn clean">{{> Paginator_UI events}}</a>
- 			</div> <!-- end call-to-action -->
- 		</div> <!-- end container -->
- 	</div>
- 	<!-- {{> Paginator_UI events}} -->
- </section>
+ </div>
+</section>
+<!-- End blog section -->
+
+<!-- Action -->
+<section>
+	<div id="action-section">
+		<div class="container">
+			<div class="call-to-action animated out" data-animation="fadeInUp" data-delay="0">
+				<!-- {{> Paginator_UI events}} -->
+				<a href="#" class="btn clean">{{> Paginator_UI events}}</a>
+			</div> <!-- end call-to-action -->
+		</div> <!-- end container -->
+	</div>
+	<!-- {{> Paginator_UI events}} -->
+</section>
 </template>

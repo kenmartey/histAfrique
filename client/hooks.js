@@ -2,11 +2,7 @@ Router.onBeforeAction(function(pause) {
 	if (!Meteor.user()) {
     // pause();
     swal({   title: "histAfrique alert!",   text: "you need to be logged-in to view this page, Redirecting you to Home!",   timer: 4000,   showConfirmButton: false });
-
-    // alert(
-    // 	"you need to be logged-in to view this page, Redirecting you to Home!"
-    // 	)
-Router.go('\home');
+    Router.go('\home');
 } else {
 	this.next();
 }
@@ -21,18 +17,6 @@ AutoForm.addHooks(null, {
 	}
 })
 
-// this section collects the id of the Event and add it to the Event picture collection
-AutoForm.hooks({
-	insertEventPictureForm: {
-		formToDoc: function(doc, ss, formId) {
-			console.log(doc);
-			doc.createevents = Router.current().params._id;
-			console.log(doc);
-			return doc;
-		}
-	}
-
-});
 // this section collects the id of the Event and add it to bookings collection with Session.get
 AutoForm.hooks({
 	insertBookingForm: {
@@ -46,18 +30,6 @@ AutoForm.hooks({
 	}
 
 });
-// this section collects the id of the country and add it to Province collection with Session.get
-// AutoForm.hooks({
-// 	insertProvinceForm: {
-// 		formToDoc: function(doc, ss, formId) {
-// 			console.log(doc);
-// 			doc.country = Session.get('countriesId');
-// 			console.log(doc);
-// 			return doc;
-// 		}
-// 	}
-
-// });
 
 // this section collects the id of the Event and add it to the Comment collection
 AutoForm.hooks({
@@ -69,33 +41,33 @@ AutoForm.hooks({
 			return doc;
 		}
 	}
-
 });
-// AutoForm.hooks({
-// 	insertEventsForm: {
-// 		formToDoc: function(doc, ss, formId) {
-// 			console.log(doc);
-// 			doc.likes = Session.get('eventId');
-// 			console.log(doc);
-// 			return doc;
-// 		}
-// 	}
-
-// });
-
 
 AutoForm.hooks({
 	insertEventForm: {
-		onSuccess: function(formType, result) {
-			$('#createEvent').modal('hide');
+		formToDoc: function(doc, ss, formId) {
+			doc.relativeImageUrl = Session.get('relativeImageUrl');
+			doc.absoluteImageUrl = Session.get('absoluteImageUrl');
+			doc.delivery_status = "not-delivered"
+			return doc;
+		},
+		onSubmit: function (insertDoc, updateDoc, currentDoc) {
+			Meteor.call('insertEvents', insertDoc, function (error, result) {
+				if (error) {
+					this.done(new Error(error));
+				}
+				else {
+					reset_form_element( $('.file_bag') );
+					$(".progress").remove();
+					$(".resetimage").remove();
+					$('#createEvent').modal('hide');
 			// return $('#eventSuccess').modal('show');
 			swal("Good job!", "You have successfully added a historical place", "success");
+
 		}
-	},
-	updateEventForm:{
-		onSuccess: function(formType, result){
-			return $('#editEvent').modal('hide');
-		}
+	});
+			return false; 
+		},
 	},
 	insertProfileForm: {
 		onSuccess: function(formType, result) {
@@ -137,4 +109,57 @@ AutoForm.hooks({
 	}
 });
 
+AutoForm.hooks({
+	updateEventForm: {
+		formToDoc: function(doc, ss, formId) {
+			doc.relativeImageUrl = Session.get('relativeImageUrl');
+			doc.absoluteImageUrl = Session.get('absoluteImageUrl');
+			return doc;
+		},
+		onSubmit: function (insertDoc, updateDoc, currentDoc) {
+			Meteor.call('editEvents', currentDoc._id, updateDoc, function (error, result) {
+				if (error) {
+					this.done(new Error(error));
+				};
+			});
+			this.done();
+			return false;  
+		},
+		onSuccess: function(formType, result) {
+			reset_form_element( $('.file_bag') );
+			$(".progress").remove();
+			$(".resetimage").remove();
+			$('#editEvent').modal('hide');
+			// return $('#EventPicturesSuccess').modal('show');
+			swal("Great Job!", "You have successfully updated this post", "success");
 
+		}
+	}
+})
+
+AutoForm.hooks({
+	insertEventPictureForm: {
+		formToDoc: function(doc, ss, formId) {
+			doc.relativeImageUrl = Session.get('relativeImageUrl');
+			doc.absoluteImageUrl = Session.get('absoluteImageUrl');
+			doc.createevents = Router.current().params._id;
+			return doc;
+		},
+		onSubmit: function (insertDoc, updateDoc, currentDoc) {
+			Meteor.call('insertEventsPicture', insertDoc, function (error, result) {
+				if (error) {
+					this.done(new Error(error));
+				}
+				else {
+					reset_form_element( $('.file_bag') );
+					$(".progress").remove();
+					$(".resetimage").remove();
+			// return $('#eventSuccess').modal('show');
+			swal("Good job!", "You have successfully added an image", "success");
+		}
+	})
+			this.done();
+			return false; 
+		}
+	}
+})

@@ -38,10 +38,10 @@
 						<div class="col-md-4">
 							<div class="card">
 								<div class="card-image">
-									{{#with FS.GetFile 'images' picture}}
-									<img class="img-thumbnail" width="560px" height="500px" src="{{this.url}}" alt="" >
+									
+									<img class="img-thumbnail" width="560px" height="500px" src="{{absoluteImageUrl}}" alt="" >
 									<span class="card-title">{{placeName}}</span>
-									{{/with}}
+									
 								</div>
 
 								<div class="card-content">
@@ -73,5 +73,5 @@
 			
 		</div>
 	</div><!--/.container-->
-
+	{{> editEventsModal}}
 </template>
