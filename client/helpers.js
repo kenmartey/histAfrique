@@ -40,7 +40,11 @@ Template.registerHelper('commentsCount', function(id){
 // 		});
 // 	}
 // });
-
+// Template.events.helpers({
+// 	commentsCounting: function(id){
+// 		return Comments.find({eventsid:id}).count();
+// 	}
+// })
 // i am yet to add likes code....
 //This section of the code handles the delete function
 Template.myBoard.helpers({

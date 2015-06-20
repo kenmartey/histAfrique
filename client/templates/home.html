@@ -15,11 +15,7 @@
 								<div class="content-home-slider">
 									<h1>Know your History</h1>
 									<h3>Discover Historical Places in Africa with histAfrique</h3>
-									{{#if currentUser}}
 									<div class="btn-orange"><a href="{{pathFor 'events'}}">Take a Tour</a></div> 
-									{{else}}
-									<div class="btn-orange"><a href="{{pathFor 'signup'}}">Register Now</a></div>
-									{{/if}}
 								</div>
 							</div>
 						</div>
@@ -36,7 +32,7 @@
 									{{#if currentUser}}
 									<div class="btn-orange"><a href="{{pathFor 'events'}}">Take a Tour</a></div> 
 									{{else}}
-									<div class="btn-orange"><a href="{{pathFor 'signup'}}#">Signup for FREE!</a></div>
+									<div class="btn-orange"><a href="{{pathFor 'signup'}}#">Add History</a></div>
 									{{/if}}
 								</div>
 							</div>
@@ -50,7 +46,7 @@
 							<div class="col-md-12">
 								<div class="content-home-slider">
 									<h1>Simple & Easy</h1>
-									<h2>Register, view interesting historical places with images and visit!</h2>
+									<h2>Signup, view interesting historical places with images and visit!</h2>
 									{{#if currentUser}}
 									<div class="btn-orange"><a href="{{pathFor 'events'}}">Take a Tour</a></div> 
 									{{else}}
@@ -84,7 +80,7 @@
 				<div class="title-section animated out" data-animation="fadeInUp" data-delay="0">
 					<h3>About histAfrique</h3>
 					<hr>
-					<p>histAfrique is an online application that displays all historical places in Africa to world with pictures with detailed history and allows anyone to leave a review of the place based on their experience. <a href="{{pathFor 'aboutHistafrique'}}"> Read more...</a></p>
+					<p>histAfrique is an online application that displays all historical places in Africa to world with images, detailed history and allows anyone to leave a review of the place based on their experience. <a href="{{pathFor 'aboutHistafrique'}}"> Read more...</a></p>
 				</div> <!-- end title-section -->
 
 				<div class="about-us">
@@ -99,7 +95,7 @@
 						<div class="col-md-5">
 							<div class="about-text animated out" data-animation="fadeInRight" data-delay="0">
 								<h1>It's just Amazing</h1>
-								<p> This platform is open to anyone who would like to know the beautiful history behind some beautiful historical places in Africa even before they first visit these places. histAfrique content is reviewed by top scholars of African history across the continent and is also open to any person who has indepth knowledge and interest in the subject.</p>
+								<p> This platform is open to anyone who would like to know the beautiful history behind some beautiful historical places in Africa even before they first visit these places. histAfrique content is sourced from different websites of African history across the continent. These websites are referenced. It is also open to any person who has indepth knowledge and interest in the subject.</p>
 								{{#if currentUser}}
 								<div class="about-action-btns">
 									<a href="{{pathFor 'events'}}" class="btn clean">Let's Tour</a>

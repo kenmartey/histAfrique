@@ -31,7 +31,6 @@ manuelschoebel:ms-seo
 biasport:facebook-sdk
 joshowens:shareit
 meteorhacks:fast-render
-accounts-twitter
 accounts-ui
 service-configuration
 http
@@ -41,3 +40,5 @@ gwendall:auth-client-callbacks
 lepozepo:s3
 pcel:loading
 u2622:persistent-session
+accounts-twitter
+

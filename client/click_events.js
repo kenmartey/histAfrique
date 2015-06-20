@@ -16,17 +16,29 @@ Template.events.events({
 	},
 	//This section gets the id of the likes
 	'click [data-likes-event]': function (e,t) {
-		var _id = $(e.currentTarget).attr('data-likes-event');
+		// if(Meteor.userId()){
+			var _id = $(e.currentTarget).attr('data-likes-event');
 		// console.log(this);
 		Session.set('eventId', this._id);
-	},
-	'click .likes': function(){
+	// }
+	// else {
+
+		// return swal('we are sorry, you need to log in to like this post')
+	// }
+
+},
+'click .likes': function(){
+	if(Meteor.userId()){
 		eventsId = Session.get('eventId');
 		console.log(eventsId)
 		myevents = Events.update(eventsId, {$inc:{likes: +1 }});
 		console.log(myevents)
 	}
-	
+	else {
+		return swal('we are sorry, you need to log in to like this post')
+	}
+}
+
 });
 
 

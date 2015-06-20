@@ -4,6 +4,7 @@
 @media screen and (min-width: 600px)  {}
 @media screen and (min-width: 1000px) {}
 @media screen and (min-width: 1400px) {}
+
 */
 .body{
   margin-top: 91px;
@@ -577,55 +578,70 @@ END OF CUSTOME CSS
     padding-left: 111px !important;
     margin-left: 595px !important;
   }
-}
-
-@media (min-width: 768px) {
-  .main {
-    padding-right: 40px;
-    padding-left: 40px;
-  }
-  .footer-social-media{
-    margin-top: -50px;
-    padding-left: 15px;
-    margin-left: 506px;
+/*  #myBoardAddhistory {
+    margin-left: 410px;
+    width: 162px;
+    }*/
   }
 
-  .source{
-    width:300px;
-    /*margin-left: 370px;*/
-    margin-top: 166px;
+  @media (min-width: 768px) {
+    .main {
+      padding-right: 40px;
+      padding-left: 40px;
+    }
+    .footer-social-media{
+      margin-top: -50px;
+      padding-left: 15px;
+      margin-left: 506px;
+    }
+    #myBoardAddhistory {
+      margin-left: 431px;
+      width: 165px;
+    }
+
+    .source{
+      width:300px;
+      /*margin-left: 370px;*/
+      margin-top: 166px;
+    }
   }
-}
-.main .page-header {
-  margin-top: 0;
-}
-.sweet-alert input{
-  display: none;
-}
-.sweet-alert fieldset{
-  visibility: hidden;
-}
-.sweet-alert[data-has-cancel-button=false] button{
-  margin-top: -13px;
-}
-#loading-message {
-  color: #fff;
-  font-size: 25px;
-  font-weight: 300;
-  font-family: sans-serif;
-}
-
-.sk-spinner-rotating-plane.sk-spinner {
-  background-color: #fff;
-}
-
-
-/*media query for btn*/
-
-@media(max-width: 320px){
-  .addhistory-btn button{
-    width: 60%;
-    padding: 18px 20px;
-    margin: 0px 20%;
+  .main .page-header {
+    margin-top: 0;
   }
-}
+  .sweet-alert input{
+    display: none;
+  }
+  .sweet-alert fieldset{
+    visibility: hidden;
+  }
+  .sweet-alert[data-has-cancel-button=false] button{
+    margin-top: -13px;
+  }
+  #loading-message {
+    color: #fff;
+    font-size: 25px;
+    font-weight: 300;
+    font-family: sans-serif;
+  }
+
+  .sk-spinner-rotating-plane.sk-spinner {
+    background-color: #fff;
+  }
+
+
+  /*media query for btn*/
+
+  @media(max-width: 320px){
+    .addhistory-btn button{
+      width: 60%;
+      padding: 18px 20px;
+      margin: 0px 20%;
+    }
+    #myBoardAddhistory {
+      margin-left: 90px;
+      width: 163px;
+    }
+  }
+  @media(min-width: 321px){
+
+  }
