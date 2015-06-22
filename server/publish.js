@@ -6,8 +6,18 @@
 // 	}
 // })
 
-Meteor.publish('events', function(){
-	return	Events.find();
+Meteor.publishComposite('events',{
+	find: function(){
+		return Events.find({})
+	},
+	children: [
+	{
+		find: function(events){
+			return Comments.find({eventsid: events._id});
+		}
+	}
+	]
+
 });
 
 Meteor.publish('images', function(){

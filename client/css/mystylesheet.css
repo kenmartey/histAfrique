@@ -555,15 +555,29 @@ END OF CUSTOME CSS
     padding-left: 322px;
     margin-top: -41px;
   }
-}
+  .sweet-alert input{
+    display: none;
+  }
+  .sweet-alert fieldset{
+    visibility: hidden;
+  }
+  .spinner .loading-effect-1 {
+    width: 50px;
+    height: 50px;
+  }
 
-@media (min-width: 764px ){
-  .footer-social-media{
+  @media (min-width: 764px ){
+    .footer-social-media{
    /* margin-top: 126px;
    margin-left: 600px;*/
  }
-
- .source {
+ .sweet-alert input{
+  display: none;
+}
+.sweet-alert fieldset{
+  visibility: hidden;
+}
+.source {
   width:300px;
   /*margin-left: 370px;*/
   /*margin-top: 126px;*/
@@ -594,11 +608,17 @@ END OF CUSTOME CSS
       padding-left: 15px;
       margin-left: 506px;
     }
+
     #myBoardAddhistory {
       margin-left: 431px;
       width: 165px;
     }
-
+    .sweet-alert input{
+      display: none;
+    }
+    .sweet-alert fieldset{
+      visibility: hidden;
+    }
     .source{
       width:300px;
       /*margin-left: 370px;*/
@@ -637,11 +657,19 @@ END OF CUSTOME CSS
       padding: 18px 20px;
       margin: 0px 20%;
     }
+    .spinner .loading-effect-1 {
+      width: 50px;
+      height: 50px;
+    }
     #myBoardAddhistory {
       margin-left: 90px;
       width: 163px;
     }
+    .sweet-alert input{
+      display: none;
+    }
+    .sweet-alert fieldset{
+      visibility: hidden;
+    }
   }
-  @media(min-width: 321px){
-
-  }
+}

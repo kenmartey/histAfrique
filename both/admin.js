@@ -10,7 +10,7 @@
 // 	}
 // };
 AdminConfig = {
-	adminEmails: ['kennedy.anyinatoe@meltwater.org'],
+	adminEmails: ['kenmartey89@gmail.com'],
 	collections: {
 		Events: {},
 		Comments: {},
