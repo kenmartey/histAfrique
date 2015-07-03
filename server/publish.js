@@ -6,6 +6,11 @@
 // 	}
 // })
 
+// return _.chain(this.dayItems.fetch()).shuffle().map(function(item, index) {
+// 	item.index = index;
+// 	return item;
+// }).value();
+
 Meteor.publishComposite('events',{
 	find: function(){
 		return Events.find({})
@@ -19,12 +24,28 @@ Meteor.publishComposite('events',{
 	]
 
 });
+Meteor.publishComposite('myBoard',{
+	find: function(){
+		return Events.find({})
+	},
+	children: [
+	{
+		find: function(events){
+			return Comments.find({eventsid: events._id});
+		}
+	}
+	]
+});
 
 Meteor.publish('images', function(){
 	return Images.find();
 });
 
 Meteor.publish('comments', function(_id){
+	var events = Events.findOne(_id)
+	return Comments.find({eventsid: _id})
+})
+Meteor.publish('myBoard', function(_id){
 	var events = Events.findOne(_id)
 	return Comments.find({eventsid: _id})
 })

@@ -1,13 +1,5 @@
 //Getting the id and using it to get information 
 //from database by quering it.
-// Template.createEventPicture.helpers({
-// 	eventName: function (e, t) {
-// 		// console.log(Session.get('pictureId'));
-// 		_id = Session.get('pictureId');
-// 		name = Events.findOne(_id).placeName
-// 		return name;
-// 	}
-// });
 Template.createEventPicture.helpers({
 	eventName: function (e, t) {
 		// console.log(Session.get('pictureId'));
@@ -33,18 +25,7 @@ Template.registerHelper('commentsCount', function(id){
 		// return 'hello'
 
 	});
-// Template.events.helpers({
-// 	people: function() {
-// 		return myPagination.find({}, {
-// 			itemsPerPage: 50
-// 		});
-// 	}
-// });
-// Template.events.helpers({
-// 	commentsCounting: function(id){
-// 		return Comments.find({eventsid:id}).count();
-// 	}
-// })
+
 // i am yet to add likes code....
 //This section of the code handles the delete function
 Template.myBoard.helpers({
@@ -131,7 +112,7 @@ Template.registerHelper('images', function(){
 Template.events.helpers({
 	events: function() {
 		return myPagination.find({}, {
-			itemsPerPage: 3
+			itemsPerPage: 6
 		});
 	}
 });

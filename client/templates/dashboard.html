@@ -2,7 +2,6 @@
 	<div class="container-fluid">
 		<div class="row row-offcanvas row-offcanvas-left">
 			<div class="body myBoard">
-				<p><h3>My Dashboard</h3></p>
 				{{#if currentUser}}
 
 				<button type="button" id="myBoardAddhistory" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#createEvent">
@@ -11,36 +10,54 @@
 				
 				<div class="container">
 					<div class="row">
-						{{#each dashboardevents}}
-						{{#if isOwner}}
-						<!-- Card Projects -->
-						<div class="col-md-4">
-							<div class="card">
-								<div class="card-image">
-									
-									<img class="img-thumbnail" width="560px" height="500px" src="{{absoluteImageUrl}}" alt="" >
-									<span class="card-title">{{placeName}}</span>
-									
+						<div class="col-sm-10 col-sm-offset-1" id="logout">
+							<div class="page-header">
+								<h3 class="reviews">My Dashboard</h3>
+								<div class="logout">
+									<a class="btn btn-default btn-circle text-uppercase" type="button" onclick="" href="{{pathFor 'signout'}}">
+										<span class="glyphicon glyphicon-off"></span> Logout                    
+									</a>                
 								</div>
-
-								<div class="card-content">
-									<p>{{history}}</p>
-								</div>
-
-								<div class="card-action">
-									<!-- <i class="fa fa-envelope-o"></i><a href="" target="new_blank"></a> -->
-									<a href="#">{{location}}</a>
-									
-									<a href="#"> <i class="fa fa-pencil edit" data-toggle="modal"  data-target="#editEvent"></i></a>
-
-									{{> quickRemoveButton collection="Events" _id=this._id onError=onError onSuccess=onSuccess beforeRemove=beforeRemove class="btn btn-danger"}}
-
-
+							</div>
+							<div class="comment-tabs">
+								<ul class="nav nav-tabs" role="tablist">
+									<li class="active"><a href="#comments-logout" role="tab" data-toggle="tab"><h4 class="reviews text-capitalize">List of Historical Places</h4></a></li>
+									<!-- <li><a href="#account-settings" role="tab" data-toggle="tab"><h4 class="reviews text-capitalize">Complete Profile</h4></a></li> -->
+								</ul>            
+								<div class="tab-content">
+									<div class="tab-pane active" id="comments-logout">                
+										<ul class="media-list">
+											{{#each dashboardevents}}
+											{{#if isOwner}}
+											<li class="media">
+												<a class="pull-left" href="#">
+													<img class="media-object img-circle" width="200px" height="200px" src="{{absoluteImageUrl}}" alt="profile">
+												</a>
+												<div class="media-body">
+													<div class="well well-lg">
+														<h4 class="media-heading reviews">{{placeName}}</h4>
+														<ul class="media-date reviews list-inline">
+															{{ tm_now createdAt}}
+														</ul>
+														<p class="media-comment">
+															{{history}}
+														</p>
+														<a class="btn btn-info btn-circle text-uppercase edit" href="#" id="reply" data-toggle="modal"  data-target="#editEvent"><span class="glyphicon glyphicon-edit"></span> Edit</a>
+														<a class="btn btn-warning btn-circle text-uppercase" href="{{pathFor 'comments' _id=_id}}"><span class="glyphicon glyphicon-comment"></span> {{commentsCount _id}} comments</a>
+														{{> quickRemoveButton collection="Events" _id=this._id onError=onError onSuccess=onSuccess beforeRemove=beforeRemove class="btn btn-danger btn-circle glyphicon glyphicon-remove"}}
+													</div>              
+												</div>
+											</li>          
+											{{/if}}
+											{{/each}}
+										</ul> 
+									</div>
+									<!-- <div class="tab-pane" id="account-settings">
+										{{> quickForm id="insertProfileForm" collection="Profiles" doc=profiledoc type="insert"}}
+									</div> -->
 								</div>
 							</div>
 						</div>
-						{{/if}}
-						{{/each}}
 					</div>
 				</div>
 				{{else}}
@@ -53,4 +70,5 @@
 		</div>
 	</div><!--/.container-->
 	{{> editEventsModal}}
+
 </template>

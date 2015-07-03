@@ -1,7 +1,7 @@
 Router.onBeforeAction(function(pause) {
 	if (!Meteor.user()) {
     // pause();
-    swal({   title: "histAfrique alert!",   text: "you need to be logged-in to view this page, Redirecting you to Home!",   timer: 4000,   showConfirmButton: false });
+    swal({   title: "histAfrique alert!",   text: "you need to be logged-in to view this page, Redirecting you to Home!",   timer: 3000,   showConfirmButton: false });
     Router.go('\home');
 } else {
 	this.next();

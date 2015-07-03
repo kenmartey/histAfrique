@@ -1,53 +1,39 @@
 AccountsTemplates.configureRoute('signIn', {
-	// name: 'signin',
-	// path: '/login',
-	// template: 'myLogin',
-	// layoutTemplate: 'myLayout',
 	redirect: '/'
 });
 AccountsTemplates.configureRoute('signUp', {
-	// name: 'signin',
-	// path: '/login',
-	// template: 'myLogin',
-	// layoutTemplate: 'myLayout',
-	redirect: '/dashboard'
+	redirect: '/'
 });
-// AccountsTemplates.configureRoute('signOut', {
-// 	// name: 'signin',
-// 	// path: '/login',
-// 	// template: 'myLogin',
-// 	// layoutTemplate: 'myLayout',
-// 	redirect: '/events'
-// });
+
 var mySubmitFunc = function(error, state){
 	if (!error) {
 		if (state === "signIn") {
-      // Successfully logged in
-      // return $('#signinSuccess').modal('show');
-      return swal("Welcome!", "You have successfully signed-In", "success");
-
-  }
-  if (state === "signUp") {
-      // Successfully registered
-      // return $('#signupSuccess').modal('show');
-      return swal("Good job!", "You have successfully signed up", "success");
-
-  }
-}
+			return swal("Welcome!", "You have successfully signed-In", "success");
+		}
+		if (state === "signUp") {
+			return swal({   title: "histAfrique",   
+				text: "You can add historical places from Dashboard or Tour the app",   
+				type: "warning",   
+				showCancelButton: true,   
+				confirmButtonColor: "#9DC7B3",   
+				confirmButtonText: "My Dashboard",   
+				cancelButtonText: "Tour Now",   
+				closeOnConfirm: false,   closeOnCancel: false }, 
+				function(isConfirm){  
+					if (isConfirm) { 
+						Router.go('/dashboard')    
+						swal("My Dashboard!", "You can now add historical places to histAfrique. Please Avoid Duplication!", "success");   
+					} else {   
+						Router.go('/historical-places')  
+						swal("Tour Now", "You can tour histAfrique and discover more historical places in Africa", "success");   } });
+		}
+	}
 };
 
 AccountsTemplates.configure({
 	onSubmitHook: mySubmitFunc
 });
-// Router.route('/sign-out', {
-// 	name: 'signOut',
-// 	onBeforeAction: function() {
-// 		Meteor.logout(function() {
-// 			return Router.go('/signIn');
-// 		});
-// 		this.next();
-// 	}
-// });
+
 Accounts.onLogout(function() {
 	return swal("histAfrique", "You have successfully signed out. Thanks for your time!", "success");
 });

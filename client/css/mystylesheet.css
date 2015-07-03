@@ -183,6 +183,7 @@
   }
   .createevent{
     margin-top: 100px;
+    width: 100%;
   }
   .btn-primary{
     background: #FF9800;
@@ -199,6 +200,7 @@
 
 .addhistory-btn button{
   margin: 0px 30%;
+  width: 44%;
 }
 
 
@@ -460,7 +462,7 @@ END OF CUSTOME CSS
 
   }
   #myBoardAddhistory{
-    margin-left: 430px;
+    margin-left: 70px;
   }
   .eventspicturebutton{
     margin-left: 535px;
@@ -555,11 +557,15 @@ END OF CUSTOME CSS
     padding-left: 322px;
     margin-top: -41px;
   }
+
   .sweet-alert input{
     display: none;
   }
   .sweet-alert fieldset{
     visibility: hidden;
+  }
+  .navbar-image{
+    margin-top: -7px;
   }
   .spinner .loading-effect-1 {
     width: 50px;
@@ -574,6 +580,7 @@ END OF CUSTOME CSS
  .sweet-alert input{
   display: none;
 }
+
 .sweet-alert fieldset{
   visibility: hidden;
 }
@@ -592,6 +599,7 @@ END OF CUSTOME CSS
     padding-left: 111px !important;
     margin-left: 595px !important;
   }
+
 /*  #myBoardAddhistory {
     margin-left: 410px;
     width: 162px;
@@ -603,6 +611,7 @@ END OF CUSTOME CSS
       padding-right: 40px;
       padding-left: 40px;
     }
+
     .footer-social-media{
       margin-top: -50px;
       padding-left: 15px;
@@ -610,8 +619,8 @@ END OF CUSTOME CSS
     }
 
     #myBoardAddhistory {
-      margin-left: 431px;
-      width: 165px;
+      margin-left: 560px;
+      width: 171px;
     }
     .sweet-alert input{
       display: none;
@@ -653,13 +662,16 @@ END OF CUSTOME CSS
 
   @media(max-width: 320px){
     .addhistory-btn button{
-      width: 60%;
+      width: 74%;
       padding: 18px 20px;
       margin: 0px 20%;
     }
     .spinner .loading-effect-1 {
       width: 50px;
       height: 50px;
+    }
+    .media-logo{
+      margin-top: -7px !important;
     }
     #myBoardAddhistory {
       margin-left: 90px;
@@ -672,4 +684,53 @@ END OF CUSTOME CSS
       visibility: hidden;
     }
   }
+}
+/*@media(max-width: 505px){
+  .addhistory-btn button {
+    margin: 0px 20%;
+    width: 68%;
+  }
+  }*/
+/* 
+====================DASHBOARD BUTTONS=====================
+*/
+.btn-circle {
+  font-weight: bold;
+  font-size: 12px;
+  padding: 6px 15px;
+  border-radius: 20px;
+}
+.btn-circle span { padding-right: 6px; }
+.embed-responsive { margin-bottom: 20px; }
+.tab-content {
+  padding: 50px 15px;
+  border: 1px solid #ddd;
+  border-top: 0;
+  border-bottom-right-radius: 4px;
+  border-bottom-left-radius: 4px;
+}
+
+.navbar-image{
+  margin-top: 0px;
+}
+@media all and (max-width: 768px) {
+  .media-logo{
+    margin-top: -7px !important;
+  }
+}
+.historical-content{
+  display: block;
+  padding: 9.5px;
+  margin: 0 0 10px;
+  font-size: 15px;
+  line-height: 1.42857143;
+  color: #333;
+  word-break: break-all;
+  word-wrap: break-word;
+  /*background-color: #f5f5f5;*/
+  /*border: 1px solid #ccc;*/
+  border-radius: 4px;
+  font-family: sans-serif;
+  white-space: pre-wrap;
+  word-break: normal;
 }

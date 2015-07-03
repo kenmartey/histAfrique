@@ -3,41 +3,30 @@
 Template.events.events({
 	'click [data-book-event]': function (e,t) {
 		var _id = $(e.currentTarget).attr('data-book-event');
-		// console.log(this);
 		Session.set('eventId', this._id);
 		Session.set('eventname', this);
-		// Session.set('eventNameForMorePictures', this);
 	},
 	//This template pulls the id of the event picture
-	'click #eventpicture': function (e,t) {
-		var id = this._id
-		// var _id = $(e.currentTarget).attr('eventpicture');
-		Session.setPersistent("pictureId", id);
+	'click #viewImages': function (e,t) {
+		var id = this._id;
+		Session.set("pictureId", id);
 	},
 	//This section gets the id of the likes
 	'click [data-likes-event]': function (e,t) {
-		// if(Meteor.userId()){
-			var _id = $(e.currentTarget).attr('data-likes-event');
-		// console.log(this);
+		var _id = $(e.currentTarget).attr('data-likes-event');
 		Session.set('eventId', this._id);
-	// }
-	// else {
-
-		// return swal('we are sorry, you need to log in to like this post')
-	// }
-
-},
-'click .likes': function(){
-	if(Meteor.userId()){
-		eventsId = Session.get('eventId');
-		console.log(eventsId)
-		myevents = Events.update(eventsId, {$inc:{likes: +1 }});
-		console.log(myevents)
+	},
+	'click .likes': function(){
+		if(Meteor.userId()){
+			eventsId = Session.get('eventId');
+			console.log(eventsId)
+			myevents = Events.update(eventsId, {$inc:{likes: +1 }});
+			console.log(myevents)
+		}
+		else {
+			return swal('we are sorry, you need to log in to like this post')
+		}
 	}
-	else {
-		return swal('we are sorry, you need to log in to like this post')
-	}
-}
 
 });
 
@@ -54,7 +43,6 @@ Template.myBoard.events({
 Template.modals.events({
 	'change #listOfCountries': function (e,t) {
 		var countries = e.currentTarget.value
-		// var countries $(this).find(':selected').data("country");
 		Session.set('countries', countries);
 
 	},
@@ -186,17 +174,10 @@ reset_form_element = function(e) {
 	e.unwrap();
 }
 
-
-
 Template.createEventPicture.events({
 	'click .imageclick': function(e,t){
-		// alert("hello")
-		// console.log(this.url());
-		// Session.set('relativeImageUrl', relative_url);
 		var imageclick = e.currentTarget.getAttribute("data-id")
 		Session.set('absoluteImageUrl', imageclick);
-		// Session.set('relativeImageUrl', relativeImageUrl);
-		// Session.set('absoluteImageUrl', success.url);
 	}
 })
 
@@ -219,6 +200,5 @@ Template.comments.rendered = function() {
 };
 
 Template.events.onCreated(function () {
-  // Use this.subscribe inside onCreated callback
-  this.subscribe("events");
+	this.subscribe("events");
 });

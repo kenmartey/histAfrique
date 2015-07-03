@@ -43,7 +43,7 @@
  					<div class="col-md-4 wow zoomIn">
  						<div class="entry-post " data-animation="fadeInLeft" data-delay="0">
  							<div class="entry-image resize wow fadeInUp">
- 								<a href="{{pathFor 'eventPictures'  _id=_id}}" id="eventpicture">
+ 								<a href="{{pathFor 'comments' _id=_id}}" id="eventpicture">
  									
  									<img class="img-thumbnail" width="560px" height="700px" src="{{absoluteImageUrl}}" alt="" >
  									<span class="card-title">{{pictureName}}</span>
@@ -54,7 +54,7 @@
  								</a>
  							</div> <!-- end entry-image -->
  							<div class="post-meta">
- 								<p><span class="location">{{country}} | {{province}}</span> | <span class="comment"><a href="{{pathFor 'comments' _id=_id}}">{{commentsCount _id}} <i class="fa fa-weixin"></i></a></span> | <span class="likes"><a href="#" data-likes-event="{{_id}}"><i class="fa fa-thumbs-up"></i> {{likes}}</a></span> | <span class="comment"><a href="{{pathFor 'comments' _id=_id}}">Readmore... </a></span>
+ 								<p><span class="location">{{country}} | {{province}}</span> | <span class="comment"><a href="{{pathFor 'comments' _id=_id}}">{{commentsCount _id}} <i class="fa fa-weixin"></i></a></span> | <span class="likes"><a href="#" data-likes-event="{{_id}}"><i class="fa fa-thumbs-up"></i> {{likes}}</a></span> | <span class="comment"><a href="{{pathFor 'eventPictures'  _id=_id}}" id="viewImages">View images </a></span>
  								</p>
  							</div> <!-- end post-meta -->
  							<h4 class="post-title"><a href="{{pathFor 'comments'}}">{{placeName}}</a></h4>

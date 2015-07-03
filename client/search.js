@@ -10,6 +10,7 @@ Template.events.events({
 //search through the collection for the word entered into the textbox
 Template.events.helpers({
 	createevents: function(){
+
 		if(Session.get("searchText"))
 			return myPagination.find({placeName: {$regex: Session.get("searchText"), $options: "i"}}, {itemsPerPage: 6})
 		else{

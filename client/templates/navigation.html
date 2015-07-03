@@ -8,19 +8,21 @@
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</button>
-				<a class="navbar-brand" href="{{pathFor 'home'}}">histAfrique</a>
+				<a class="navbar-brand" href="{{pathFor 'home'}}"> 
+					<img class="navbar-image media-logo" src="/images/histafrique.png" alt="histAfrique">
+				</a>
 			</div>
 			<div class="navbar-collapse collapse">
 
 				<ul class="nav navbar-nav navbar-right">
 					<li class=""><a href="{{pathFor 'home'}}">Home</a></li>
 					<!-- this is where the nav bar items(Profile, dashboard, signIn and signOut. it should be uncommented one by one ) should be. -->
-					
+
 					<li><a href="{{pathFor 'events'}}">tour</a></li> 
 					{{#if currentUser}}
 					<li><a href="{{pathFor 'myBoard'}}">dashboard</a></li>
 					{{/if}} 
-					
+
 					{{#if currentUser}}
 					<li><a href="{{pathFor 'signout'}}">Sign-Out</a>
 					</li>
