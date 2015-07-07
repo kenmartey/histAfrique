@@ -9,6 +9,7 @@ Template.createEventPicture.helpers({
 	}
 });
 
+
 Template.view_profile.helpers({
 	isOwner: function(e,t){
 		return this.owner === Meteor.userId();
@@ -115,4 +116,47 @@ Template.events.helpers({
 			itemsPerPage: 6
 		});
 	}
+});
+
+
+/*
+VIEW DIRECTION TO THE PLACE ON MAP
+*/
+
+if (Meteor.isClient) {
+	Meteor.startup(function() {
+		GoogleMaps.load();
+	});
+}
+
+Template.view_map.helpers({
+	exampleMapOptions: function() {
+    // Make sure the maps API has loaded
+    _id = Session.get('myeventsid');
+    latitude = Events.findOne(_id).latitude;
+    longitude = Events.findOne(_id).longitude
+    if (GoogleMaps.loaded()) {
+      // Map initialization options
+      return {
+      	center: new google.maps.LatLng(latitude, longitude),
+      	zoom: 5
+      };
+
+  }
+}
+});
+
+Template.view_map.onCreated(function() {
+  // We can use the `ready` callback to interact with the map API once the map is ready.
+  GoogleMaps.ready('exampleMap', function(map) {
+    // Add a marker to the map once it's ready
+    // var marker = new google.maps.Marker({
+    // 	position: map.options.center,
+    // 	map: map.instance
+    // });
+  var marker = new google.maps.Marker({
+  	position: map.options.center,
+  	map: map.instance
+  });
+});
 });

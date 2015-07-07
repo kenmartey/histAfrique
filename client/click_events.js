@@ -202,3 +202,14 @@ Template.comments.rendered = function() {
 Template.events.onCreated(function () {
 	this.subscribe("events");
 });
+
+Template.events.events({
+	'click .post-title': function(){
+		Session.setPersistent('myeventsid', this._id);
+		// console.log(this._id)
+	},
+	'click .imageclick': function(){
+		Session.setPersistent('myeventsid', this._id);
+		// console.log(this._id)
+	},
+})
