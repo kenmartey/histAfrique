@@ -7,7 +7,7 @@ Router.onBeforeAction(function(pause) {
 	this.next();
 }
 }, {
-	except: ['home', 'events', 'signup', 'signin', 'signout','eventPictures','comments','aboutHistafrique']
+	except: ['home', 'events', 'signup', 'signin', 'signout','eventPictures','comments','aboutHistafrique','view_map']
 });
 
 
