@@ -54,7 +54,7 @@
  								</a>
  							</div> <!-- end entry-image -->
  							<div class="post-meta">
- 								<p><span class="location">{{country}} | {{province}}</span> | <span class="comment"><a href="{{pathFor 'comments' _id=_id}}">{{commentsCount _id}} <i class="fa fa-weixin"></i></a></span> | <span class="likes"><a href="#" data-likes-event="{{_id}}"><i class="fa fa-thumbs-up"></i> {{likes}}</a></span> | <span class="comment"><a href="{{pathFor 'eventPictures'  _id=_id}}" id="viewImages">View images </a></span>
+ 								<p><span class="location">{{country}} | {{province}}</span> | <span class="comment"><a href="{{pathFor 'comments' _id=_id}}">{{commentsCount _id}} <i class="fa fa-weixin"></i></a></span> | <span class="likes"><a href="#" data-likes-event="{{_id}}" class="disabled"><i class="fa fa-thumbs-up"></i> {{likes}}</a></span> | <span class="comment"><a href="{{pathFor 'eventPictures'  _id=_id}}" id="viewImages">View images </a></span>
  								</p>
  							</div> <!-- end post-meta -->
  							<h4 class="post-title"><a href="{{pathFor 'comments'}}">{{placeName}}</a></h4>

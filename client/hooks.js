@@ -1,3 +1,15 @@
+// var requireLogin = function() {
+// 	if (!Meteor.isServer && !Meteor.userId() && !Meteor.loggingIn()) {
+// 		this.redirect('auth');
+// 	} else {
+// 		this.next();
+// 	}
+// };
+
+// Router.onBeforeAction(requireLogin, {
+// 	except: ['auth']
+// });
+
 Router.onBeforeAction(function(pause) {
 	if (!Meteor.user()) {
     // pause();
@@ -49,6 +61,7 @@ AutoForm.hooks({
 			doc.relativeImageUrl = Session.get('relativeImageUrl');
 			doc.absoluteImageUrl = Session.get('absoluteImageUrl');
 			doc.delivery_status = "not-delivered"
+			doc.owner = Meteor.userId();
 			return doc;
 		},
 		onSubmit: function (insertDoc, updateDoc, currentDoc) {

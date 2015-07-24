@@ -13,21 +13,22 @@ Template.events.events({
 	},
 	//This section gets the id of the likes
 	'click [data-likes-event]': function (e,t) {
-		var _id = $(e.currentTarget).attr('data-likes-event');
-		Session.set('eventId', this._id);
-	},
-	'click .likes': function(){
+		_id = $(e.currentTarget).attr('data-likes-event');
+		// if(Events.findOne(_id, {likes:{likes: 1}})){
+		// 	alert("hello")
+		// 	return	false;
+		// }
+		console.log(_id)
 		if(Meteor.userId()){
-			eventsId = Session.get('eventId');
-			console.log(eventsId)
-			myevents = Events.update(eventsId, {$inc:{likes: +1 }});
-			console.log(myevents)
+			if(Events.update(_id, {$inc:{likes: +1 }})){
+				// console.log('updated');
+				$("[data-likes-event='"+ _id +"']").removeAttr('data-likes-event');
+			}
 		}
 		else {
 			return swal('we are sorry, you need to log in to like this post')
-		}
+		}	
 	}
-
 });
 
 

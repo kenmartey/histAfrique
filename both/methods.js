@@ -17,3 +17,10 @@
 // 	}
 // 	// EventsFilter.search.setField('country');
 // })
+Meteor.methods({
+	"owner":function() {
+		owner = this.userId;
+        //should print the user details if logged in, undefined otherwise.
+        console.log(owner);
+    }
+});
